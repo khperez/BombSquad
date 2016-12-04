@@ -28,5 +28,11 @@ module SequenceVerifier(state, seq_key, verify, sw_combo, clk, rst, result);
 
     always @(posedge clk)
         begin
+            if (rst == 0)
+                begin
+                end
+            else
+                begin
+                end
         end
 endmodule
