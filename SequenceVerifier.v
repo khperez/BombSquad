@@ -11,7 +11,6 @@
     + seq_key: sequence key
     + seq_input: sequence cell input from user
     + verify: sequence cell verification
-    + sw_combo: switch combination
     + clk: clock
     + rst: reset
 
@@ -23,12 +22,11 @@
 
 */
 
-module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, rst, result);
+module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result);
     input [6:0] game_state;
     input [15:0] seq_key;
     input [3:0] seq_input;
     input verify;
-    input [15:0] sw_combo;
     input clk, rst;
 
     output reg [1:0] result;
@@ -77,6 +75,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                             stage_counter <= 0;
                                             level_stage <= stage0;
                                             result <= 2'b00;
+                                        end
                                 end
                         // Stage 1 of level
                         stage1: begin
@@ -191,7 +190,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                             // Up
                                             if (stage2reg == 4'hE)
                                                 begin
-                                                    stage2target <= seq_key[15:12];
+                                                    stage2_target <= seq_key[15:12];
                                                     if (seq_input == stage2_target)
                                                         begin
                                                             if (stage_counter < 4)
@@ -215,7 +214,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                             // Right
                                             else if (stage2reg == 4'hD)
                                                 begin
-                                                    stage2target <= seq_key[7:4];
+                                                    stage2_target <= seq_key[7:4];
                                                     if (seq_input == stage2_target)
                                                         begin
                                                             if (stage_counter < 4)
@@ -239,7 +238,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                             // Down
                                             else if (stage2reg == 4'hB)
                                                 begin
-                                                    stage2target <= seq_key[11:8];
+                                                    stage2_target <= seq_key[11:8];
                                                     if (seq_input == stage2_target)
                                                         begin
                                                             if (stage_counter < 4)
@@ -263,7 +262,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                             // Left
                                             else if (stage2reg == 4'h7)
                                                 begin
-                                                    stage2target <= seq_key[11:8];
+                                                    stage2_target <= seq_key[11:8];
                                                     if (seq_input == stage2_target)
                                                         begin
                                                             if (stage_counter < 4)
@@ -548,7 +547,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, sw_combo, clk, r
                                                 begin
                                                     level_stage <= stage0;
                                                     result <= 2'b00;
-                                                end         
+                                                end
                                             else
                                                 begin
                                                     level_stage <= stage0;
