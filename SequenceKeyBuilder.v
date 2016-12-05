@@ -71,7 +71,7 @@ module SequenceKeyBuilder(game_state, level_state, lfsr_data, enable, clk, rst, 
                                     end
                                 else if ((lfsr_data % 4) == 3)
                                     begin
-                                        cell1 <= 4'b1011;
+                                        cell1 <= 4'b0111;
                                         state <= s2;
                                     end
                                 else
@@ -99,7 +99,7 @@ module SequenceKeyBuilder(game_state, level_state, lfsr_data, enable, clk, rst, 
                                     end
                                 else if ((lfsr_data % 4) == 3)
                                     begin
-                                        cell2 <= 4'b1011;
+                                        cell2 <= 4'b0111;
                                         state <= s3;
                                     end
                                 else
@@ -126,7 +126,7 @@ module SequenceKeyBuilder(game_state, level_state, lfsr_data, enable, clk, rst, 
                                     end
                                 else if ((lfsr_data % 4) == 3)
                                     begin
-                                        cell3 <= 4'b1011;
+                                        cell3 <= 4'b0111;
                                         state <= s4;
                                     end
                                 else
@@ -153,7 +153,7 @@ module SequenceKeyBuilder(game_state, level_state, lfsr_data, enable, clk, rst, 
                                     end
                                 else if ((lfsr_data % 4) == 3)
                                     begin
-                                        cell4 <= 4'b1011;
+                                        cell4 <= 4'b0111;
                                         state <= seq_complete;
                                     end
                                 else
