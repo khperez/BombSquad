@@ -17,8 +17,11 @@
     + s_current : current game state
         0x00: authentication
         0x10: game in progress
-        0x11: level success
-        0x12: level failed
+        0x11: level 1 success
+        0x12: level 1 failed
+        0x13: level 2 success
+        0x14: level 2 failed
+        0x16: level 3 failed
         0x20: game success sequence begin
         0x21: game success sequence end
         0x30: game over sequence begin
