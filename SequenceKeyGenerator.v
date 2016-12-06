@@ -17,9 +17,9 @@
 module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, transmit);
 
     // module SequenceKeyDecoder(game_state, level_state, lfsr_data, enable, clk, rst, sequence_key);
-    SequenceKeyBuilder SequenceKeyBuilder1();
+    SequenceKeyBuilder SequenceKeyBuilder1(game_state, level_state, lfsr_data, enable, clk, rst, sequence_key);
 
     // module LFSR8bit(enable, reset, clk, output_sequence);
-    LFSR8bit LFSR8bit1();
+    LFSR8bit LFSR8bit1(enable, rst, clk, output_sequence);
 
 endmodule

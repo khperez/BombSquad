@@ -99,12 +99,12 @@ module GameController(s_auth, s_time, cur_time, s_results, clk, rst, s_current);
                              end
                     game_success: begin
                                         // Game Success Sequence begin
-                                        if ()
+                                        if (s_results == 2'b01)
                                             begin
                                                 s_current <= 7'h20;
                                                 game_state <= game_success;
                                             end
-                                        else if ()
+                                        else if (s_results == 2'b11)
                                             begin
                                                 s_current <= 7'h21;
                                                 game_state <= auth;
@@ -112,13 +112,13 @@ module GameController(s_auth, s_time, cur_time, s_results, clk, rst, s_current);
                                   end
                     game_over: begin
                                     // Game Over Sequence begin
-                                    if ()
+                                    if (s_results == 2'b10)
                                         begin
                                             s_current <= 7'h30;
                                             game_state <= game_over;
                                         end
                                     // Game Over Sequence end
-                                    else if ()
+                                    else if (s_results == 2'b11)
                                         begin
                                             s_current <= 7'h31;
                                             game_state <= auth;

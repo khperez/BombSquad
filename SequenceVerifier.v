@@ -109,7 +109,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -139,7 +139,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -169,7 +169,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -199,7 +199,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                     stage_counter <= 0;
                                                             end
                                                         end
@@ -236,7 +236,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)
@@ -265,7 +265,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)
@@ -294,7 +294,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -324,7 +324,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b11;
+                                                                    result <= 2'b00;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)
@@ -432,6 +432,92 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             level_stage <= stage3;
                                                         end
                                                 end
+                                                // Down
+                                                else if (stage3reg == 4'hB)
+                                                    begin
+                                                        case (stage_counter)
+                                                            2'b00: begin
+                                                                        stage3_target <= seq_key[3:0];
+                                                                   end
+                                                            2'b01: begin
+                                                                        stage3_target <= seq_key[15:12];
+                                                                   end
+                                                            2'b10: begin
+                                                                        stage3_target <= seq_key[11:8];
+                                                                   end
+                                                            2'b11: begin
+                                                                        stage3_target <= seq_key[7:4];
+                                                                   end
+                                                        endcase
+                                                        if (seq_input == stage3_target && verify == 1)
+                                                            begin
+                                                                if (stage_counter < 3)
+                                                                    begin
+                                                                        level_stage <= stage3;
+                                                                        stage_counter <= stage_counter + 1;
+                                                                        result <= 2'b00;
+                                                                    end
+                                                                else
+                                                                    begin
+                                                                        level_stage <= level_success;
+                                                                        result <= 2'b01;
+                                                                        stage_counter <= 0;
+                                                                    end
+                                                            end
+                                                        else if (seq_input != stage3_target && verify == 1)
+                                                            begin
+                                                                result <= 2'b10;
+                                                                level_stage <= stage_fail;
+                                                            end
+                                                        else
+                                                            begin
+                                                                result <= 2'b00;
+                                                                level_stage <= stage3;
+                                                            end
+                                                    end
+                                                // Left
+                                                else if (stage3reg == 4'h7)
+                                                    begin
+                                                        case (stage_counter)
+                                                            2'b00: begin
+                                                                        stage3_target <= seq_key[11:8];
+                                                                   end
+                                                            2'b01: begin
+                                                                        stage3_target <= seq_key[7:4];
+                                                                   end
+                                                            2'b10: begin
+                                                                        stage3_target <= seq_key[3:0];
+                                                                   end
+                                                            2'b11: begin
+                                                                        stage3_target <= seq_key[15:12];
+                                                                   end
+                                                        endcase
+                                                        if (seq_input == stage3_target && verify == 1)
+                                                            begin
+                                                                if (stage_counter < 3)
+                                                                    begin
+                                                                        level_stage <= stage3;
+                                                                        stage_counter <= stage_counter + 1;
+                                                                        result <= 2'b00;
+                                                                    end
+                                                                else
+                                                                    begin
+                                                                        level_stage <= level_success;
+                                                                        result <= 2'b01;
+                                                                        stage_counter <= 0;
+                                                                    end
+                                                            end
+                                                        else if (seq_input != stage3_target && verify == 1)
+                                                            begin
+                                                                result <= 2'b10;
+                                                                level_stage <= stage_fail;
+                                                            end
+                                                        else
+                                                            begin
+                                                                result <= 2'b00;
+                                                                level_stage <= stage3;
+                                                            end
+                                                    end
                                         end
                                 end
                         // Level Success
@@ -440,12 +526,12 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                             if (game_state == 7'h21)
                                                 begin
                                                     level_stage <= stage0;
-                                                    result <= 2'b00;
+                                                    result <= 2'b11;
                                                 end
                                             else
                                                 begin
                                                     level_stage <= stage0;
-                                                    result <= 2'b00;
+                                                    result <= 2'b11;
                                                 end
                                        end
 
