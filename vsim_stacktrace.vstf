@@ -1,0 +1,18 @@
+# Current time Mon Dec 05 23:39:44 2016
+# ModelSim Stack Trace
+# Program = vsim
+# Id = "10.3c"
+# Version = "2014.09"
+# Date = "Sep 20 2014"
+# Platform = win32pe
+# 0    0x007fec04: '<unknown (@0x7fec04)>'
+# 1    0x008013a2: '<unknown (@0x8013a2)>'
+# 2    0x1000e054: 'Tcl_ListMathFuncs + 0x444' in 'c:\altera\14.1\modelsim_ase\win32aloem\tcl85.dll'
+# 3    0x1000ecba: 'Tcl_EvalEx + 0x7da' in 'c:\altera\14.1\modelsim_ase\win32aloem\tcl85.dll'
+# 4    0x1000e500: 'Tcl_EvalEx + 0x20' in 'c:\altera\14.1\modelsim_ase\win32aloem\tcl85.dll'
+# 5    0x00ec7f09: '<unknown (@0xec7f09)>'
+# 6    0x1005fb86: 'Tcl_NotifyChannel + 0x136' in 'c:\altera\14.1\modelsim_ase\win32aloem\tcl85.dll'
+# 7    0x100aab09: 'TclpHasSockets + 0x379' in 'c:\altera\14.1\modelsim_ase\win32aloem\tcl85.dll'
+# End of Stack Trace
+
+

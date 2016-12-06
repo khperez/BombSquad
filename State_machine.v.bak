@@ -1,0 +1,9 @@
+module State_machine(clk, State);
+input clk;
+output [7:0]State_m;
+reg [7:0]State_m;
+
+always @(posedge clk) begin
+	State_m <= 8b'0;
+end
+endmodule
