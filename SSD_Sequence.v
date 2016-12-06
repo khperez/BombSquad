@@ -1,7 +1,7 @@
-module SSD_Sequence(Sequence_in, display, ButtonMove, ButtonNext, clk, reset, Sequence_out, SevSeg1, SevSeg2, SevSeg3, SevSeg4);
+module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, reset, Sequence_out, SevSeg1, SevSeg2, SevSeg3, SevSeg4);
 
 	input[15:0] Sequence_in;
-	input display, ButtonMove, ButtonNext;
+	input display, OneSec, ButtonMove, ButtonNext;
 
 	output[7:0] SevSeg1, SevSeg2, SevSeg3, SevSeg4;
 	reg[7:0] SevSeg1, SevSeg2, SevSeg3, SevSeg4;
@@ -10,9 +10,11 @@ module SSD_Sequence(Sequence_in, display, ButtonMove, ButtonNext, clk, reset, Se
 
 	input clk, reset;
 
-	parameter init = 0, firstSeg = 1, secondSeg = 2, thirdSeg = 3, fourthSeg = 4;
+	parameter init = 0, show2Sec = 1, initialStart = 2, firstSeg = 3, secondSeg = 4, thirdSeg = 5, fourthSeg = 6;
 
 	reg[2:0] state;
+	
+	reg[1:0] visabity; 
 
 	always@(posedge clk)
 	begin
@@ -22,52 +24,72 @@ module SSD_Sequence(Sequence_in, display, ButtonMove, ButtonNext, clk, reset, Se
 			SevSeg2 <= 7'b1111111;
 			SevSeg3 <= 7'b1111111;
 			SevSeg4 <= 7'b1111111;
-			state <= firstSeg;
-		end
-		else if (display == 1)
-		begin
-			case(Sequence_in[3:0])
-			4'b1110 : begin SevSeg1 <= 7'b1111110; end
-			4'b1101 : begin SevSeg1 <= 7'b1111001; end
-			4'b1011 : begin SevSeg1 <= 7'b1110111; end
-			4'b0111 : begin SevSeg1 <= 7'b1001111; end
-			default : begin SevSeg1 <= 7'b0100001; end
-			endcase
-
-			case(Sequence_in[7:4])
-			4'b1110 : begin SevSeg2 <= 7'b1111110; end
-			4'b1101 : begin SevSeg2 <= 7'b1111001; end
-			4'b1011 : begin SevSeg2 <= 7'b1110111; end
-			4'b0111 : begin SevSeg2 <= 7'b1001111; end
-			default : begin SevSeg2 <= 7'b0100001; end
-			endcase
-
-			case(Sequence_in[11:8])
-			4'b1110 : begin SevSeg3 <= 7'b1111110; end
-			4'b1101 : begin SevSeg3 <= 7'b1111001; end
-			4'b1011 : begin SevSeg3 <= 7'b1110111; end
-			4'b0111 : begin SevSeg3 <= 7'b1001111; end
-			default : begin SevSeg3 <= 7'b0100001; end
-			endcase
-
-			case(Sequence_in[15:12])
-			4'b1110 : begin SevSeg4 <= 7'b1111110; end
-			4'b1101 : begin SevSeg4 <= 7'b1111001; end
-			4'b1011 : begin SevSeg4 <= 7'b1110111; end
-			4'b0111 : begin SevSeg4 <= 7'b1001111; end
-			default : begin SevSeg4 <= 7'b0100001; end
-			endcase
+			visabity <= 0;
+			state <= init;
 		end
 		else
 		begin
 			case(state)
 				init:
 				begin
+					SevSeg1 <= 7'b1111111;
+					SevSeg2 <= 7'b1111111;
+					SevSeg3 <= 7'b1111111;
+					SevSeg4 <= 7'b1111111;
+					visabity <= 0;
+					if (display == 1)
+						state <= show2Sec;
+					else 
+						state <= init;
+				end
+				show2Sec:
+				begin
+				
+					if (visabity == 2)
+						state <= initialStart;
+					else if (OneSec == 1)
+						visabity <= visabity + 1;
+						
+					case(Sequence_in[3:0])
+					4'b1110 : begin SevSeg1 <= 7'b1111110; end
+					4'b1101 : begin SevSeg1 <= 7'b1111001; end
+					4'b1011 : begin SevSeg1 <= 7'b1110111; end
+					4'b0111 : begin SevSeg1 <= 7'b1001111; end
+					default : begin SevSeg1 <= 7'b0100001; end
+					endcase
+
+					case(Sequence_in[7:4])
+					4'b1110 : begin SevSeg2 <= 7'b1111110; end
+					4'b1101 : begin SevSeg2 <= 7'b1111001; end
+					4'b1011 : begin SevSeg2 <= 7'b1110111; end
+					4'b0111 : begin SevSeg2 <= 7'b1001111; end
+					default : begin SevSeg2 <= 7'b0100001; end
+					endcase
+
+					case(Sequence_in[11:8])
+					4'b1110 : begin SevSeg3 <= 7'b1111110; end
+					4'b1101 : begin SevSeg3 <= 7'b1111001; end
+					4'b1011 : begin SevSeg3 <= 7'b1110111; end
+					4'b0111 : begin SevSeg3 <= 7'b1001111; end
+					default : begin SevSeg3 <= 7'b0100001; end
+					endcase
+
+					case(Sequence_in[15:12])
+					4'b1110 : begin SevSeg4 <= 7'b1111110; end
+					4'b1101 : begin SevSeg4 <= 7'b1111001; end
+					4'b1011 : begin SevSeg4 <= 7'b1110111; end
+					4'b0111 : begin SevSeg4 <= 7'b1001111; end
+					default : begin SevSeg4 <= 7'b0100001; end
+					endcase
+				end
+				initialStart:
+				begin
 					SevSeg1 <= 7'b1111110;
 					SevSeg2 <= 7'b1111110;
 					SevSeg3 <= 7'b1111110;
 					SevSeg4 <= 7'b1111110;
 					Sequence_out <= 4'b1110;
+					visabity <= 0;
 					state <= firstSeg;
 				end
 				firstSeg:
