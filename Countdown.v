@@ -22,7 +22,7 @@ module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value
 			init:
 			begin
 			if (switch_op == 8'h10) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
-			else begin state <= init; value_one = 0; value_two = 0; value_three = 0; end
+			else begin state <= init; value_one = 9; value_two = 9; value_three = 9; end
 			end
 			countdown:
 			begin

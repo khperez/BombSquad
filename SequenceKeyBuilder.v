@@ -28,9 +28,7 @@ module SequenceKeyBuilder(game_state, level_state, data_in, clk, rst, sequence_k
     output reg [15:0] sequence_key = 16'h0;
     output reg transmit;
 
-    reg [3:0] cell1 = 0, cell2 = 0, cell3 = 0, cell4 = 0;
     reg [3:0] state;
-    reg [7:0] lfsr_data;
 
     parameter s0 = 3'b000, s1 = 3'b001, s2 = 3'b010, s3 = 3'b011, s4 = 3'b100,
               seq_complete = 3'b101;
@@ -41,12 +39,7 @@ module SequenceKeyBuilder(game_state, level_state, data_in, clk, rst, sequence_k
                 begin
                     state <= s1;
                     sequence_key <= 0;
-                    cell1 <= 0;
-                    cell2 <= 0;
-                    cell3 <= 0;
-                    cell4 <= 0;
                     transmit <= 0;
-                    lfsr_data <= 0;
                 end
             else
                 begin

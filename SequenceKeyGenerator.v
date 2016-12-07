@@ -23,7 +23,7 @@ module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, tra
     input [1:0] level_state;
     input clk, rst;
 
-    wire [15:0] output_sequence;
+    wire [7:0] output_sequence;
 
     output [15:0] sequence_key;
     output transmit;

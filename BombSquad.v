@@ -36,9 +36,9 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     output [6:0] timer_sevseg1, timer_sevseg2, timer_sevseg3;
 
     // module ButtonShaper(B_in, B_out, Clk, Rst);
-    ButtonShaper RotateButton(rotate_button, rotate);
-    ButtonShaper VerifyButton(verify_button, verify);
-    ButtonShaper SubmitButton(submit_button, submit);
+    ButtonShaper RotateButton(rotate_button, rotate, clk, rst);
+    ButtonShaper VerifyButton(verify_button, verify, clk, rst);
+    ButtonShaper SubmitButton(submit_button, submit, clk, rst);
 
     // module Authentication(clk, reset, State, user_cred, rom_cred, submit, s_update, rom_addr, ram_id, User);
     Authentication UserAuthentication(clk, rst, game_state, user_cred, rom_cred, submit, s_auth, rom_addr, ram_id, user);
