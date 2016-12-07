@@ -4,8 +4,8 @@ module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk
 	input one_sec, button_move, button_next;
 	input [7:0] display;
 
-	output[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
-	reg[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
+	output[6:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
+	reg[6:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
 
 	output reg [3:0] sequence_out;
 
