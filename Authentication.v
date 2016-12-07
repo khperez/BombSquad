@@ -47,18 +47,10 @@ input [7:0]State;
 input [7:0]user_cred, rom_cred;
 output [7:0]rom_addr;
 output [1:0]s_update;
-<<<<<<< HEAD
-output [3:0]User;
+output [3:0]User, ram_id;
 reg [7:0]user_c, rom_c, rom_a, ram_a;
 reg [1:0]s_update;
 reg [3:0]State_m, User;
-=======
-output [3:0]User, ram_id;
-output time_req;
-reg [7:0]user_c, rom_c, rom_a;
-reg [1:0]s_update;
-reg [3:0]State_m, User, ram_a; 
->>>>>>> origin/master
 reg flag;
 parameter Init = 0, Compare = 1, Next_id = 2;
 

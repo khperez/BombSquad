@@ -25,7 +25,7 @@ module SequenceKeyBuilder(game_state, level_state, data_in, clk, rst, sequence_k
     input [7:0] data_in;
     input clk, rst;
 
-    output reg [15:0] sequence_key = 0;
+    output reg [15:0] sequence_key = 16'h0;
     output reg transmit;
 
     reg [3:0] cell1 = 0, cell2 = 0, cell3 = 0, cell4 = 0;

@@ -1,0 +1,213 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "timer_sevseg1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "timer_sevseg3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "puzzle_sevseg4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

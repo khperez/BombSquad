@@ -20,15 +20,17 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     input submit_button, rotate_button, verify_button,
           clk, rst;
 
-    wire [7:0] address, rom_cred, rom_addr, ram_id;
+    wire [7:0] game_state, rom_cred, rom_addr, ram_id;
     wire [3:0] user, cur_time3, cur_time2, cur_time1;
-    wire [1:0] s_update;
+    wire [1:0] s_auth, verifier_result;
+    wire [11:0] init_time;
 
     wire [15:0] sequence_key;
 
     wire submit, rotate, verify;
     wire one_sec;
     wire valid_key;
+    wire [3:0] sequence_input;
 
     output [6:0] puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4;
     output [6:0] timer_sevseg1, timer_sevseg2, timer_sevseg3;
@@ -39,13 +41,13 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     ButtonShaper SubmitButton(submit_button, submit);
 
     // module Authentication(clk, reset, State, user_cred, rom_cred, submit, s_update, rom_addr, ram_id, User);
-    Authentication UserAuthentication(clk, rst, game_state, user_cred, rom_cred, submit, s_update, rom_addr, ram_id, user);
+    Authentication UserAuthentication(clk, rst, game_state, user_cred, rom_cred, submit, s_auth, rom_addr, ram_id, user);
 
     // module ROM_Sim(address, clock, q);
-    ROM_Sim UserCredentials(address, clk, rom_cred);
+    ROM_Sim UserCredentials(rom_addr, clk, rom_cred);
 
     // module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
-    GameController MainGameController(s_update, {cur_time3, cur_time2, cur_time1}, s_results, clk, rst, game_state);
+    GameController MainGameController(s_auth, {cur_time3, cur_time2, cur_time1}, verifier_result, clk, rst, game_state);
 
     // module OneSec_Timer(clk, reset, timeout);
     OneSec_Timer OneSecondTimer(clk, rst, one_sec);
@@ -59,10 +61,10 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     SevSegTimer SevSegTimer3(cur_time1, timer_sevseg1);
 
     // module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, transmit);
-    SequenceKeyGenerator PuzzleSequenceKeyGenerator(game_state, verifier_result, clk, rst, sequence_key, transmit);
+    SequenceKeyGenerator PuzzleSequenceKeyGenerator(game_state, verifier_result, clk, rst, sequence_key, valid_key);
 
     // module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, clk, rst, result);
-    SequenceVerifier UserSequenceVerifier(game_state, sequence_key, transmit, sequence_input, verify, clk, rst, verifier_result);
+    SequenceVerifier UserSequenceVerifier(game_state, sequence_key, valid_key, sequence_input, verify, clk, rst, verifier_result);
 
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
     SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);

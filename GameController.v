@@ -26,14 +26,13 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
     input [1:0] s_auth, s_results;
     input clk, rst;
     input [11:0] cur_time;
-    output [7:0] s_current;
 
     reg [2:0] game_state;
 
     parameter authentication = 3'b000, in_game = 3'b001,
               game_success = 3'b010, game_over = 3'b011;
 
-    output reg [6:0] s_current;
+    output reg [7:0] s_current;
 
     always @(posedge clk)
         begin
@@ -100,7 +99,7 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         else if (s_results == 2'b11)
                                             begin
                                                 s_current <= 8'h21;
-                                                game_state <= auth;
+                                                game_state <= s_auth;
                                             end
                                   end
                     game_over: begin
@@ -114,7 +113,7 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                     else if (s_results == 2'b11)
                                         begin
                                             s_current <= 8'h31;
-                                            game_state <= auth;
+                                            game_state <= s_auth;
                                         end
                                end
                     endcase

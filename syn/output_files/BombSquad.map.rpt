@@ -1,0 +1,975 @@
+Analysis & Synthesis report for BombSquad
+Wed Dec 07 10:11:28 2016
+Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |BombSquad|SSD_Sequence:SSD_Sequence1|state
+ 10. State Machine - |BombSquad|SequenceVerifier:UserSequenceVerifier|level_stage
+ 11. State Machine - |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state
+ 12. State Machine - |BombSquad|Authentication:UserAuthentication|State_m
+ 13. State Machine - |BombSquad|ButtonShaper:SubmitButton|State
+ 14. State Machine - |BombSquad|ButtonShaper:VerifyButton|State
+ 15. State Machine - |BombSquad|ButtonShaper:RotateButton|State
+ 16. Registers Removed During Synthesis
+ 17. Removed Registers Triggering Further Register Optimizations
+ 18. General Register Statistics
+ 19. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 20. Source assignments for ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated
+ 21. Parameter Settings for User Entity Instance: ButtonShaper:RotateButton
+ 22. Parameter Settings for User Entity Instance: ButtonShaper:VerifyButton
+ 23. Parameter Settings for User Entity Instance: ButtonShaper:SubmitButton
+ 24. Parameter Settings for User Entity Instance: Authentication:UserAuthentication
+ 25. Parameter Settings for User Entity Instance: ROM_Sim:UserCredentials|altsyncram:altsyncram_component
+ 26. Parameter Settings for User Entity Instance: GameController:MainGameController
+ 27. Parameter Settings for User Entity Instance: Countdown:CountdownTimer
+ 28. Parameter Settings for User Entity Instance: SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1
+ 29. Parameter Settings for User Entity Instance: SequenceVerifier:UserSequenceVerifier
+ 30. Parameter Settings for User Entity Instance: SSD_Sequence:SSD_Sequence1
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "SSD_Sequence:SSD_Sequence1"
+ 33. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1"
+ 34. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"
+ 35. Port Connectivity Checks: "Authentication:UserAuthentication"
+ 36. Port Connectivity Checks: "ButtonShaper:SubmitButton"
+ 37. Port Connectivity Checks: "ButtonShaper:VerifyButton"
+ 38. Port Connectivity Checks: "ButtonShaper:RotateButton"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2016 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 07 10:11:28 2016       ;
+; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
+; Revision Name                      ; BombSquad                                   ;
+; Top-level Entity Name              ; BombSquad                                   ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 255                                         ;
+;     Total combinational functions  ; 246                                         ;
+;     Dedicated logic registers      ; 140                                         ;
+; Total registers                    ; 140                                         ;
+; Total pins                         ; 62                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 2,048                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Top-level entity name                                                      ; BombSquad          ; BombSquad          ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone V          ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+; ../SSD_Sequence.v                ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v             ;         ;
+; ../SevSegTimer.v                 ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SevSegTimer.v              ;         ;
+; ../SequenceVerifier.v            ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v         ;         ;
+; ../SequenceKeyGenerator.v        ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v     ;         ;
+; ../SequenceKeyBuilder.v          ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v       ;         ;
+; ../ROM_Sim.v                     ; yes             ; User Wizard-Generated File   ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v                  ;         ;
+; ../OneSec_Timer.v                ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v             ;         ;
+; ../LFSR8bit.v                    ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LFSR8bit.v                 ;         ;
+; ../GameController.v              ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/GameController.v           ;         ;
+; ../Countdown.v                   ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v                ;         ;
+; ../ButtonShaper.v                ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ButtonShaper.v             ;         ;
+; ../BombSquad.v                   ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v                ;         ;
+; ../Authentication.v              ; yes             ; User Verilog HDL File        ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v           ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf                     ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/stratix_ram_block.inc              ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_mux.inc                        ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/lpm_decode.inc                     ;         ;
+; aglobal160.inc                   ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/aglobal160.inc                     ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/a_rdenreg.inc                      ;         ;
+; altrom.inc                       ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/altrom.inc                         ;         ;
+; altram.inc                       ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/altram.inc                         ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                 ; d:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
+; db/altsyncram_0p91.tdf           ; yes             ; Auto-Generated Megafunction  ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_0p91.tdf ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 255       ;
+;                                             ;           ;
+; Total combinational functions               ; 246       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 129       ;
+;     -- 3 input functions                    ; 36        ;
+;     -- <=2 input functions                  ; 81        ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 214       ;
+;     -- arithmetic mode                      ; 32        ;
+;                                             ;           ;
+; Total registers                             ; 140       ;
+;     -- Dedicated logic registers            ; 140       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 62        ;
+; Total memory bits                           ; 2048      ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 148       ;
+; Total fan-out                               ; 1389      ;
+; Average fan-out                             ; 2.68      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                        ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Entity Name          ; Library Name ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |BombSquad                                           ; 246 (1)           ; 140 (0)      ; 2048        ; 0            ; 0       ; 0         ; 62   ; 0            ; |BombSquad                                                                                        ; BombSquad            ; work         ;
+;    |Authentication:UserAuthentication|               ; 33 (33)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
+;    |Countdown:CountdownTimer|                        ; 28 (28)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
+;    |GameController:MainGameController|               ; 27 (27)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
+;    |OneSec_Timer:OneSecondTimer|                     ; 37 (37)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|OneSec_Timer:OneSecondTimer                                                            ; OneSec_Timer         ; work         ;
+;    |ROM_Sim:UserCredentials|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials                                                                ; ROM_Sim              ; work         ;
+;       |altsyncram:altsyncram_component|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
+;          |altsyncram_0p91:auto_generated|            ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated ; altsyncram_0p91      ; work         ;
+;    |SSD_Sequence:SSD_Sequence1|                      ; 62 (62)           ; 30 (30)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
+;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 27 (0)            ; 34 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
+;       |LFSR8bit:LFSR8bit1|                           ; 8 (8)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1                     ; LFSR8bit             ; work         ;
+;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 19 (19)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
+;    |SequenceVerifier:UserSequenceVerifier|           ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
+;    |SevSegTimer:SevSegTimer1|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer1                                                               ; SevSegTimer          ; work         ;
+;    |SevSegTimer:SevSegTimer2|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer2                                                               ; SevSegTimer          ; work         ;
+;    |SevSegTimer:SevSegTimer3|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer3                                                               ; SevSegTimer          ; work         ;
++------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                     ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
+; Name                                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF             ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
+; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; ROM_initial.hex ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BombSquad|SSD_Sequence:SSD_Sequence1|state                                                                                 ;
++--------------------+-----------------+----------------+-----------------+----------------+--------------------+----------------+------------+
+; Name               ; state.fourthSeg ; state.thirdSeg ; state.secondSeg ; state.firstSeg ; state.initialStart ; state.show2Sec ; state.init ;
++--------------------+-----------------+----------------+-----------------+----------------+--------------------+----------------+------------+
+; state.init         ; 0               ; 0              ; 0               ; 0              ; 0                  ; 0              ; 0          ;
+; state.show2Sec     ; 0               ; 0              ; 0               ; 0              ; 0                  ; 1              ; 1          ;
+; state.initialStart ; 0               ; 0              ; 0               ; 0              ; 1                  ; 0              ; 1          ;
+; state.firstSeg     ; 0               ; 0              ; 0               ; 1              ; 0                  ; 0              ; 1          ;
+; state.secondSeg    ; 0               ; 0              ; 1               ; 0              ; 0                  ; 0              ; 1          ;
+; state.thirdSeg     ; 0               ; 1              ; 0               ; 0              ; 0                  ; 0              ; 1          ;
+; state.fourthSeg    ; 1               ; 0              ; 0               ; 0              ; 0                  ; 0              ; 1          ;
++--------------------+-----------------+----------------+-----------------+----------------+--------------------+----------------+------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BombSquad|SequenceVerifier:UserSequenceVerifier|level_stage                                                                                       ;
++---------------------------+---------------------------+------------------------+--------------------+--------------------+--------------------+--------------------+
+; Name                      ; level_stage.level_success ; level_stage.stage_fail ; level_stage.stage3 ; level_stage.stage2 ; level_stage.stage1 ; level_stage.stage0 ;
++---------------------------+---------------------------+------------------------+--------------------+--------------------+--------------------+--------------------+
+; level_stage.stage0        ; 0                         ; 0                      ; 0                  ; 0                  ; 0                  ; 0                  ;
+; level_stage.stage1        ; 0                         ; 0                      ; 0                  ; 0                  ; 1                  ; 1                  ;
+; level_stage.stage2        ; 0                         ; 0                      ; 0                  ; 1                  ; 0                  ; 1                  ;
+; level_stage.stage3        ; 0                         ; 0                      ; 1                  ; 0                  ; 0                  ; 1                  ;
+; level_stage.stage_fail    ; 0                         ; 1                      ; 0                  ; 0                  ; 0                  ; 1                  ;
+; level_stage.level_success ; 1                         ; 0                      ; 0                  ; 0                  ; 0                  ; 1                  ;
++---------------------------+---------------------------+------------------------+--------------------+--------------------+--------------------+--------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state ;
++----------+--------------------------------------------------------------------------------------------------------------+
+; Name     ; state.s2                                                                                                     ;
++----------+--------------------------------------------------------------------------------------------------------------+
+; state.s1 ; 0                                                                                                            ;
+; state.s2 ; 1                                                                                                            ;
++----------+--------------------------------------------------------------------------------------------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |BombSquad|Authentication:UserAuthentication|State_m ;
++-----------------+--------------+-----------------+-------------------+
+; Name            ; State_m.Init ; State_m.Next_id ; State_m.Compare   ;
++-----------------+--------------+-----------------+-------------------+
+; State_m.Init    ; 0            ; 0               ; 0                 ;
+; State_m.Compare ; 1            ; 0               ; 1                 ;
+; State_m.Next_id ; 1            ; 1               ; 0                 ;
++-----------------+--------------+-----------------+-------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |BombSquad|ButtonShaper:SubmitButton|State ;
++--------------+-------------+--------------+----------------+
+; Name         ; State.S_Off ; State.S_Off2 ; State.S_On     ;
++--------------+-------------+--------------+----------------+
+; State.S_Off  ; 0           ; 0            ; 0              ;
+; State.S_On   ; 1           ; 0            ; 1              ;
+; State.S_Off2 ; 1           ; 1            ; 0              ;
++--------------+-------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |BombSquad|ButtonShaper:VerifyButton|State ;
++--------------+-------------+--------------+----------------+
+; Name         ; State.S_Off ; State.S_Off2 ; State.S_On     ;
++--------------+-------------+--------------+----------------+
+; State.S_Off  ; 0           ; 0            ; 0              ;
+; State.S_On   ; 1           ; 0            ; 1              ;
+; State.S_Off2 ; 1           ; 1            ; 0              ;
++--------------+-------------+--------------+----------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------+
+; State Machine - |BombSquad|ButtonShaper:RotateButton|State ;
++--------------+-------------+--------------+----------------+
+; Name         ; State.S_Off ; State.S_Off2 ; State.S_On     ;
++--------------+-------------+--------------+----------------+
+; State.S_Off  ; 0           ; 0            ; 0              ;
+; State.S_On   ; 1           ; 0            ; 1              ;
+; State.S_Off2 ; 1           ; 1            ; 0              ;
++--------------+-------------+--------------+----------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                    ;
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+; Register name                                                                                  ; Reason for Removal                                                   ;
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+; ButtonShaper:SubmitButton|B_out                                                                ; Stuck at GND due to stuck port clock                                 ;
+; ButtonShaper:VerifyButton|B_out                                                                ; Stuck at GND due to stuck port clock                                 ;
+; ButtonShaper:RotateButton|B_out                                                                ; Stuck at GND due to stuck port clock                                 ;
+; SSD_Sequence:SSD_Sequence1|sequence_out[0..3]                                                  ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|sevseg_3[7]                                                         ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|sevseg_2[7]                                                         ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|sevseg_1[7]                                                         ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|stage3_target[0..3]                                      ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|stage2_target[0..3]                                      ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|stage1_target[0..3]                                      ; Lost fanout                                                          ;
+; Authentication:UserAuthentication|user_c[0..7]                                                 ; Stuck at GND due to stuck port data_in                               ;
+; SSD_Sequence:SSD_Sequence1|sevseg_1[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_1[1]                   ;
+; SSD_Sequence:SSD_Sequence1|sevseg_2[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_2[1]                   ;
+; SSD_Sequence:SSD_Sequence1|sevseg_3[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_3[1]                   ;
+; SSD_Sequence:SSD_Sequence1|sevseg_4[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_4[1]                   ;
+; GameController:MainGameController|s_current[3,6,7]                                             ; Merged with GameController:MainGameController|s_current[2]           ;
+; SequenceVerifier:UserSequenceVerifier|stage_counter[1,2]                                       ; Merged with SequenceVerifier:UserSequenceVerifier|stage_counter[0]   ;
+; SequenceVerifier:UserSequenceVerifier|stage_counter[0]                                         ; Stuck at GND due to stuck port data_in                               ;
+; GameController:MainGameController|game_state[2]                                                ; Stuck at GND due to stuck port data_in                               ;
+; ButtonShaper:SubmitButton|State.S_Off                                                          ; Lost fanout                                                          ;
+; ButtonShaper:SubmitButton|State.S_On                                                           ; Lost fanout                                                          ;
+; ButtonShaper:SubmitButton|State.S_Off2                                                         ; Lost fanout                                                          ;
+; ButtonShaper:VerifyButton|State.S_Off                                                          ; Lost fanout                                                          ;
+; ButtonShaper:VerifyButton|State.S_On                                                           ; Lost fanout                                                          ;
+; ButtonShaper:VerifyButton|State.S_Off2                                                         ; Lost fanout                                                          ;
+; ButtonShaper:RotateButton|State.S_Off                                                          ; Lost fanout                                                          ;
+; ButtonShaper:RotateButton|State.S_On                                                           ; Lost fanout                                                          ;
+; ButtonShaper:RotateButton|State.S_Off2                                                         ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|level_stage.stage_fail                                   ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|level_stage.level_success                                ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|state~9                                                             ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|state~10                                                            ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|state~11                                                            ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|level_stage~8                                            ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|level_stage~9                                            ; Lost fanout                                                          ;
+; SequenceVerifier:UserSequenceVerifier|level_stage~10                                           ; Lost fanout                                                          ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~5 ; Lost fanout                                                          ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~6 ; Lost fanout                                                          ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~7 ; Lost fanout                                                          ;
+; Authentication:UserAuthentication|State_m~4                                                    ; Lost fanout                                                          ;
+; Authentication:UserAuthentication|State_m~5                                                    ; Lost fanout                                                          ;
+; SSD_Sequence:SSD_Sequence1|state.secondSeg                                                     ; Merged with SSD_Sequence:SSD_Sequence1|state.fourthSeg               ;
+; SSD_Sequence:SSD_Sequence1|state.thirdSeg                                                      ; Merged with SSD_Sequence:SSD_Sequence1|state.fourthSeg               ;
+; SequenceVerifier:UserSequenceVerifier|level_stage.stage3                                       ; Merged with SequenceVerifier:UserSequenceVerifier|level_stage.stage2 ;
+; SSD_Sequence:SSD_Sequence1|state.fourthSeg                                                     ; Stuck at GND due to stuck port data_in                               ;
+; SequenceVerifier:UserSequenceVerifier|level_stage.stage2                                       ; Stuck at GND due to stuck port data_in                               ;
+; SequenceVerifier:UserSequenceVerifier|stage3reg[0..3]                                          ; Stuck at GND due to stuck port data_in                               ;
+; SequenceVerifier:UserSequenceVerifier|stage2reg[0..3]                                          ; Stuck at GND due to stuck port data_in                               ;
+; GameController:MainGameController|s_current[2]                                                 ; Stuck at GND due to stuck port data_in                               ;
+; Total Number of Removed Registers = 77                                                         ;                                                                      ;
++------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                    ;
++----------------------------------------------------------+---------------------------+---------------------------------------------------------+
+; Register name                                            ; Reason for Removal        ; Registers Removed due to This Register                  ;
++----------------------------------------------------------+---------------------------+---------------------------------------------------------+
+; ButtonShaper:VerifyButton|B_out                          ; Stuck at GND              ; SSD_Sequence:SSD_Sequence1|sequence_out[2],             ;
+;                                                          ; due to stuck port clock   ; SSD_Sequence:SSD_Sequence1|sequence_out[1],             ;
+;                                                          ;                           ; SSD_Sequence:SSD_Sequence1|sequence_out[0],             ;
+;                                                          ;                           ; SSD_Sequence:SSD_Sequence1|sequence_out[3],             ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage3_target[3], ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2_target[1], ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2_target[2], ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2_target[3], ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage1_target[3], ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage_counter[0]  ;
+; ButtonShaper:SubmitButton|B_out                          ; Stuck at GND              ; Authentication:UserAuthentication|user_c[0],            ;
+;                                                          ; due to stuck port clock   ; Authentication:UserAuthentication|user_c[1],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[2],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[3],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[4],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[5],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[6],            ;
+;                                                          ;                           ; Authentication:UserAuthentication|user_c[7]             ;
+; SequenceVerifier:UserSequenceVerifier|level_stage.stage2 ; Stuck at GND              ; SequenceVerifier:UserSequenceVerifier|stage3reg[2],     ;
+;                                                          ; due to stuck port data_in ; SequenceVerifier:UserSequenceVerifier|stage3reg[3],     ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2reg[0],     ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2reg[1],     ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2reg[2],     ;
+;                                                          ;                           ; SequenceVerifier:UserSequenceVerifier|stage2reg[3]      ;
+; GameController:MainGameController|game_state[2]          ; Stuck at GND              ; GameController:MainGameController|s_current[2]          ;
+;                                                          ; due to stuck port data_in ;                                                         ;
++----------------------------------------------------------+---------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 140   ;
+; Number of registers using Synchronous Clear  ; 38    ;
+; Number of registers using Synchronous Load   ; 33    ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 59    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |BombSquad|OneSec_Timer:OneSecondTimer|cnt[25]                                                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[0] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_c[4]                                                             ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_a[7]                                                             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[0]                                                                ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[3]                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|s_update[1]                                                          ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_4[6]                                                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_2[6]                                                                 ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_3[3]                                                                 ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[2]                                                                  ;
+; 7:1                ; 5 bits    ; 20 LEs        ; 5 LEs                ; 15 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_1[3]                                                                 ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|GameController:MainGameController|s_current[0]                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|Authentication:UserAuthentication|State_m                                                              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|level_stage                                                      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|level_stage                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------+
+; Source assignments for ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                              ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
++---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:RotateButton ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; S_Off          ; 0     ; Signed Integer                                ;
+; S_On           ; 1     ; Signed Integer                                ;
+; S_Off2         ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:VerifyButton ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; S_Off          ; 0     ; Signed Integer                                ;
+; S_On           ; 1     ; Signed Integer                                ;
+; S_Off2         ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonShaper:SubmitButton ;
++----------------+-------+-----------------------------------------------+
+; Parameter Name ; Value ; Type                                          ;
++----------------+-------+-----------------------------------------------+
+; S_Off          ; 0     ; Signed Integer                                ;
+; S_On           ; 1     ; Signed Integer                                ;
+; S_Off2         ; 2     ; Signed Integer                                ;
++----------------+-------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Authentication:UserAuthentication ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; Init           ; 0     ; Signed Integer                                        ;
+; Compare        ; 1     ; Signed Integer                                        ;
+; Next_id        ; 2     ; Signed Integer                                        ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ROM_Sim:UserCredentials|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                     ;
++------------------------------------+----------------------+------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                  ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                                  ;
+; WIDTH_A                            ; 8                    ; Signed Integer                           ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                           ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                           ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                  ;
+; WIDTH_B                            ; 1                    ; Untyped                                  ;
+; WIDTHAD_B                          ; 1                    ; Untyped                                  ;
+; NUMWORDS_B                         ; 1                    ; Untyped                                  ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                  ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                                  ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                                  ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                  ;
+; INIT_FILE                          ; ROM_initial.hex      ; Untyped                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                  ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                  ;
+; CBXI_PARAMETER                     ; altsyncram_0p91      ; Untyped                                  ;
++------------------------------------+----------------------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: GameController:MainGameController ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; authentication ; 000   ; Unsigned Binary                                       ;
+; in_game        ; 001   ; Unsigned Binary                                       ;
+; game_success   ; 010   ; Unsigned Binary                                       ;
+; game_over      ; 011   ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Countdown:CountdownTimer ;
++----------------+-------+----------------------------------------------+
+; Parameter Name ; Value ; Type                                         ;
++----------------+-------+----------------------------------------------+
+; init           ; 0     ; Signed Integer                               ;
+; countdown      ; 1     ; Signed Integer                               ;
++----------------+-------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                                                       ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+; s0             ; 000   ; Unsigned Binary                                                                                            ;
+; s1             ; 001   ; Unsigned Binary                                                                                            ;
+; s2             ; 010   ; Unsigned Binary                                                                                            ;
+; s3             ; 011   ; Unsigned Binary                                                                                            ;
+; s4             ; 100   ; Unsigned Binary                                                                                            ;
+; seq_complete   ; 101   ; Unsigned Binary                                                                                            ;
++----------------+-------+------------------------------------------------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SequenceVerifier:UserSequenceVerifier ;
++----------------+-------+-----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                      ;
++----------------+-------+-----------------------------------------------------------+
+; stage0         ; 000   ; Unsigned Binary                                           ;
+; stage1         ; 001   ; Unsigned Binary                                           ;
+; stage2         ; 010   ; Unsigned Binary                                           ;
+; stage3         ; 011   ; Unsigned Binary                                           ;
+; final_stage    ; 100   ; Unsigned Binary                                           ;
+; stage_fail     ; 101   ; Unsigned Binary                                           ;
+; level_success  ; 110   ; Unsigned Binary                                           ;
++----------------+-------+-----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SSD_Sequence:SSD_Sequence1 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; init           ; 0     ; Signed Integer                                 ;
+; show2Sec       ; 1     ; Signed Integer                                 ;
+; initialStart   ; 2     ; Signed Integer                                 ;
+; firstSeg       ; 3     ; Signed Integer                                 ;
+; secondSeg      ; 4     ; Signed Integer                                 ;
+; thirdSeg       ; 5     ; Signed Integer                                 ;
+; fourthSeg      ; 6     ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                    ;
++-------------------------------------------+---------------------------------------------------------+
+; Name                                      ; Value                                                   ;
++-------------------------------------------+---------------------------------------------------------+
+; Number of entity instances                ; 1                                                       ;
+; Entity Instance                           ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                                     ;
+;     -- WIDTH_A                            ; 8                                                       ;
+;     -- NUMWORDS_A                         ; 256                                                     ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                                  ;
+;     -- WIDTH_B                            ; 1                                                       ;
+;     -- NUMWORDS_B                         ; 1                                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                               ;
++-------------------------------------------+---------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SSD_Sequence:SSD_Sequence1"                                                                                                     ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                                                                     ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+; sevseg_1 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "sevseg_1[7..7]" have no fanouts ;
+; sevseg_2 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "sevseg_2[7..7]" have no fanouts ;
+; sevseg_3 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "sevseg_3[7..7]" have no fanouts ;
+; sevseg_4 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "sevseg_4[7..7]" have no fanouts ;
++----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1"                                                                                                               ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type   ; Severity ; Details                                                                                                                                                                ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; output_sequence ; Output ; Warning  ; Output or bidir port (8 bits) is smaller than the port expression (16 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND. ;
++-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"                                                                                                ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; game_state ; Input ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
+; data_in    ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Authentication:UserAuthentication"                                                                                                                                            ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                                                                                                               ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ram_id       ; Output ; Warning  ; Output or bidir port (4 bits) is smaller than the port expression (8 bits) it drives.  The 4 most-significant bit(s) in the port expression will be connected to GND. ;
+; ram_id[3..0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; User         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
++--------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonShaper:SubmitButton"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Rst  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonShaper:VerifyButton"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Rst  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonShaper:RotateButton"                                                                                                                  ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                      ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Clk  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; Rst  ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 62                          ;
+; cycloneiii_ff         ; 140                         ;
+;     ENA               ; 34                          ;
+;     ENA SCLR          ; 25                          ;
+;     SCLR              ; 13                          ;
+;     SLD               ; 33                          ;
+;     plain             ; 35                          ;
+; cycloneiii_lcell_comb ; 249                         ;
+;     arith             ; 32                          ;
+;         2 data inputs ; 32                          ;
+;     normal            ; 217                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 46                          ;
+;         3 data inputs ; 36                          ;
+;         4 data inputs ; 129                         ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 2.22                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
+    Info: Processing started: Wed Dec 07 10:10:45 2016
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BombSquad -c BombSquad
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/ssd_sequence.v
+    Info (12023): Found entity 1: SSD_Sequence File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sevsegtimer.v
+    Info (12023): Found entity 1: SevSegTimer File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SevSegTimer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sequenceverifier.v
+    Info (12023): Found entity 1: SequenceVerifier File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sequencekeygenerator.v
+    Info (12023): Found entity 1: SequenceKeyGenerator File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 20
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sequencekeybuilder.v
+    Info (12023): Found entity 1: SequenceKeyBuilder File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/rom_sim.v
+    Info (12023): Found entity 1: ROM_Sim File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/ram_sim.v
+    Info (12023): Found entity 1: RAM_sim File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/RAM_sim.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/onesec_timer.v
+    Info (12023): Found entity 1: OneSec_Timer File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/lfsr8bit.v
+    Info (12023): Found entity 1: LFSR8bit File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LFSR8bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/gamecontroller.v
+    Info (12023): Found entity 1: GameController File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/GameController.v Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/countdown.v
+    Info (12023): Found entity 1: Countdown File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/buttonshaper.v
+    Info (12023): Found entity 1: ButtonShaper File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ButtonShaper.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/bombsquad.v
+    Info (12023): Found entity 1: BombSquad File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/authentication.v
+    Info (12023): Found entity 1: Authentication File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 43
+Info (12127): Elaborating entity "BombSquad" for the top level hierarchy
+Info (12128): Elaborating entity "ButtonShaper" for hierarchy "ButtonShaper:RotateButton" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 39
+Info (12128): Elaborating entity "Authentication" for hierarchy "Authentication:UserAuthentication" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 44
+Warning (10230): Verilog HDL assignment warning at Authentication.v(124): truncated value with size 32 to match size of target (8) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 124
+Warning (10230): Verilog HDL assignment warning at Authentication.v(137): truncated value with size 8 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 137
+Info (12128): Elaborating entity "ROM_Sim" for hierarchy "ROM_Sim:UserCredentials" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 47
+Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
+Info (12130): Elaborated megafunction instantiation "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
+Info (12133): Instantiated megafunction "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" with the following parameter: File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
+    Info (12134): Parameter "address_aclr_a" = "NONE"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "ROM_initial.hex"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "256"
+    Info (12134): Parameter "operation_mode" = "ROM"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
+    Info (12134): Parameter "widthad_a" = "8"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0p91.tdf
+    Info (12023): Found entity 1: altsyncram_0p91 File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_0p91.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_0p91" for hierarchy "ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated" File: d:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "GameController" for hierarchy "GameController:MainGameController" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 50
+Info (12128): Elaborating entity "OneSec_Timer" for hierarchy "OneSec_Timer:OneSecondTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 53
+Warning (10230): Verilog HDL assignment warning at OneSec_Timer.v(16): truncated value with size 32 to match size of target (26) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 16
+Info (12128): Elaborating entity "Countdown" for hierarchy "Countdown:CountdownTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 56
+Warning (10230): Verilog HDL assignment warning at Countdown.v(18): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 18
+Warning (10230): Verilog HDL assignment warning at Countdown.v(24): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 24
+Warning (10230): Verilog HDL assignment warning at Countdown.v(25): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 25
+Warning (10230): Verilog HDL assignment warning at Countdown.v(29): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 29
+Warning (10230): Verilog HDL assignment warning at Countdown.v(32): truncated value with size 32 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 32
+Warning (10230): Verilog HDL assignment warning at Countdown.v(35): truncated value with size 32 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 35
+Warning (10230): Verilog HDL assignment warning at Countdown.v(36): truncated value with size 32 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 36
+Warning (10230): Verilog HDL assignment warning at Countdown.v(37): truncated value with size 32 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 37
+Warning (10230): Verilog HDL assignment warning at Countdown.v(39): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 39
+Warning (10230): Verilog HDL assignment warning at Countdown.v(41): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 41
+Info (12128): Elaborating entity "SevSegTimer" for hierarchy "SevSegTimer:SevSegTimer1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 59
+Info (12128): Elaborating entity "SequenceKeyGenerator" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 64
+Info (12128): Elaborating entity "SequenceKeyBuilder" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 32
+Warning (10036): Verilog HDL or VHDL warning at SequenceKeyBuilder.v(31): object "cell1" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at SequenceKeyBuilder.v(31): object "cell2" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at SequenceKeyBuilder.v(31): object "cell3" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at SequenceKeyBuilder.v(31): object "cell4" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 31
+Warning (10036): Verilog HDL or VHDL warning at SequenceKeyBuilder.v(33): object "lfsr_data" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyBuilder.v Line: 33
+Info (12128): Elaborating entity "LFSR8bit" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 35
+Info (12128): Elaborating entity "SequenceVerifier" for hierarchy "SequenceVerifier:UserSequenceVerifier" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 67
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(112): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 112
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(142): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 142
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(172): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 172
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(202): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 202
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(243): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 243
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(272): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 272
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(301): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 301
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(331): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 331
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(385): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 385
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(428): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 428
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(471): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 471
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(514): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 514
+Info (12128): Elaborating entity "SSD_Sequence" for hierarchy "SSD_Sequence:SSD_Sequence1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 70
+Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(52): truncated value with size 32 to match size of target (2) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 52
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[15]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[14]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[13]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[12]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[11]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[10]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[9]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+    Warning (12110): Net "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|output_sequence[8]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 26
+Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 41 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "user_cred[0]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[1]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[2]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[3]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[4]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[5]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[6]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "user_cred[7]" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 18
+    Warning (15610): No output dependent on input pin "submit_button" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 20
+    Warning (15610): No output dependent on input pin "rotate_button" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 20
+    Warning (15610): No output dependent on input pin "verify_button" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 20
+Info (21057): Implemented 328 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 49 output pins
+    Info (21061): Implemented 258 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 850 megabytes
+    Info: Processing ended: Wed Dec 07 10:11:28 2016
+    Info: Elapsed time: 00:00:43
+    Info: Total CPU time (on all processors): 00:01:19
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.map.smsg.
+
+

@@ -1,6 +1,6 @@
 module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
 
-	input [7:0] switch_op
+	input [7:0] switch_op;
 	input sec_timer;
 	input[11:0] init_time;
 
