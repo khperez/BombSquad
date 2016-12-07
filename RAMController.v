@@ -1,21 +1,19 @@
-module RAMController(user_id, success, clk, reset, address_out, data_in, data_out, r_w);
+module RAMController(user_id, game_state, clk, reset, address_out, data_in, data_out, cur_level, r_w);
 	
 	input[3:0] user_id;
-	input success, clk, reset;
-	input[7:0] data_in;
+	input[7:0] data_in, game_state;
+	input clk, reset;
 	
-	output[7:0] address_out, data_out;
-	reg[7:0] address_out, data_out;
+	output[7:0] address_out, cur_level, data_out;
+	reg[7:0] address_out, cur_level;
 	
 	output r_w;
 	reg r_w;
 		
-	parameter init = 0, inc = 1, monitor = 2, level_up = 3;
+	parameter init = 0, inc = 1, write_to = 2, read_from = 3;
 	
 	reg[1:0] state;
-	
 	reg[1:0] location;
-	reg[7:0] load;
 	
 	always@(posedge clk)
 	begin
@@ -23,12 +21,13 @@ module RAMController(user_id, success, clk, reset, address_out, data_in, data_ou
 		begin
 			state <= init;
 			location <= 0;
+			cur_level <= 0;
 		end
 		else
 		begin
 			case(state)
 				init: begin
-					data_out <= 0;
+					data_out = 0;
 					address_out <= location;
 					r_w <= 1;
 					state <= inc;
@@ -36,7 +35,7 @@ module RAMController(user_id, success, clk, reset, address_out, data_in, data_ou
 				inc: begin
 					if (location == 4)
 					begin
-						state <= monitor;
+						state <= write_to;
 						r_w <= 0;
 					end
 					else
@@ -45,66 +44,73 @@ module RAMController(user_id, success, clk, reset, address_out, data_in, data_ou
 						state <= init;
 					end
 				end
-				monitor: begin
+				write_to: begin
 					case(user_id)
 						4'b1100: begin
-							if (success == /*VALUE*/) //Corrct?
+							if (game_state == 8'h20) 
 							begin
 								address_out <= 0;
-								location <= 0;
-								r_w = 0;
-								load <= data_in;
-								state <= level_up;
+								r_w = 1;
+								data_out = cur_level <= cur_level + 1;
 							end
-							else
-								state <= monitor;
 						end
 						4'b1100: begin
-							if (success == /*VALUE*/)
+							if (game_state == 8'h20)
 							begin
 								address_out <= 1;
-								location <= 1;
-								r_w = 0;
-								load <= data_in;
-								state <= level_up;
+								r_w = 1;
+								data_out = cur_level <= cur_level + 1;
 							end
-							else
-								state <= monitor;
 						end
 						4'b1100: begin
-							if (success == /*VALUE*/)
+							if (game_state == 8'h20)
 							begin
 								address_out <= 2;
-								location <= 2;
-								r_w = 0;
-								load <= data_in;
-								state <= level_up;
+								r_w = 1;
+								data_out = cur_level <= cur_level + 1;
 							end
-							else
-								state <= monitor;
 						end
 						4'b1100: begin
-							if (success == /*VALUE*/)
+							if (game_state == 8'h20)
 							begin
 								address_out <= 3;
-								location <= 3;
-								r_w = 0;
-								load <= data_in;
-								state <= level_up;
+								r_w = 1;
+								data_out = cur_level <= cur_level + 1;
 							end
-							else
-								state <= monitor;
+						end
+						if (game_state == 8'h30)
+							state <= read_from;
+						else
+							state <= write_to;
 						end
 					endcase
 				end
-				level_up: begin
-					data_out <= load + 1;
-					address_out <= location;
-					r_w <= 1;
-					state <= monitor;
+				read_from:
+				begin
+					case(user_id)
+						4'b1100: begin
+							address_out <= 0;
+							r_w = 0;
+							cur_level <= data_in;
+						end
+						4'b1100: begin
+							address_out <= 1;
+							r_w = 0;
+							cur_level <= data_in;
+						end
+						4'b1100: begin
+							address_out <= 2;
+							r_w = 0;
+							cur_level <= data_in;
+						end
+						4'b1100: begin
+							address_out <= 3;
+							r_w = 0;
+							cur_level <= data_in;
+						end
+					endcase
 				end
 			endcase
 		end
 	end
-
 endmodule
