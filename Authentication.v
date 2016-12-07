@@ -1,3 +1,4 @@
+
 //Bomb squad
 //Author: Rafael Campos
 //Course: ECE 5440
@@ -34,8 +35,8 @@
 				User			ID		Password
 				Katherine Perez	       1100               1100
    				Sergio Silva           0011               0011
-				Daniel Lopez           1111               0000
-				Rafael Campos          0000               1111
+				Daniel Lopez           1101               0001
+				Rafael Campos          0100               1110
 
 */
 
@@ -44,13 +45,13 @@ module Authentication(clk, reset, State, user_cred, rom_cred, submit, s_update, 
 input clk, reset, submit;
 input [7:0]State;
 input [7:0]user_cred, rom_cred;
-output [7:0]rom_addr, ram_id;
+output [7:0]rom_addr;
 output [1:0]s_update;
-output [3:0]User;
+output [3:0]User, ram_id;
 output time_req;
-reg [7:0]user_c, rom_c, rom_a, ram_a;
+reg [7:0]user_c, rom_c, rom_a;
 reg [1:0]s_update;
-reg [3:0]State_m, User; 
+reg [3:0]State_m, User, ram_a; 
 reg flag;
 parameter Init = 0, Compare = 1, Next_id = 2;
 
@@ -59,7 +60,7 @@ always@(posedge clk) begin
 		user_c   <= 8'b0;
 		rom_c    <= 8'b0;
 		rom_a    <= 8'b0;
-		ram_a    <= 8'b0;
+		ram_a    <= 4'b0;
 		s_update <= 2'b0;
 		User     <= 4'b0;
 		State_m  <= Init;
@@ -89,19 +90,19 @@ always@(posedge clk) begin
 
 					if(rom_c === 8'b11001100) begin
 						User   <= 4'b0001;
-						ram_a <= 8'b11001100;
+						ram_a <= 4'b1100;
 					end
 					else if(rom_c === 8'b00110011) begin
 						User   <= 4'b0010;
-						ram_a <= 8'b00110011;
+						ram_a <= 4'b0011;
 					end
-					else if(rom_c === 8'b11110000) begin
+					else if(rom_c === 8'b11010001) begin
 						User   <= 4'b0011;
-						ram_a <= 8'b11110000;
+						ram_a <= 4'b1101;
 					end
-					else if(rom_c === 8'b00001111) begin
+					else if(rom_c === 8'b01001110) begin
 						User   <= 4'b0100;
-						ram_a <= 8'b00001111;
+						ram_a <= 4'b0100;
 					end
 
 					State_m  <= Next_id;
