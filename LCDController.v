@@ -113,6 +113,19 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	  prev_state <= state;
 	end
 
+	8'h10: begin // GAME IN PROGRESS
+	  // ____GAME__IN____ //
+	  // ____PROGRESS____ //
+	  data1[0]  <= L__; data1[1]  <= L__; data1[2]  <= L__; data1[3]  <= L__; data1[4]  <= L_G;
+	  data1[5]  <= L_A; data1[6]  <= L_M; data1[7]  <= L_E; data1[8]  <= L__; data1[9]  <= L__;
+	  data1[10] <= L_I; data1[11] <= L_N; data1[12] <= L__; data1[13] <= L__; data1[14] <= L__; data1[15] <= L__;
+	  data2[0]  <= L__; data2[1]  <= L__; data2[2]  <= L__; data2[3]  <= L__; data2[4]  <= L_P;
+	  data2[5]  <= L_R; data2[6]  <= L_O; data2[7]  <= L_G; data2[8]  <= L_R; data2[9]  <= L_E;
+	  data2[10] <= L_S; data2[11] <= L_S; data2[12] <= L__; data2[13] <= L__; data2[14] <= L__; data2[15] <= L__;
+
+	  prev_state <= state;
+	end
+
 	default: begin // UNKNOWN STATE
 	  // UNKNOWN_STATE___ //
 	  // ________________ //
