@@ -1,4 +1,4 @@
-module TimeAssignment(game_level,value_three, value_two, value_one);
+module TimeAssignment(game_level, value_three, value_two, value_one);
 		
 		input[7:0] game_level;
 		
