@@ -4,22 +4,22 @@
 
 /*------------------------------------------- Authentication module -----------------------------------------------
 
-	The authentication module receives a 8 bit string from mechanical switches and stores them in the 
-	user_cred reg variable. Then a Final State Machine starts by checking if a pulse has been received 
+	The authentication module receives a 8 bit string from mechanical switches and stores them in the
+	user_cred reg variable. Then a Final State Machine starts by checking if a pulse has been received
 	from the button shaper by checking the net submit input signal. In the next step the module retreives
-	the credential stored in the first address of a rom file and compares it with the 8 bit input signal. 
-	If the comparison succeeds, the module proceeds to send 2 signal flags to the game controller. The 
-	signal flag s_update is used to inform the game controller that a user have successfully logged in. 
-	The signal User is employed to identify the user by checking its input id to a mapped table of ids. 
-	If a comparison fails, the module retreives the information stored in the next address to the one already 
-	tested. If the module reaches the last meaningful address in the rom, it will update the signal s_update 
-	to inform the game controller that the comparison failed.  
+	the credential stored in the first address of a rom file and compares it with the 8 bit input signal.
+	If the comparison succeeds, the module proceeds to send 2 signal flags to the game controller. The
+	signal flag s_update is used to inform the game controller that a user have successfully logged in.
+	The signal User is employed to identify the user by checking its input id to a mapped table of ids.
+	If a comparison fails, the module retreives the information stored in the next address to the one already
+	tested. If the module reaches the last meaningful address in the rom, it will update the signal s_update
+	to inform the game controller that the comparison failed.
 
 	inputs:
 		clk       : clock
 		rst       : reset
 		State     : Game controller authentication state code
-		user_cred : 8 bit sequence from onboard mechanical switches that represents the user's 
+		user_cred : 8 bit sequence from onboard mechanical switches that represents the user's
 			    ID(first 4 bits from MSB) and password(last 4 bits)
 		rom_cred  : 8 bit sequence retreived from rom file
 		submit    : input from button shaper
@@ -39,7 +39,7 @@
 
 */
 
-module Authentication(clk, reset, State, user_cred, rom_cred, submit, s_update, time_req, rom_addr, ram_id, User);
+module Authentication(clk, reset, State, user_cred, rom_cred, submit, s_update, rom_addr, ram_id, User);
 
 input clk, reset, submit;
 input [7:0]State;
@@ -47,10 +47,9 @@ input [7:0]user_cred, rom_cred;
 output [7:0]rom_addr, ram_id;
 output [1:0]s_update;
 output [3:0]User;
-output time_req;
 reg [7:0]user_c, rom_c, rom_a, ram_a;
 reg [1:0]s_update;
-reg [3:0]State_m, User; 
+reg [3:0]State_m, User;
 reg flag;
 parameter Init = 0, Compare = 1, Next_id = 2;
 
@@ -66,7 +65,7 @@ always@(posedge clk) begin
 	end
 	else if(State === 8'b0) begin
 		case(State_m)
-			
+
 			Init : begin
 				if(submit == 1) begin
 					user_c  <= user_cred;

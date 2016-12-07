@@ -9,9 +9,12 @@
     Inputs:
     + game_state
     + level_state
+    + clk
+    + rst
 
     Outputs:
     + sequence_key
+    + transmit
 */
 
 module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, transmit);

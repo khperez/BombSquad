@@ -1,7 +1,8 @@
 module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
 
 	input[15:0] sequence_in;
-	input display, one_sec, button_move, button_next;
+	input one_sec, button_move, button_next;
+	input [7:0] display;
 
 	output[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
 	reg[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
@@ -13,8 +14,8 @@ module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk
 	parameter init = 0, show2Sec = 1, initialStart = 2, firstSeg = 3, secondSeg = 4, thirdSeg = 5, fourthSeg = 6;
 
 	reg[2:0] state;
-	
-	reg[1:0] visabity; 
+
+	reg[1:0] visabity;
 
 	always@(posedge clk)
 	begin
@@ -37,19 +38,19 @@ module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk
 					sevseg_3 <= 7'b1111111;
 					sevseg_4 <= 7'b1111111;
 					visabity <= 0;
-					if (display == 1)
+					if (display == 8'h10)
 						state <= show2Sec;
-					else 
+					else
 						state <= init;
 				end
 				show2Sec:
 				begin
-				
+
 					if (visabity == 2)
 						state <= initialStart;
 					else if (one_sec == 1)
 						visabity <= visabity + 1;
-						
+
 					case(sequence_in[3:0])
 					4'b1110 : begin sevseg_1 <= 7'b1111110; end
 					4'b1101 : begin sevseg_1 <= 7'b1111001; end

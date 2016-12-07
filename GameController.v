@@ -49,43 +49,43 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         // Authentication Stage 1: Awaiting user to input credentials
                                         if (s_auth == 2'b00)
                                             begin
-                                                s_current <= 7'h0;
+                                                s_current <= 8'h0;
                                                 game_state <= authentication;
                                             end
                                         // Authentication Stage 2: User has entered correct credentials
                                         else if (s_auth == 2'b01)
                                             begin
-                                                s_current <= 7'h1;
+                                                s_current <= 8'h1;
                                                 game_state <= in_game;
                                             end
                                         // Authentication Stage 3: User has entered incorrect credentials
                                         else if (s_auth == 2'b10)
                                             begin
-                                                s_current <= 7'h2;
+                                                s_current <= 8'h2;
                                                 game_state <= authentication;
                                             end
                                     end
                     in_game: begin
                                 if (cur_time == 0)
                                     begin
-                                        s_current <= 7'h12;
+                                        s_current <= 8'h12;
                                         game_state <= game_over;
                                     end
                                 else
                                     begin
                                         if (s_results == 2'b00)
                                             begin
-                                                s_current <= 7'h10;
+                                                s_current <= 8'h10;
                                                 game_state <= in_game;
                                             end
                                         else if (s_results == 2'b01)
                                             begin
-                                                s_current <= 7'h20;
+                                                s_current <= 8'h20;
                                                 game_state <= game_success;
                                             end
                                         else if (s_results == 2'b10)
                                             begin
-                                                s_current <= 7'h30;
+                                                s_current <= 8'h30;
                                                 game_state <= game_over;
                                             end
                                     end
@@ -94,12 +94,12 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         // Game Success Sequence begin
                                         if (s_results == 2'b01)
                                             begin
-                                                s_current <= 7'h20;
+                                                s_current <= 8'h20;
                                                 game_state <= game_success;
                                             end
                                         else if (s_results == 2'b11)
                                             begin
-                                                s_current <= 7'h21;
+                                                s_current <= 8'h21;
                                                 game_state <= auth;
                                             end
                                   end
@@ -107,13 +107,13 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                     // Game Over Sequence begin
                                     if (s_results == 2'b10)
                                         begin
-                                            s_current <= 7'h30;
+                                            s_current <= 8'h30;
                                             game_state <= game_over;
                                         end
                                     // Game Over Sequence end
                                     else if (s_results == 2'b11)
                                         begin
-                                            s_current <= 7'h31;
+                                            s_current <= 8'h31;
                                             game_state <= auth;
                                         end
                                end

@@ -8,8 +8,8 @@
                  display.
     Inputs:
     + game_state: current game state
-    + key_request: request new key
     + seq_key: sequence key
+    + valid_key: valid key
     + seq_input: sequence cell input from user
     + verify: sequence cell verification
     + clk: clock
@@ -23,11 +23,11 @@
 
 */
 
-module SequenceVerifier(game_state, key_request, seq_key, seq_input, verify, clk, rst, result);
+module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, clk, rst, result);
     input [7:0] game_state;
     input [15:0] seq_key;
     input [3:0] seq_input;
-    input key_request, verify;
+    input valid_key, verify;
     input clk, rst;
 
     output reg [1:0] result;
@@ -65,7 +65,7 @@ module SequenceVerifier(game_state, key_request, seq_key, seq_input, verify, clk
                     case (level_stage)
                         // User authentication stage
                         stage0: begin
-                                    if (game_state == 7'h10)
+                                    if (game_state == 8'h10)
                                         begin
                                             level_stage <= stage1;
                                             result <= 2'b11;
@@ -92,438 +92,452 @@ module SequenceVerifier(game_state, key_request, seq_key, seq_input, verify, clk
                                 end
                         // Stage 1 of level
                         stage1: begin
-                                    if (stage1reg != 0)
+                                    if (valid_key == 1)
                                         begin
-                                            // Up
-                                            if (stage1reg == 4'hE && stage_counter <= 4)
+                                            stage1reg <= seq_key[11:8];
+                                        end
+                                    else if (valid_key == 0)
+                                        begin
+                                            stage1reg <= stage1reg;
+                                        end
+                                    // Up
+                                    if (stage1reg == 4'hE && stage_counter <= 4)
+                                        begin
+                                            stage1_target <= 4'hB;
+                                            if (seq_input == stage1_target && verify == 1)
                                                 begin
-                                                    stage1_target <= 4'hB;
-                                                    if (seq_input == stage1_target && verify == 1)
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage1;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    result <= 2'b11;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage1_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage1;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage1;
+                                                            level_stage <= stage2;
+                                                            result <= 2'b11;
+                                                            stage_counter <= 0;
                                                         end
                                                 end
-                                            // Right
-                                            else if (stage1reg == 4'hD && stage_counter <= 4)
+                                            else if (seq_input != stage1_target && verify == 1)
                                                 begin
-                                                    stage1_target <= 4'h7;
-                                                    if (seq_input == stage1_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage1;
+                                                end
+                                        end
+                                    // Right
+                                    else if (stage1reg == 4'hD && stage_counter <= 4)
+                                        begin
+                                            stage1_target <= 4'h7;
+                                            if (seq_input == stage1_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage1;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    result <= 2'b11;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage1_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage1;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage1;
+                                                            level_stage <= stage2;
+                                                            result <= 2'b11;
+                                                            stage_counter <= 0;
                                                         end
                                                 end
-                                            // Down
-                                            else if (stage1reg == 4'hB && stage_counter <= 4)
+                                            else if (seq_input != stage1_target && verify == 1)
                                                 begin
-                                                    stage1_target <= 4'hE;
-                                                    if (seq_input == stage1_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage1;
+                                                end
+                                        end
+                                    // Down
+                                    else if (stage1reg == 4'hB && stage_counter <= 4)
+                                        begin
+                                            stage1_target <= 4'hE;
+                                            if (seq_input == stage1_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage1;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    result <= 2'b11;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage1_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage1;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage1;
+                                                            level_stage <= stage2;
+                                                            result <= 2'b11;
+                                                            stage_counter <= 0;
                                                         end
                                                 end
-                                            // Left
-                                            else if (stage1reg == 4'h7 && stage_counter <= 4)
+                                            else if (seq_input != stage1_target && verify == 1)
                                                 begin
-                                                    stage1_target <= 4'hD;
-                                                    if (seq_input == stage1_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage1;
+                                                end
+                                        end
+                                    // Left
+                                    else if (stage1reg == 4'h7 && stage_counter <= 4)
+                                        begin
+                                            stage1_target <= 4'hD;
+                                            if (seq_input == stage1_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage1;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    result <= 2'b11;
-                                                                    stage_counter <= 0;
-                                                            end
-                                                        end
-                                                    else if (seq_input != stage1_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage1;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage1;
-                                                        end
+                                                            level_stage <= stage2;
+                                                            result <= 2'b11;
+                                                            stage_counter <= 0;
+                                                    end
+                                                end
+                                            else if (seq_input != stage1_target && verify == 1)
+                                                begin
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage1;
                                                 end
                                         end
                                 end
                         // Stage 2 of level
                         stage2: begin
-                                    stage2reg <= seq_key[3:0];
-                                    if (stage2reg != 0)
+                                    if (valid_key == 1)
                                         begin
-                                            // Up
-                                            if (stage2reg == 4'hE)
+                                            stage2reg <= seq_key[3:0];
+                                        end
+                                    else if (valid_key == 0)
+                                        begin
+                                            stage2reg <= stage2reg;
+                                        end
+                                    // Up
+                                    if (stage2reg == 4'hE)
+                                        begin
+                                            stage2_target <= seq_key[15:12];
+                                            if (seq_input == stage2_target && verify == 1)
                                                 begin
-                                                    stage2_target <= seq_key[15:12];
-                                                    if (seq_input == stage2_target && verify == 1)
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    result <= 2'b11;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage2_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage2;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage2;
+                                                            level_stage <= stage3;
+                                                            result <= 2'b11;
                                                         end
                                                 end
-                                            // Right
-                                            else if (stage2reg == 4'hD)
+                                            else if (seq_input != stage2_target && verify == 1)
                                                 begin
-                                                    stage2_target <= seq_key[11:8];
-                                                    if (seq_input == stage2_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage2;
+                                                end
+                                        end
+                                    // Right
+                                    else if (stage2reg == 4'hD)
+                                        begin
+                                            stage2_target <= seq_key[11:8];
+                                            if (seq_input == stage2_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    result <= 2'b11;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage2_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage2;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage2;
+                                                            level_stage <= stage3;
+                                                            result <= 2'b11;
                                                         end
                                                 end
-                                            // Down
-                                            else if (stage2reg == 4'hB)
+                                            else if (seq_input != stage2_target && verify == 1)
                                                 begin
-                                                    stage2_target <= seq_key[7:4];
-                                                    if (seq_input == stage2_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage2;
+                                                end
+                                        end
+                                    // Down
+                                    else if (stage2reg == 4'hB)
+                                        begin
+                                            stage2_target <= seq_key[7:4];
+                                            if (seq_input == stage2_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    result <= 2'b11;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage2_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage2;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage2;
+                                                            level_stage <= stage3;
+                                                            result <= 2'b11;
+                                                            stage_counter <= 0;
                                                         end
                                                 end
-                                            // Left
-                                            else if (stage2reg == 4'h7)
+                                            else if (seq_input != stage2_target && verify == 1)
                                                 begin
-                                                    stage2_target <= seq_key[15:12];
-                                                    if (seq_input == stage2_target && verify == 1)
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage2;
+                                                end
+                                        end
+                                    // Left
+                                    else if (stage2reg == 4'h7)
+                                        begin
+                                            stage2_target <= seq_key[15:12];
+                                            if (seq_input == stage2_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
                                                         begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage2;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    result <= 2'b11;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage2_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
+                                                            level_stage <= stage2;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
                                                         end
                                                     else
                                                         begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage2;
+                                                            level_stage <= stage3;
+                                                            result <= 2'b11;
                                                         end
+                                                end
+                                            else if (seq_input != stage2_target && verify == 1)
+                                                begin
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b10;
+                                                    level_stage <= stage2;
                                                 end
                                         end
                                 end
 
                         // Stage 3 of level
                         stage3: begin
-                                    stage3reg <= seq_key[15:12];
-                                    if (stage3reg != 0)
+                                    if (valid_key == 1)
                                         begin
-                                            // Up
-                                            if (stage3reg == 4'hE)
-                                                begin
-                                                    case (stage_counter)
-                                                        2'b00: begin
-                                                                    stage3_target <= seq_key[3:0];
-                                                               end
-                                                        2'b01: begin
-                                                                    stage3_target <= seq_key[7:4];
-                                                               end
-                                                        2'b10: begin
-                                                                    stage3_target <= seq_key[11:8];
-                                                               end
-                                                        2'b11: begin
-                                                                    stage3_target <= seq_key[15:12];
-                                                               end
-                                                    endcase
-                                                    if (seq_input == stage3_target && verify == 1)
-                                                        begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= level_success;
-                                                                    result <= 2'b01;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage3_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
-                                                        end
-                                                    else
-                                                        begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage3;
-                                                        end
-                                                end
-                                            // Right
-                                            else if (stage3reg == 4'hD)
-                                                begin
-                                                    case (stage_counter)
-                                                        2'b00: begin
-                                                                    stage3_target <= seq_key[15:12];
-                                                               end
-                                                        2'b01: begin
-                                                                    stage3_target <= seq_key[11:8];
-                                                               end
-                                                        2'b10: begin
-                                                                    stage3_target <= seq_key[7:4];
-                                                               end
-                                                        2'b11: begin
-                                                                    stage3_target <= seq_key[3:0];
-                                                               end
-                                                    endcase
-                                                    if (seq_input == stage3_target && verify == 1)
-                                                        begin
-                                                            if (stage_counter < 3)
-                                                                begin
-                                                                    level_stage <= stage3;
-                                                                    stage_counter <= stage_counter + 1;
-                                                                    result <= 2'b00;
-                                                                end
-                                                            else
-                                                                begin
-                                                                    level_stage <= level_success;
-                                                                    result <= 2'b01;
-                                                                    stage_counter <= 0;
-                                                                end
-                                                        end
-                                                    else if (seq_input != stage3_target && verify == 1)
-                                                        begin
-                                                            result <= 2'b10;
-                                                            level_stage <= stage_fail;
-                                                        end
-                                                    else
-                                                        begin
-                                                            result <= 2'b00;
-                                                            level_stage <= stage3;
-                                                        end
-                                                end
-                                                // Down
-                                                else if (stage3reg == 4'hB)
-                                                    begin
-                                                        case (stage_counter)
-                                                            2'b00: begin
-                                                                        stage3_target <= seq_key[3:0];
-                                                                   end
-                                                            2'b01: begin
-                                                                        stage3_target <= seq_key[15:12];
-                                                                   end
-                                                            2'b10: begin
-                                                                        stage3_target <= seq_key[11:8];
-                                                                   end
-                                                            2'b11: begin
-                                                                        stage3_target <= seq_key[7:4];
-                                                                   end
-                                                        endcase
-                                                        if (seq_input == stage3_target && verify == 1)
-                                                            begin
-                                                                if (stage_counter < 3)
-                                                                    begin
-                                                                        level_stage <= stage3;
-                                                                        stage_counter <= stage_counter + 1;
-                                                                        result <= 2'b00;
-                                                                    end
-                                                                else
-                                                                    begin
-                                                                        level_stage <= level_success;
-                                                                        result <= 2'b01;
-                                                                        stage_counter <= 0;
-                                                                    end
-                                                            end
-                                                        else if (seq_input != stage3_target && verify == 1)
-                                                            begin
-                                                                result <= 2'b10;
-                                                                level_stage <= stage_fail;
-                                                            end
-                                                        else
-                                                            begin
-                                                                result <= 2'b00;
-                                                                level_stage <= stage3;
-                                                            end
-                                                    end
-                                                // Left
-                                                else if (stage3reg == 4'h7)
-                                                    begin
-                                                        case (stage_counter)
-                                                            2'b00: begin
-                                                                        stage3_target <= seq_key[11:8];
-                                                                   end
-                                                            2'b01: begin
-                                                                        stage3_target <= seq_key[7:4];
-                                                                   end
-                                                            2'b10: begin
-                                                                        stage3_target <= seq_key[3:0];
-                                                                   end
-                                                            2'b11: begin
-                                                                        stage3_target <= seq_key[15:12];
-                                                                   end
-                                                        endcase
-                                                        if (seq_input == stage3_target && verify == 1)
-                                                            begin
-                                                                if (stage_counter < 3)
-                                                                    begin
-                                                                        level_stage <= stage3;
-                                                                        stage_counter <= stage_counter + 1;
-                                                                        result <= 2'b00;
-                                                                    end
-                                                                else
-                                                                    begin
-                                                                        level_stage <= level_success;
-                                                                        result <= 2'b01;
-                                                                        stage_counter <= 0;
-                                                                    end
-                                                            end
-                                                        else if (seq_input != stage3_target && verify == 1)
-                                                            begin
-                                                                result <= 2'b10;
-                                                                level_stage <= stage_fail;
-                                                            end
-                                                        else
-                                                            begin
-                                                                result <= 2'b00;
-                                                                level_stage <= stage3;
-                                                            end
-                                                    end
+                                            stage3reg <= seq_key[15:12];
                                         end
+                                    else if (valid_key == 0)
+                                        begin
+                                            stage3reg <= stage3reg;
+                                        end
+                                    // Up
+                                    if (stage3reg == 4'hE)
+                                        begin
+                                            case (stage_counter)
+                                                2'b00: begin
+                                                            stage3_target <= seq_key[3:0];
+                                                       end
+                                                2'b01: begin
+                                                            stage3_target <= seq_key[7:4];
+                                                       end
+                                                2'b10: begin
+                                                            stage3_target <= seq_key[11:8];
+                                                       end
+                                                2'b11: begin
+                                                            stage3_target <= seq_key[15:12];
+                                                       end
+                                            endcase
+                                            if (seq_input == stage3_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
+                                                        begin
+                                                            level_stage <= stage3;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
+                                                        end
+                                                    else
+                                                        begin
+                                                            level_stage <= level_success;
+                                                            result <= 2'b01;
+                                                            stage_counter <= 0;
+                                                        end
+                                                end
+                                            else if (seq_input != stage3_target && verify == 1)
+                                                begin
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage3;
+                                                end
+                                        end
+                                    // Right
+                                    else if (stage3reg == 4'hD)
+                                        begin
+                                            case (stage_counter)
+                                                2'b00: begin
+                                                            stage3_target <= seq_key[15:12];
+                                                       end
+                                                2'b01: begin
+                                                            stage3_target <= seq_key[11:8];
+                                                       end
+                                                2'b10: begin
+                                                            stage3_target <= seq_key[7:4];
+                                                       end
+                                                2'b11: begin
+                                                            stage3_target <= seq_key[3:0];
+                                                       end
+                                            endcase
+                                            if (seq_input == stage3_target && verify == 1)
+                                                begin
+                                                    if (stage_counter < 3)
+                                                        begin
+                                                            level_stage <= stage3;
+                                                            stage_counter <= stage_counter + 1;
+                                                            result <= 2'b00;
+                                                        end
+                                                    else
+                                                        begin
+                                                            level_stage <= level_success;
+                                                            result <= 2'b01;
+                                                            stage_counter <= 0;
+                                                        end
+                                                end
+                                            else if (seq_input != stage3_target && verify == 1)
+                                                begin
+                                                    result <= 2'b10;
+                                                    level_stage <= stage_fail;
+                                                end
+                                            else
+                                                begin
+                                                    result <= 2'b00;
+                                                    level_stage <= stage3;
+                                                end
+                                        end
+                                        // Down
+                                        else if (stage3reg == 4'hB)
+                                            begin
+                                                case (stage_counter)
+                                                    2'b00: begin
+                                                                stage3_target <= seq_key[3:0];
+                                                           end
+                                                    2'b01: begin
+                                                                stage3_target <= seq_key[15:12];
+                                                           end
+                                                    2'b10: begin
+                                                                stage3_target <= seq_key[11:8];
+                                                           end
+                                                    2'b11: begin
+                                                                stage3_target <= seq_key[7:4];
+                                                           end
+                                                endcase
+                                                if (seq_input == stage3_target && verify == 1)
+                                                    begin
+                                                        if (stage_counter < 3)
+                                                            begin
+                                                                level_stage <= stage3;
+                                                                stage_counter <= stage_counter + 1;
+                                                                result <= 2'b00;
+                                                            end
+                                                        else
+                                                            begin
+                                                                level_stage <= level_success;
+                                                                result <= 2'b01;
+                                                                stage_counter <= 0;
+                                                            end
+                                                    end
+                                                else if (seq_input != stage3_target && verify == 1)
+                                                    begin
+                                                        result <= 2'b10;
+                                                        level_stage <= stage_fail;
+                                                    end
+                                                else
+                                                    begin
+                                                        result <= 2'b00;
+                                                        level_stage <= stage3;
+                                                    end
+                                            end
+                                        // Left
+                                        else if (stage3reg == 4'h7)
+                                            begin
+                                                case (stage_counter)
+                                                    2'b00: begin
+                                                                stage3_target <= seq_key[11:8];
+                                                           end
+                                                    2'b01: begin
+                                                                stage3_target <= seq_key[7:4];
+                                                           end
+                                                    2'b10: begin
+                                                                stage3_target <= seq_key[3:0];
+                                                           end
+                                                    2'b11: begin
+                                                                stage3_target <= seq_key[15:12];
+                                                           end
+                                                endcase
+                                                if (seq_input == stage3_target && verify == 1)
+                                                    begin
+                                                        if (stage_counter < 3)
+                                                            begin
+                                                                level_stage <= stage3;
+                                                                stage_counter <= stage_counter + 1;
+                                                                result <= 2'b00;
+                                                            end
+                                                        else
+                                                            begin
+                                                                level_stage <= level_success;
+                                                                result <= 2'b01;
+                                                                stage_counter <= 0;
+                                                            end
+                                                    end
+                                                else if (seq_input != stage3_target && verify == 1)
+                                                    begin
+                                                        result <= 2'b10;
+                                                        level_stage <= stage_fail;
+                                                    end
+                                                else
+                                                    begin
+                                                        result <= 2'b00;
+                                                        level_stage <= stage3;
+                                                    end
+                                            end
                                 end
+                                
                         // Level Success
                         level_success: begin
                                             // Game success sequence end
-                                            if (game_state == 7'h21)
+                                            if (game_state == 8'h21)
                                                 begin
                                                     level_stage <= stage0;
                                                     result <= 2'b11;

@@ -1,17 +1,18 @@
 module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
 
-	input switch_op, sec_timer;
+	input [7:0] switch_op
+	input sec_timer;
 	input[11:0] init_time;
-	
+
 	output[3:0] value_three, value_two, value_one;
 	reg[3:0] value_three, value_two, value_one;
-	
+
 	input reset, clk;
-	
+
 	parameter init = 0, countdown = 1;
-	
+
 	reg state;
-	
+
 	always@(posedge clk)
 	begin
 		if (reset == 0) begin state <= init; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
@@ -19,13 +20,13 @@ module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value
 		begin
 			case(state)
 			init:
-			begin 
-			if (switch_op == 1) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
+			begin
+			if (switch_op == 8'h10) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
 			else begin state <= init; value_one = 0; value_two = 0; value_three = 0; end
 			end
 			countdown:
 			begin
-				if (switch_op == 1) state <= init; //ADD correct state
+				if (switch_op == 8'h10) state <= init; //ADD correct state
 				else if (sec_timer == 1)
 				begin
 					if (value_one != 0) value_one <= value_one - 1;
