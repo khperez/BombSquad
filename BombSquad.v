@@ -11,7 +11,9 @@
 
 */
 
-module BombSquad();
+module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rst,
+                 timer_sevseg1, timer_sevseg2, timer_sevseg3,
+                 puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
 
     input [7:0] user_cred;
 
@@ -27,6 +29,9 @@ module BombSquad();
     wire submit, rotate, verify;
     wire one_sec;
     wire valid_key;
+
+    output [6:0] puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4;
+    output [6:0] timer_sevseg1, timer_sevseg2, timer_sevseg3;
 
     // module ButtonShaper(B_in, B_out, Clk, Rst);
     ButtonShaper RotateButton(rotate_button, rotate);
@@ -48,6 +53,11 @@ module BombSquad();
     // module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
     Countdown CountdownTimer(init_time, game_state, one_sec, rst, clk, cur_time3, cur_time2, cur_time1);
 
+    // module SevSegTimer(digit_reg, segment_output);
+    SevSegTimer SevSegTimer1(cur_time3, timer_sevseg3);
+    SevSegTimer SevSegTimer2(cur_time2, timer_sevseg2);
+    SevSegTimer SevSegTimer3(cur_time1, timer_sevseg1);
+
     // module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, transmit);
     SequenceKeyGenerator PuzzleSequenceKeyGenerator(game_state, verifier_result, clk, rst, sequence_key, transmit);
 
@@ -55,6 +65,6 @@ module BombSquad();
     SequenceVerifier UserSequenceVerifier(game_state, sequence_key, transmit, sequence_input, verify, clk, rst, verifier_result);
 
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
-    SSD_Sequence SSD_Sequence1(sequence_key, )
+    SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, sevseg1, sevseg2, sevseg3, seveg4);
 
 endmodule
