@@ -1,6 +1,6 @@
-module Countdown(init_time, SwitchOp, SecTimer, reset, clk, value_three, value_two, value_one);
+module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
 
-	input SwitchOp, SecTimer;
+	input switch_op, sec_timer;
 	input[11:0] init_time;
 	
 	output[3:0] value_three, value_two, value_one;
@@ -20,13 +20,13 @@ module Countdown(init_time, SwitchOp, SecTimer, reset, clk, value_three, value_t
 			case(state)
 			init:
 			begin 
-			if (SwitchOp == 1) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
+			if (switch_op == 1) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
 			else begin state <= init; value_one = 0; value_two = 0; value_three = 0; end
 			end
 			countdown:
 			begin
-				if (SwitchOp == 1) state <= init; //ADD correct state
-				else if (SecTimer == 1)
+				if (switch_op == 1) state <= init; //ADD correct state
+				else if (sec_timer == 1)
 				begin
 					if (value_one != 0) value_one <= value_one - 1;
 					else if (value_one == 0 && (value_two != 0 || value_three!= 0))

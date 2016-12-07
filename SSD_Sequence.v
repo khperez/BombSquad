@@ -1,12 +1,12 @@
-module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, reset, Sequence_out, SevSeg1, SevSeg2, SevSeg3, SevSeg4);
+module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
 
-	input[15:0] Sequence_in;
-	input display, OneSec, ButtonMove, ButtonNext;
+	input[15:0] sequence_in;
+	input display, one_sec, button_move, button_next;
 
-	output[7:0] SevSeg1, SevSeg2, SevSeg3, SevSeg4;
-	reg[7:0] SevSeg1, SevSeg2, SevSeg3, SevSeg4;
+	output[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
+	reg[7:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
 
-	output reg [3:0] Sequence_out;
+	output reg [3:0] sequence_out;
 
 	input clk, reset;
 
@@ -20,10 +20,10 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 	begin
 		if (reset == 0)
 		begin
-			SevSeg1 <= 7'b1111111;
-			SevSeg2 <= 7'b1111111;
-			SevSeg3 <= 7'b1111111;
-			SevSeg4 <= 7'b1111111;
+			sevseg_1 <= 7'b1111111;
+			sevseg_2 <= 7'b1111111;
+			sevseg_3 <= 7'b1111111;
+			sevseg_4 <= 7'b1111111;
 			visabity <= 0;
 			state <= init;
 		end
@@ -32,10 +32,10 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 			case(state)
 				init:
 				begin
-					SevSeg1 <= 7'b1111111;
-					SevSeg2 <= 7'b1111111;
-					SevSeg3 <= 7'b1111111;
-					SevSeg4 <= 7'b1111111;
+					sevseg_1 <= 7'b1111111;
+					sevseg_2 <= 7'b1111111;
+					sevseg_3 <= 7'b1111111;
+					sevseg_4 <= 7'b1111111;
 					visabity <= 0;
 					if (display == 1)
 						state <= show2Sec;
@@ -47,63 +47,63 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 				
 					if (visabity == 2)
 						state <= initialStart;
-					else if (OneSec == 1)
+					else if (one_sec == 1)
 						visabity <= visabity + 1;
 						
-					case(Sequence_in[3:0])
-					4'b1110 : begin SevSeg1 <= 7'b1111110; end
-					4'b1101 : begin SevSeg1 <= 7'b1111001; end
-					4'b1011 : begin SevSeg1 <= 7'b1110111; end
-					4'b0111 : begin SevSeg1 <= 7'b1001111; end
-					default : begin SevSeg1 <= 7'b0100001; end
+					case(sequence_in[3:0])
+					4'b1110 : begin sevseg_1 <= 7'b1111110; end
+					4'b1101 : begin sevseg_1 <= 7'b1111001; end
+					4'b1011 : begin sevseg_1 <= 7'b1110111; end
+					4'b0111 : begin sevseg_1 <= 7'b1001111; end
+					default : begin sevseg_1 <= 7'b0100001; end
 					endcase
 
-					case(Sequence_in[7:4])
-					4'b1110 : begin SevSeg2 <= 7'b1111110; end
-					4'b1101 : begin SevSeg2 <= 7'b1111001; end
-					4'b1011 : begin SevSeg2 <= 7'b1110111; end
-					4'b0111 : begin SevSeg2 <= 7'b1001111; end
-					default : begin SevSeg2 <= 7'b0100001; end
+					case(sequence_in[7:4])
+					4'b1110 : begin sevseg_2 <= 7'b1111110; end
+					4'b1101 : begin sevseg_2 <= 7'b1111001; end
+					4'b1011 : begin sevseg_2 <= 7'b1110111; end
+					4'b0111 : begin sevseg_2 <= 7'b1001111; end
+					default : begin sevseg_2 <= 7'b0100001; end
 					endcase
 
-					case(Sequence_in[11:8])
-					4'b1110 : begin SevSeg3 <= 7'b1111110; end
-					4'b1101 : begin SevSeg3 <= 7'b1111001; end
-					4'b1011 : begin SevSeg3 <= 7'b1110111; end
-					4'b0111 : begin SevSeg3 <= 7'b1001111; end
-					default : begin SevSeg3 <= 7'b0100001; end
+					case(sequence_in[11:8])
+					4'b1110 : begin sevseg_3 <= 7'b1111110; end
+					4'b1101 : begin sevseg_3 <= 7'b1111001; end
+					4'b1011 : begin sevseg_3 <= 7'b1110111; end
+					4'b0111 : begin sevseg_3 <= 7'b1001111; end
+					default : begin sevseg_3 <= 7'b0100001; end
 					endcase
 
-					case(Sequence_in[15:12])
-					4'b1110 : begin SevSeg4 <= 7'b1111110; end
-					4'b1101 : begin SevSeg4 <= 7'b1111001; end
-					4'b1011 : begin SevSeg4 <= 7'b1110111; end
-					4'b0111 : begin SevSeg4 <= 7'b1001111; end
-					default : begin SevSeg4 <= 7'b0100001; end
+					case(sequence_in[15:12])
+					4'b1110 : begin sevseg_4 <= 7'b1111110; end
+					4'b1101 : begin sevseg_4 <= 7'b1111001; end
+					4'b1011 : begin sevseg_4 <= 7'b1110111; end
+					4'b0111 : begin sevseg_4 <= 7'b1001111; end
+					default : begin sevseg_4 <= 7'b0100001; end
 					endcase
 				end
 				initialStart:
 				begin
-					SevSeg1 <= 7'b1111110;
-					SevSeg2 <= 7'b1111110;
-					SevSeg3 <= 7'b1111110;
-					SevSeg4 <= 7'b1111110;
-					Sequence_out <= 4'b1110;
+					sevseg_1 <= 7'b1111110;
+					sevseg_2 <= 7'b1111110;
+					sevseg_3 <= 7'b1111110;
+					sevseg_4 <= 7'b1111110;
+					sequence_out <= 4'b1110;
 					visabity <= 0;
 					state <= firstSeg;
 				end
 				firstSeg:
 				begin
-					if (ButtonNext == 1)
+					if (button_next == 1)
 						state <= secondSeg;
-					else if (ButtonMove == 1)
+					else if (button_move == 1)
 					begin
-						case(SevSeg1)
-							7'b1111110 : begin SevSeg1 = 7'b1111001; Sequence_out = 4'b1101; end
-							7'b1111001 : begin SevSeg1 = 7'b1110111; Sequence_out = 4'b1011; end
-							7'b1110111 : begin SevSeg1 = 7'b1001111; Sequence_out = 4'b0111; end
-							7'b1001111 : begin SevSeg1 = 7'b1111110; Sequence_out = 4'b1110; end
-							default : begin SevSeg1 = 7'b0100001; end
+						case(sevseg_1)
+							7'b1111110 : begin sevseg_1 = 7'b1111001; sequence_out = 4'b1101; end
+							7'b1111001 : begin sevseg_1 = 7'b1110111; sequence_out = 4'b1011; end
+							7'b1110111 : begin sevseg_1 = 7'b1001111; sequence_out = 4'b0111; end
+							7'b1001111 : begin sevseg_1 = 7'b1111110; sequence_out = 4'b1110; end
+							default : begin sevseg_1 = 7'b0100001; end
 						endcase
 						state <= firstSeg;
 					end
@@ -112,16 +112,16 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 				end
 				secondSeg:
 				begin
-					if (ButtonNext == 1)
+					if (button_next == 1)
 						state <= thirdSeg;
-					else if (ButtonMove == 1)
+					else if (button_move == 1)
 					begin
-						case(SevSeg2)
-							7'b1111110 : begin SevSeg1 = 7'b1111001; Sequence_out = 4'b1101; end
-							7'b1111001 : begin SevSeg1 = 7'b1110111; Sequence_out = 4'b1011; end
-							7'b1110111 : begin SevSeg1 = 7'b1001111; Sequence_out = 4'b0111; end
-							7'b1001111 : begin SevSeg1 = 7'b1111110; Sequence_out = 4'b1110; end
-							default : begin SevSeg2 = 7'b0100001; end
+						case(sevseg_2)
+							7'b1111110 : begin sevseg_1 = 7'b1111001; sequence_out = 4'b1101; end
+							7'b1111001 : begin sevseg_1 = 7'b1110111; sequence_out = 4'b1011; end
+							7'b1110111 : begin sevseg_1 = 7'b1001111; sequence_out = 4'b0111; end
+							7'b1001111 : begin sevseg_1 = 7'b1111110; sequence_out = 4'b1110; end
+							default : begin sevseg_2 = 7'b0100001; end
 						endcase
 						state <= secondSeg;
 					end
@@ -130,16 +130,16 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 				end
 				thirdSeg:
 				begin
-					if (ButtonNext == 1)
+					if (button_next == 1)
 						state <= fourthSeg;
-					else if (ButtonMove == 1)
+					else if (button_move == 1)
 					begin
-						case(SevSeg3)
-							7'b1111110 : begin SevSeg1 = 7'b1111001; Sequence_out = 4'b1101; end
-							7'b1111001 : begin SevSeg1 = 7'b1110111; Sequence_out = 4'b1011; end
-							7'b1110111 : begin SevSeg1 = 7'b1001111; Sequence_out = 4'b0111; end
-							7'b1001111 : begin SevSeg1 = 7'b1111110; Sequence_out = 4'b1110; end
-							default : begin SevSeg3 = 7'b0100001; end
+						case(sevseg_3)
+							7'b1111110 : begin sevseg_1 = 7'b1111001; sequence_out = 4'b1101; end
+							7'b1111001 : begin sevseg_1 = 7'b1110111; sequence_out = 4'b1011; end
+							7'b1110111 : begin sevseg_1 = 7'b1001111; sequence_out = 4'b0111; end
+							7'b1001111 : begin sevseg_1 = 7'b1111110; sequence_out = 4'b1110; end
+							default : begin sevseg_3 = 7'b0100001; end
 						endcase
 						state <= thirdSeg;
 					end
@@ -148,16 +148,16 @@ module SSD_Sequence(Sequence_in, display, OneSec, ButtonMove, ButtonNext, clk, r
 				end
 				fourthSeg:
 				begin
-					if (ButtonNext == 1)
+					if (button_next == 1)
 						state <= init;
-					else if (ButtonMove == 1)
+					else if (button_move == 1)
 					begin
-						case(SevSeg1)
-							7'b1111110 : begin SevSeg1 = 7'b1111001; Sequence_out = 4'b1101; end
-							7'b1111001 : begin SevSeg1 = 7'b1110111; Sequence_out = 4'b1011; end
-							7'b1110111 : begin SevSeg1 = 7'b1001111; Sequence_out = 4'b0111; end
-							7'b1001111 : begin SevSeg1 = 7'b1111110; Sequence_out = 4'b1110; end
-							default : begin SevSeg1 = 7'b0100001; end
+						case(sevseg_1)
+							7'b1111110 : begin sevseg_1 = 7'b1111001; sequence_out = 4'b1101; end
+							7'b1111001 : begin sevseg_1 = 7'b1110111; sequence_out = 4'b1011; end
+							7'b1110111 : begin sevseg_1 = 7'b1001111; sequence_out = 4'b0111; end
+							7'b1001111 : begin sevseg_1 = 7'b1111110; sequence_out = 4'b1110; end
+							default : begin sevseg_1 = 7'b0100001; end
 						endcase
 						state <= fourthSeg;
 					end
