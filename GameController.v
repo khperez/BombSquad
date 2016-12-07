@@ -15,6 +15,8 @@
     Outputs:
     + s_current : current game state
         0x00: authentication
+        0x01: authentication success
+        0x02: authentication fail
         0x10: game in progress
         0x20: game success sequence begin
         0x21: game success sequence end
@@ -86,6 +88,11 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                             begin
                                                 s_current <= 8'h30;
                                                 game_state <= game_over;
+                                            end
+                                        else if (s_results == 2'b11)
+                                            begin
+                                                s_current <= 8'h20;
+                                                game_state <= in_game;
                                             end
                                     end
                              end
