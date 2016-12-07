@@ -4,7 +4,7 @@
 
 /*
    LCDController: Initializes and configures the on board LCD for displaying data.
-   
+
    INPUTS:
      + clk: system clock
      + reset: resets the entire system (active low)
@@ -84,7 +84,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	  data2[0]  <= L_E; data2[1]  <= L_N; data2[2]  <= L_T; data2[3]  <= L_E; data2[4]  <= L_R;
 	  data2[5]  <= L__; data2[6]  <= L_C; data2[7]  <= L_R; data2[8]  <= L_E; data2[9]  <= L_D;
 	  data2[10] <= L_E; data2[11] <= L_N; data2[12] <= L_T; data2[13] <= L_I; data2[14] <= L_A; data2[15] <= L_L;
-	
+
 	  prev_state <= state;
 	end
 
@@ -128,7 +128,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	end
       endcase
 
-      case (fsm) 
+      case (fsm)
         S_POWER: begin
           lcd_on <= 1;
           lcd_en <= 1;
@@ -175,7 +175,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
         S_WRITEDATA: begin
           lcd_en <= 1;
 	  fsm <= S_PUSH;
-	  
+
 	  case (char)
             0:  begin lcd_flag <= {2'b10, data1[0]}; end
             1:  begin lcd_flag <= {2'b10, data1[1]}; end
@@ -221,7 +221,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	  end
 
         end
-        
+
         S_HOME: begin
           lcd_en <= 1;
           lcd_flag <= 10'b00_1100_0000;  // 10'b00_0000_001*

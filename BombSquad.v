@@ -13,7 +13,8 @@
 
 module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rst,
                  timer_sevseg1, timer_sevseg2, timer_sevseg3,
-                 puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
+                 puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4,
+                 lcd_on, lcd_en, lcd_flag);
 
     input [7:0] user_cred;
 
@@ -32,6 +33,8 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     wire valid_key;
     wire [3:0] sequence_input;
 
+    output lcd_on, lcd_en;
+    output [9:0] lcd_flag;
     output [6:0] puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4;
     output [6:0] timer_sevseg1, timer_sevseg2, timer_sevseg3;
 
@@ -68,5 +71,8 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
 
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
     SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
+
+    // module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
+    LCDController LCDController1(clk, rst, game_state, lcd_on, lcd_en, lcd_flag);
 
 endmodule

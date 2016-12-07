@@ -1,3 +1,4 @@
+Warning (10268): Verilog HDL information at LCDController.v(62): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 62
 Warning (10268): Verilog HDL information at SSD_Sequence.v(20): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 20
 Warning (10268): Verilog HDL information at Countdown.v(16): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 16
 Warning (10268): Verilog HDL information at Authentication.v(57): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 57

@@ -15,29 +15,32 @@ module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value
 
 	always@(posedge clk)
 	begin
-		if (reset == 0) begin state <= init; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
+		if (reset == 0) begin state <= init; value_one = 9; value_two = 9; value_three = 9; end
 		else
 		begin
 			case(state)
 			init:
 			begin
-			if (switch_op == 8'h10) begin state <= countdown; value_one = init_time[3:0]; value_two = init_time[7:4]; value_three = init_time[11:8]; end
+			if (switch_op == 8'h10) begin state <= countdown; value_one = 0; value_two = 0; value_three = 3; end
 			else begin state <= init; value_one = 9; value_two = 9; value_three = 9; end
 			end
 			countdown:
 			begin
-				if (switch_op == 8'h10) state <= init; //ADD correct state
-				else if (sec_timer == 1)
-				begin
-					if (value_one != 0) value_one <= value_one - 1;
-					else if (value_one == 0 && (value_two != 0 || value_three!= 0))
+				if (sec_timer == 1 && switch_op == 8'h10)
 					begin
-						if (value_two == 0) begin value_three <= value_three - 1; value_two <= 4'b1001; value_one <= 4'b1001; end
-						else if (value_three == 0) begin value_two <= value_two - 1; value_one <= 4'b1001; end
-						else begin value_two <= value_two - 1; value_one <= 4'b1001; end
+						if (value_one != 0) value_one <= value_one - 1;
+						else if (value_one == 0 && (value_two != 0 || value_three!= 0))
+						begin
+							if (value_two == 0) begin value_three <= value_three - 1; value_two <= 4'b1001; value_one <= 4'b1001; end
+							else if (value_three == 0) begin value_two <= value_two - 1; value_one <= 4'b1001; end
+							else begin value_two <= value_two - 1; value_one <= 4'b1001; end
+						end
+						else if (value_one == 0 && value_two == 0 && value_three== 0) state <= init;
 					end
-					else if (value_one == 0 && value_two == 0 && value_three== 0) state <= init;
-				end
+				else if (switch_op == 8'h20 || switch_op == 8'h30)
+					begin
+						state <= init;
+					end
 				else state <= countdown;
 			end
 			endcase
