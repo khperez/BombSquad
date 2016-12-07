@@ -65,6 +65,6 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     SequenceVerifier UserSequenceVerifier(game_state, sequence_key, transmit, sequence_input, verify, clk, rst, verifier_result);
 
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
-    SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, sevseg1, sevseg2, sevseg3, seveg4);
+    SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
 
 endmodule
