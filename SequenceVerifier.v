@@ -8,6 +8,7 @@
                  display.
     Inputs:
     + game_state: current game state
+    + key_request: request new key
     + seq_key: sequence key
     + seq_input: sequence cell input from user
     + verify: sequence cell verification
@@ -22,11 +23,11 @@
 
 */
 
-module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result);
-    input [6:0] game_state;
+module SequenceVerifier(game_state, key_request, seq_key, seq_input, verify, clk, rst, result);
+    input [7:0] game_state;
     input [15:0] seq_key;
     input [3:0] seq_input;
-    input verify;
+    input key_request, verify;
     input clk, rst;
 
     output reg [1:0] result;
@@ -50,7 +51,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
             if (rst == 0)
                 begin
                     level_stage <= stage0;
-                    result <= 2'b00;
+                    result <= 2'b11;
                     stage1reg <= 0;
                     stage2reg <= 0;
                     stage3reg <= 0;
@@ -67,7 +68,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                     if (game_state == 7'h10)
                                         begin
                                             level_stage <= stage1;
-                                            result <= 2'b00;
+                                            result <= 2'b11;
                                             stage1reg <= 0;
                                             stage2reg <= 0;
                                             stage3reg <= 0;
@@ -91,7 +92,6 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                 end
                         // Stage 1 of level
                         stage1: begin
-                                    stage1reg <= seq_key[11:8];
                                     if (stage1reg != 0)
                                         begin
                                             // Up
@@ -109,7 +109,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -139,7 +139,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -169,7 +169,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -199,7 +199,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage2;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                     stage_counter <= 0;
                                                             end
                                                         end
@@ -236,7 +236,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)
@@ -265,7 +265,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)
@@ -294,7 +294,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                     stage_counter <= 0;
                                                                 end
                                                         end
@@ -324,7 +324,7 @@ module SequenceVerifier(game_state, seq_key, seq_input, verify, clk, rst, result
                                                             else
                                                                 begin
                                                                     level_stage <= stage3;
-                                                                    result <= 2'b00;
+                                                                    result <= 2'b11;
                                                                 end
                                                         end
                                                     else if (seq_input != stage2_target && verify == 1)

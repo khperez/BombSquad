@@ -1,6 +1,5 @@
-module LFSR8bit(enable, reset, clk, output_sequence);
+module LFSR8bit(reset, clk, output_sequence);
 
-	input enable;
 	output [7:0] output_sequence;
 	reg [7:0] output_sequence;
 

@@ -7,8 +7,7 @@
     Description: The brain of the entire game.
     Inputs:
     + s_auth : results from authentication module
-    + s_time:
-    + cur_time:
+    + cur_time: current time output
     + s_results : sequence verifier results
     + clk : clock
     + rst : reset
@@ -17,22 +16,17 @@
     + s_current : current game state
         0x00: authentication
         0x10: game in progress
-        0x11: level 1 success
-        0x12: level 1 failed
-        0x13: level 2 success
-        0x14: level 2 failed
-        0x16: level 3 failed
         0x20: game success sequence begin
         0x21: game success sequence end
         0x30: game over sequence begin
         0x31: game over sequence end
 */
 
-module GameController(s_auth, s_time, cur_time, s_results, clk, rst, s_current);
-    input [1:0] s_auth, s_time, s_results;
+module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
+    input [1:0] s_auth, s_results;
     input clk, rst;
-    input [X:X] cur_time;
-    output [6:0] s_current;
+    input [11:0] cur_time;
+    output [7:0] s_current;
 
     reg [2:0] game_state;
 
@@ -79,7 +73,6 @@ module GameController(s_auth, s_time, cur_time, s_results, clk, rst, s_current);
                                     end
                                 else
                                     begin
-                                        // Game Stage 1
                                         if (s_results == 2'b00)
                                             begin
                                                 s_current <= 7'h10;
@@ -87,12 +80,12 @@ module GameController(s_auth, s_time, cur_time, s_results, clk, rst, s_current);
                                             end
                                         else if (s_results == 2'b01)
                                             begin
-                                                s_current <= 7'h11;
+                                                s_current <= 7'h20;
                                                 game_state <= game_success;
                                             end
                                         else if (s_results == 2'b10)
                                             begin
-                                                s_current <= 7'h12;
+                                                s_current <= 7'h30;
                                                 game_state <= game_over;
                                             end
                                     end
