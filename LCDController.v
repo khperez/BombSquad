@@ -4,12 +4,14 @@
 
 /*
    LCDController: Initializes and configures the on board LCD for displaying data.
-
+   
    INPUTS:
      + clk: system clock
      + reset: resets the entire system (active low)
      + state: state of the game / state to display
         - 0x00: authentication
+	- 0x01: authentication success
+	- 0x02: authentication failed
         - 0x10: game in progress
         - 0x11: level 1 success
         - 0x12: level 1 failed
@@ -71,9 +73,6 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
     end
 
     else if (lcd_activate == 1) begin
-      if (prev_state != state)
-	fsm <= S_POWER;
-
       case (state)
 	8'h00: begin // AUTHENTICATION PENDING
 	  // ___BOMB_SQUAD___ //
@@ -84,7 +83,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	  data2[0]  <= L_E; data2[1]  <= L_N; data2[2]  <= L_T; data2[3]  <= L_E; data2[4]  <= L_R;
 	  data2[5]  <= L__; data2[6]  <= L_C; data2[7]  <= L_R; data2[8]  <= L_E; data2[9]  <= L_D;
 	  data2[10] <= L_E; data2[11] <= L_N; data2[12] <= L_T; data2[13] <= L_I; data2[14] <= L_A; data2[15] <= L_L;
-
+	
 	  prev_state <= state;
 	end
 
@@ -128,7 +127,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 	end
       endcase
 
-      case (fsm)
+      case (fsm) 
         S_POWER: begin
           lcd_on <= 1;
           lcd_en <= 1;
@@ -175,7 +174,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
         S_WRITEDATA: begin
           lcd_en <= 1;
 	  fsm <= S_PUSH;
-
+	  
 	  case (char)
             0:  begin lcd_flag <= {2'b10, data1[0]}; end
             1:  begin lcd_flag <= {2'b10, data1[1]}; end
@@ -211,22 +210,23 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
             31: begin lcd_flag <= {2'b10, data2[13]}; end
             32: begin lcd_flag <= {2'b10, data2[14]}; end
             33: begin lcd_flag <= {2'b10, data2[15]}; end
+            34: begin lcd_flag <= 10'b00_1000_0000; end // HOME
             default: begin lcd_flag <= 10'b10_0010_0000; end // ' '
           endcase
 
-	  if (char == 33) next <= S_HOME;
+	  if (char == 34) next <= S_HOME;
 	  else begin
 	    next <= S_WRITEDATA;
 	    char = char + 1;
 	  end
 
         end
-
+        
         S_HOME: begin
           lcd_en <= 1;
-          lcd_flag <= 10'b00_1100_0000;  // 10'b00_0000_001*
+          lcd_flag <= 10'b00_1000_0000;  // 10'b00_0000_001*
 	  fsm <= S_PUSH;
-	  next <= S_PUSH;
+	  next <= S_WRITEDATA;
         end
 
 	S_PUSH: begin
