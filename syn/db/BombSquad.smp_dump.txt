@@ -1,14 +1,13 @@
 
 State Machine - |BombSquad|LCDController:LCDController1|next
-Name next.S_DISPCLR next.S_DISPOFF next.S_PUSH next.S_HOME next.S_WRITEDATA next.S_ENTRYMODE next.S_DISPCNTRL next.S_FNCTNSET 
-next.S_FNCTNSET 0 0 0 0 0 0 0 0 
-next.S_DISPCNTRL 0 0 0 0 0 0 1 1 
-next.S_ENTRYMODE 0 0 0 0 0 1 0 1 
-next.S_WRITEDATA 0 0 0 0 1 0 0 1 
-next.S_HOME 0 0 0 1 0 0 0 1 
-next.S_PUSH 0 0 1 0 0 0 0 1 
-next.S_DISPOFF 0 1 0 0 0 0 0 1 
-next.S_DISPCLR 1 0 0 0 0 0 0 1 
+Name next.S_DISPCLR next.S_DISPOFF next.S_HOME next.S_WRITEDATA next.S_ENTRYMODE next.S_DISPCNTRL next.S_FNCTNSET 
+next.S_FNCTNSET 0 0 0 0 0 0 0 
+next.S_DISPCNTRL 0 0 0 0 0 1 1 
+next.S_ENTRYMODE 0 0 0 0 1 0 1 
+next.S_WRITEDATA 0 0 0 1 0 0 1 
+next.S_HOME 0 0 1 0 0 0 1 
+next.S_DISPOFF 0 1 0 0 0 0 1 
+next.S_DISPCLR 1 0 0 0 0 0 1 
 
 State Machine - |BombSquad|LCDController:LCDController1|fsm
 Name fsm.S_DISPCLR fsm.S_DISPOFF fsm.S_PUSH fsm.S_HOME fsm.S_WRITEDATA fsm.S_ENTRYMODE fsm.S_DISPCNTRL fsm.S_FNCTNSET fsm.S_POWER 

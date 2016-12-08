@@ -46,7 +46,7 @@ module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk
 				show2Sec:
 				begin
 
-					if (visabity == 2)
+					if (visabity == 3)
 						state <= initialStart;
 					else if (one_sec == 1)
 						visabity <= visabity + 1;

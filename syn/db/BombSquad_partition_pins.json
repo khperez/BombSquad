@@ -200,11 +200,95 @@
 					"strict" : false
 				},
 				{
-					"name" : "rst",
+					"name" : "lcd_en",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[0]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[1]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[2]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[3]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[4]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[5]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[6]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[7]",
+					"strict" : false
+				},
+				{
+					"name" : "lcd_flag[9]",
 					"strict" : false
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "rotate_button",
+					"strict" : false
+				},
+				{
+					"name" : "verify_button",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[1]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[0]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[3]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[2]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[5]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[4]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[7]",
+					"strict" : false
+				},
+				{
+					"name" : "user_cred[6]",
+					"strict" : false
+				},
+				{
+					"name" : "submit_button",
 					"strict" : false
 				}
 			]

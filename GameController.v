@@ -50,19 +50,19 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         // Authentication Stage 1: Awaiting user to input credentials
                                         if (s_auth == 2'b00)
                                             begin
-                                                s_current <= 8'h0;
+                                                s_current <= 8'h00;
                                                 game_state <= authentication;
                                             end
                                         // Authentication Stage 2: User has entered correct credentials
                                         else if (s_auth == 2'b01)
                                             begin
-                                                s_current <= 8'h1;
+                                                s_current <= 8'h01;
                                                 game_state <= in_game;
                                             end
                                         // Authentication Stage 3: User has entered incorrect credentials
                                         else if (s_auth == 2'b10)
                                             begin
-                                                s_current <= 8'h2;
+                                                s_current <= 8'h02;
                                                 game_state <= authentication;
                                             end
                                     end
