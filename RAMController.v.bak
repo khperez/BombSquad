@@ -13,7 +13,7 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 	parameter init = 0, inc = 1, write_to = 2, read_from = 3;
 	
 	reg[1:0] state;
-	reg[2:0] location;
+	reg[1:0] location;
 	
 	always@(posedge clk)
 	begin
@@ -33,7 +33,7 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 					state <= inc;
 				end
 				inc: begin
-					if (location === 3'b100)
+					if (location == 4)
 					begin
 						state <= write_to;
 						r_w <= 0;
@@ -54,7 +54,7 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 								data_out = cur_level <= cur_level + 1;
 							end
 						end
-						4'b0011: begin
+						4'b1100: begin
 							if (game_state == 8'h20)
 							begin
 								address_out <= 1;
@@ -62,7 +62,7 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 								data_out = cur_level <= cur_level + 1;
 							end
 						end
-						4'b1101: begin
+						4'b1100: begin
 							if (game_state == 8'h20)
 							begin
 								address_out <= 2;
@@ -70,7 +70,7 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 								data_out = cur_level <= cur_level + 1;
 							end
 						end
-						4'b0100: begin
+						4'b1100: begin
 							if (game_state == 8'h20)
 							begin
 								address_out <= 3;
@@ -94,17 +94,17 @@ module RAMController(user_id, game_state, clk, reset, address_out, data_in, data
 							r_w = 0;
 							cur_level <= data_in;
 						end
-						4'b0011: begin
+						4'b1100: begin
 							address_out <= 1;
 							r_w = 0;
 							cur_level <= data_in;
 						end
-						4'b1101: begin
+						4'b1100: begin
 							address_out <= 2;
 							r_w = 0;
 							cur_level <= data_in;
 						end
-						4'b0100: begin
+						4'b1100: begin
 							address_out <= 3;
 							r_w = 0;
 							cur_level <= data_in;
