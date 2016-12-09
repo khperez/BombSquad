@@ -76,7 +76,7 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     // module OneSec_Timer(clk, reset, timeout);
     OneSec_Timer OneSecondTimer(clk, rst, one_sec);
 
-    // module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
+    // module Countdown(init_time, game_state, sec_timer, reset, clk, value_three, value_two, value_one);
     Countdown CountdownTimer({value_three, value_two, value_one}, game_state, one_sec, rst, clk, cur_time3, cur_time2, cur_time1);
 
     // module SevSegTimer(digit_reg, segment_output);
