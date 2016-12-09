@@ -90,7 +90,7 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 	8'h30: begin
 	  if (counter == C_45MS) begin
 	    counter <= 0;
-	    led_r <= {random1[1:0], random2, random3};
+	    led_r <= {random1[4:1], random2[7:1], random3[7:1]};
 	  end
 	
 	  else begin
