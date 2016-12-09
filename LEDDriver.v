@@ -34,6 +34,8 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 
   reg direction; // 0:left 1:right
 
+  parameter C_20MS = 1000000;
+
   always @(posedge clk) begin
     if (reset == 0) begin
 	led_g <= 0;
@@ -44,10 +46,11 @@ module LEDDriver(clk, reset, state, led_g, led_r);
     else begin
       case(state)
         8'h10: begin
-	  if (counter == 1000000) begin
+	  if (counter == C_20MS) begin
 	    counter <= 0;
 
-	    if      (led_r == 18'b100000000000000000) direction <= 1;
+	    if (led_r == 18'b0) led_r <= 18'b1;
+	    else if (led_r == 18'b100000000000000000) direction <= 1;
 	    else if (led_r == 18'b000000000000000001) direction <= 0;
 
 	    if      (direction == 0) led_r <= led_r << 1;
@@ -59,9 +62,21 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 	  end
 	end
 
+	8'h30: begin
+	  if (counter == C_20MS) begin
+	    counter <= 0;
+	    led_r <= $random;
+	  end
+	
+	  else begin
+	    counter <= counter + 1;
+	  end
+
+	end
+
         default: begin
-	  led_g <= 18'b111111111111111111;
-	  led_r <= 18'b11111111;
+	  led_g <= 8'b0;
+	  led_r <= 18'b0;
         end
       endcase
     end
