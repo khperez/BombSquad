@@ -77,7 +77,7 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     OneSec_Timer OneSecondTimer(clk, rst, one_sec);
 
     // module Countdown(init_time, switch_op, sec_timer, reset, clk, value_three, value_two, value_one);
-    Countdown CountdownTimer(init_time, game_state, one_sec, rst, clk, cur_time3, cur_time2, cur_time1);
+    Countdown CountdownTimer({value_three, value_two, value_one}, game_state, one_sec, rst, clk, cur_time3, cur_time2, cur_time1);
 
     // module SevSegTimer(digit_reg, segment_output);
     SevSegTimer SevSegTimer1(cur_time3, timer_sevseg3);
@@ -98,5 +98,14 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
 
     // module LEDDriver(clk, reset, state, led_g, led_r);
     LEDDriver LEDDriver1(clk, rst, game_state, led_g, led_r);
+	
+	//module RAMController(user_id, game_state, clk, data_in, reset, address_out, r_w, data_out, cur_level);
+	RAMController	RAMController1(ram_id, game_state, clk, data_in, rst, address_out, r_w, data_out, cur_level);
+	
+	//module RAM_sim (address, clock, data, wren, q);
+	RAM_sim	RAM_sim1(address_out, clk, data_out, r_w, data_in);
+	
+	//module TimeAssignment(game_level, value_three, value_two, value_one);
+	TimeAssignment	TimeAssignment1(cur_level, value_three, value_two, value_one);
 
 endmodule
