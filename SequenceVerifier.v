@@ -533,19 +533,19 @@ module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, clk, 
                                                     end
                                             end
                                 end
-                                
+
                         // Level Success
                         level_success: begin
                                             // Game success sequence end
                                             if (game_state == 8'h21)
                                                 begin
-                                                    level_stage <= stage0;
-                                                    result <= 2'b11;
+                                                    level_stage <= stage1;
+                                                    result <= 2'b01;
                                                 end
                                             else
                                                 begin
-                                                    level_stage <= stage0;
-                                                    result <= 2'b11;
+                                                    level_stage <= stage1;
+                                                    result <= 2'b01;
                                                 end
                                        end
 

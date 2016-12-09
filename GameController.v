@@ -69,12 +69,12 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                     in_game: begin
                                 if (cur_time == 0)
                                     begin
-                                        s_current <= 8'h12;
+                                        s_current <= 8'h30;
                                         game_state <= game_over;
                                     end
                                 else
                                     begin
-                                        if (s_results == 2'b00)
+                                        if (s_results == 2'b00 || s_results == 2'b11)
                                             begin
                                                 s_current <= 8'h10;
                                                 game_state <= in_game;
@@ -88,11 +88,6 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                             begin
                                                 s_current <= 8'h30;
                                                 game_state <= game_over;
-                                            end
-                                        else if (s_results == 2'b11)
-                                            begin
-                                                s_current <= 8'h20;
-                                                game_state <= in_game;
                                             end
                                     end
                              end
