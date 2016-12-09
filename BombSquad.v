@@ -6,8 +6,26 @@
     Bomb Squad Module
     Description: The top level module of the game: BombSquad.
     Inputs:
+    + user_cred : user credentials on the slide switches
+    + submit_button
+    + rotate_button
+    + verify_button
+    + clk
+    + rst
 
     Outputs:
+    + lcd_on
+    + lcd_en
+    + lcd_flag
+    + puzzle_sevseg1
+    + puzzle_sevseg2
+    + puzzle_sevseg3
+    + puzzle_sevseg4
+    + timer_sevseg1
+    + timer_sevseg2
+    + timer_sevseg3
+	+ led_g
+	+ led_r
 
 */
 
@@ -68,15 +86,15 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     // module SequenceKeyGenerator(game_state, level_state, clk, rst, sequence_key, transmit);
     SequenceKeyGenerator PuzzleSequenceKeyGenerator(game_state, verifier_result, clk, rst, sequence_key, valid_key);
 
-    // module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, clk, rst, result);
-    SequenceVerifier UserSequenceVerifier(game_state, sequence_key, valid_key, sequence_input, verify, clk, rst, verifier_result);
+    // module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, submit, clk, rst, result);
+    SequenceVerifier UserSequenceVerifier(game_state, sequence_key, valid_key, sequence_input, verify, submit, clk, rst, verifier_result);
 
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
     SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
 
     // module LCDController(clk, reset, state, user, score, lcd_on, lcd_en, lcd_flag);
     LCDController LCDController1(clk, rst, game_state, ram_id, cur_level, lcd_on, lcd_en, lcd_flag);
-	
+
     // module LEDDriver(clk, reset, state, led_g, led_r);
     LEDDriver LEDDriver1(clk, rst, game_state, led_g, led_r);
 

@@ -101,6 +101,10 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                                 s_current <= 8'h10;
                                                 game_state <= in_game;
                                             end
+                                        else
+                                            begin
+                                                game_state <= game_success;
+                                            end
                                   end
                     game_over: begin
                                     // Game Over Sequence begin
@@ -114,6 +118,15 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         begin
                                             s_current <= 8'h00;
                                             game_state <= s_auth;
+                                        end
+                                    else if (s_results == 2'b00)
+                                        begin
+                                            s_current <= 8'h10;
+                                            game_state <= in_game;
+                                        end
+                                    else
+                                        begin
+                                            game_state <= game_over;
                                         end
                                end
                     endcase
