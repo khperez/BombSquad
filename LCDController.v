@@ -89,7 +89,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
 	  data_user[5] <= "L";
 	end
 
-	8'0100: begin
+	8'b0100: begin
 	  data_user[0] <= "R";
 	  data_user[1] <= "A";
 	  data_user[2] <= "F";
@@ -105,6 +105,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
 	  data_user[3] <= "O";
 	  data_user[4] <= "R";
 	  data_user[5] <= "!";
+	end
     endcase
 
       case (state)
