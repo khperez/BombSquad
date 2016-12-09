@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BombSquad
-Thu Dec 08 22:06:51 2016
+Thu Dec 08 23:22:00 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,14 +41,13 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  33. Parameter Settings for User Entity Instance: LCDController:LCDController1
  34. Parameter Settings for User Entity Instance: LEDDriver:LEDDriver1
  35. altsyncram Parameter Settings by Entity Instance
- 36. Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR1"
- 37. Port Connectivity Checks: "LCDController:LCDController1"
- 38. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"
- 39. Port Connectivity Checks: "Authentication:UserAuthentication"
- 40. Post-Synthesis Netlist Statistics for Top Partition
- 41. Elapsed Time Per Partition
- 42. Analysis & Synthesis Messages
- 43. Analysis & Synthesis Suppressed Messages
+ 36. Port Connectivity Checks: "LCDController:LCDController1"
+ 37. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"
+ 38. Port Connectivity Checks: "Authentication:UserAuthentication"
+ 39. Post-Synthesis Netlist Statistics for Top Partition
+ 40. Elapsed Time Per Partition
+ 41. Analysis & Synthesis Messages
+ 42. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -75,15 +74,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Dec 08 22:06:51 2016       ;
+; Analysis & Synthesis Status        ; Successful - Thu Dec 08 23:22:00 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; BombSquad                                   ;
 ; Top-level Entity Name              ; BombSquad                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 987                                         ;
-;     Total combinational functions  ; 974                                         ;
-;     Dedicated logic registers      ; 415                                         ;
-; Total registers                    ; 415                                         ;
+; Total logic elements               ; 951                                         ;
+;     Total combinational functions  ; 938                                         ;
+;     Dedicated logic registers      ; 422                                         ;
+; Total registers                    ; 422                                         ;
 ; Total pins                         ; 100                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,048                                       ;
@@ -235,20 +234,20 @@ agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 987       ;
+; Estimated Total logic elements              ; 951       ;
 ;                                             ;           ;
-; Total combinational functions               ; 974       ;
+; Total combinational functions               ; 938       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 581       ;
-;     -- 3 input functions                    ; 164       ;
-;     -- <=2 input functions                  ; 229       ;
+;     -- 4 input functions                    ; 578       ;
+;     -- 3 input functions                    ; 144       ;
+;     -- <=2 input functions                  ; 216       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 895       ;
+;     -- normal mode                          ; 859       ;
 ;     -- arithmetic mode                      ; 79        ;
 ;                                             ;           ;
-; Total registers                             ; 415       ;
-;     -- Dedicated logic registers            ; 415       ;
+; Total registers                             ; 422       ;
+;     -- Dedicated logic registers            ; 422       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 100       ;
@@ -257,9 +256,9 @@ agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 423       ;
-; Total fan-out                               ; 4823      ;
-; Average fan-out                             ; 3.02      ;
+; Maximum fan-out                             ; 430       ;
+; Total fan-out                               ; 4752      ;
+; Average fan-out                             ; 3.03      ;
 +---------------------------------------------+-----------+
 
 
@@ -268,17 +267,16 @@ agreement for further details.
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Entity Name          ; Library Name ;
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BombSquad                                           ; 974 (1)           ; 415 (0)      ; 2048        ; 0            ; 0       ; 0         ; 100  ; 0            ; |BombSquad                                                                                        ; BombSquad            ; work         ;
-;    |Authentication:UserAuthentication|               ; 58 (58)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
+; |BombSquad                                           ; 938 (1)           ; 422 (0)      ; 2048        ; 0            ; 0       ; 0         ; 100  ; 0            ; |BombSquad                                                                                        ; BombSquad            ; work         ;
+;    |Authentication:UserAuthentication|               ; 60 (60)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
 ;    |ButtonShaper:RotateButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:RotateButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:SubmitButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:SubmitButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:VerifyButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:VerifyButton                                                              ; ButtonShaper         ; work         ;
-;    |Countdown:CountdownTimer|                        ; 28 (28)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
-;    |GameController:MainGameController|               ; 27 (27)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
-;    |LCDController:LCDController1|                    ; 356 (356)         ; 179 (179)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
-;    |LEDDriver:LEDDriver1|                            ; 123 (115)         ; 57 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
-;       |LFSR8bit:LFSR1|                               ; 8 (8)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR1                                                    ; LFSR8bit             ; work         ;
-;       |LFSR8bit:LFSR2|                               ; 0 (0)             ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR2                                                    ; LFSR8bit             ; work         ;
+;    |Countdown:CountdownTimer|                        ; 30 (30)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
+;    |GameController:MainGameController|               ; 26 (26)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
+;    |LCDController:LCDController1|                    ; 354 (354)         ; 179 (179)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
+;    |LEDDriver:LEDDriver1|                            ; 88 (80)           ; 64 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
+;       |LFSR8bit:LFSR1|                               ; 8 (8)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR1                                                    ; LFSR8bit             ; work         ;
 ;    |OneSec_Timer:OneSecondTimer|                     ; 36 (36)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|OneSec_Timer:OneSecondTimer                                                            ; OneSec_Timer         ; work         ;
 ;    |ROM_Sim:UserCredentials|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials                                                                ; ROM_Sim              ; work         ;
 ;       |altsyncram:altsyncram_component|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
@@ -286,8 +284,8 @@ agreement for further details.
 ;    |SSD_Sequence:SSD_Sequence1|                      ; 164 (164)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
 ;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 19 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
 ;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 19 (19)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
-;    |SequenceVerifier:UserSequenceVerifier|           ; 134 (134)         ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
-;    |SevSegTimer:SevSegTimer1|                        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer1                                                               ; SevSegTimer          ; work         ;
+;    |SequenceVerifier:UserSequenceVerifier|           ; 133 (133)         ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
+;    |SevSegTimer:SevSegTimer1|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer1                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer2|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer2                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer3|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer3                                                               ; SevSegTimer          ; work         ;
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
@@ -524,7 +522,6 @@ Encoding Type:  One-Hot
 ; SSD_Sequence:SSD_Sequence1|sevseg_2[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_2[1]                 ;
 ; SSD_Sequence:SSD_Sequence1|sevseg_3[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_3[1]                 ;
 ; SSD_Sequence:SSD_Sequence1|sevseg_4[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_4[1]                 ;
-; LEDDriver:LEDDriver1|led_g[1..7]                                                               ; Merged with LEDDriver:LEDDriver1|led_g[0]                          ;
 ; GameController:MainGameController|s_current[3,6,7]                                             ; Merged with GameController:MainGameController|s_current[2]         ;
 ; LCDController:LCDController1|data1[5][1]                                                       ; Merged with LCDController:LCDController1|data1[1][0]               ;
 ; LCDController:LCDController1|data1[6][4]                                                       ; Merged with LCDController:LCDController1|data1[1][0]               ;
@@ -581,18 +578,24 @@ Encoding Type:  One-Hot
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[1]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[1] ;
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[1]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[1] ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[1]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[1] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[2]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[2] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[2]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[2] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[3]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[3] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[3]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[3] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[4]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[4] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[4]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[4] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[5]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[5] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[5]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[5] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[6]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[6] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[6]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[6] ;
-; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[7]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[7] ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[7]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[7] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[2]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[2] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[2]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[2] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[2]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[2] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[3]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[3] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[3]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[3] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[3]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[3] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[4]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[4] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[4]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[4] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[4]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[4] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[5]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[5] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[5]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[5] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[5]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[5] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[6]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[6] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[6]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[6] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[6]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[6] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[7]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[7] ;
+; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[7]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[7] ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[7]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[7] ;
 ; LCDController:LCDController1|data_user[2][4]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
 ; LCDController:LCDController1|data_user[3][2]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
 ; LCDController:LCDController1|data_user[5][0]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
@@ -654,7 +657,6 @@ Encoding Type:  One-Hot
 ; LCDController:LCDController1|data_user[1][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
 ; LCDController:LCDController1|data_user[2][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
 ; LCDController:LCDController1|data_user[5][4]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
-; LEDDriver:LEDDriver1|led_g[0]                                                                  ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|lcd_on                                                            ; Stuck at VCC due to stuck port data_in                             ;
 ; GameController:MainGameController|game_state[2]                                                ; Stuck at GND due to stuck port data_in                             ;
 ; GameController:MainGameController|s_current[2]                                                 ; Stuck at GND due to stuck port data_in                             ;
@@ -682,7 +684,7 @@ Encoding Type:  One-Hot
 ; LCDController:LCDController1|data2[11][6]                                                      ; Merged with LCDController:LCDController1|data1[11][0]              ;
 ; LCDController:LCDController1|data2[6][1]                                                       ; Merged with LCDController:LCDController1|data2[14][6]              ;
 ; LCDController:LCDController1|data2[2][5]                                                       ; Merged with LCDController:LCDController1|data2[11][5]              ;
-; Total Number of Removed Registers = 260                                                        ;                                                                    ;
+; Total Number of Removed Registers = 258                                                        ;                                                                    ;
 +------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 
@@ -771,58 +773,56 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 415   ;
-; Number of registers using Synchronous Clear  ; 139   ;
-; Number of registers using Synchronous Load   ; 64    ;
+; Total registers                              ; 422   ;
+; Number of registers using Synchronous Clear  ; 121   ;
+; Number of registers using Synchronous Load   ; 59    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 281   ;
+; Number of registers using Clock Enable       ; 309   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[12][3]                                                               ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[8][0]                                                                ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |BombSquad|OneSec_Timer:OneSecondTimer|cnt[1]                                                                      ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_c[7]                                                              ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|user_c[0]                                                             ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|counter[0]                                                                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_a[7]                                                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[0]                                                                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[3]                                                                 ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|char_cur[5]                                                                ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[13][5]                                                               ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 2 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[2]                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[3]                                                                   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|s_update[1]                                                           ;
-; 32:1               ; 6 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; Yes        ; |BombSquad|LCDController:LCDController1|data2[1][1]                                                                ;
-; 32:1               ; 4 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|data2[8][2]                                                                ;
-; 5:1                ; 22 bits   ; 66 LEs        ; 22 LEs               ; 44 LEs                 ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|counter[17]                                                                        ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_3[6]                                                                  ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_2[4]                                                                  ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_1[6]                                                                  ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_4[1]                                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[2]                                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[3]                                                                   ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|ram_a[1]                                                              ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 3 LEs                ; 21 LEs                 ; Yes        ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage_counter[0]                                                  ;
-; 262:1              ; 4 bits    ; 696 LEs       ; 12 LEs               ; 684 LEs                ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sequence_out[3]                                                              ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|Authentication:UserAuthentication|State_m                                                               ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |BombSquad|LEDDriver:LEDDriver1|led_r                                                                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                        ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                        ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|Selector12                                                                 ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state            ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage1_target                                                     ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage2_target                                                     ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage3_target                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[10][1]                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[12][2]                                                              ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |BombSquad|OneSec_Timer:OneSecondTimer|cnt[21]                                                                    ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[8] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_c[6]                                                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|user_c[0]                                                            ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|counter[5]                                                                ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_a[6]                                                             ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[0]                                                                ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|char_cur[1]                                                               ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[13][5]                                                              ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[2]                                                                  ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|s_update[1]                                                          ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; Yes        ; |BombSquad|LCDController:LCDController1|data2[1][5]                                                               ;
+; 32:1               ; 4 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|data2[11][3]                                                              ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_3[4]                                                                 ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_2[6]                                                                 ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_1[4]                                                                 ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_4[6]                                                                 ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[2]                                                                  ;
+; 34:1               ; 8 bits    ; 176 LEs       ; 8 LEs                ; 168 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_g[3]                                                                          ;
+; 34:1               ; 22 bits   ; 484 LEs       ; 22 LEs               ; 462 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|counter[5]                                                                        ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|ram_a[1]                                                             ;
+; 36:1               ; 17 bits   ; 408 LEs       ; 34 LEs               ; 374 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_r[8]                                                                          ;
+; 12:1               ; 3 bits    ; 24 LEs        ; 3 LEs                ; 21 LEs                 ; Yes        ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage_counter[0]                                                 ;
+; 262:1              ; 4 bits    ; 696 LEs       ; 12 LEs               ; 684 LEs                ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sequence_out[3]                                                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|Authentication:UserAuthentication|State_m                                                              ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                       ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|Selector12                                                                ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state           ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage1_target                                                    ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage2_target                                                    ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage3_target                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -1066,15 +1066,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR1"                                                                 ;
-+-----------------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port                  ; Type   ; Severity ; Details                                                                             ;
-+-----------------------+--------+----------+-------------------------------------------------------------------------------------+
-; output_sequence[7..2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-----------------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "LCDController:LCDController1"                                                                                                                                                   ;
 +------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1109,26 +1100,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 100                         ;
-; cycloneiii_ff         ; 415                         ;
-;     ENA               ; 169                         ;
+; cycloneiii_ff         ; 422                         ;
+;     ENA               ; 202                         ;
 ;     ENA SCLR          ; 82                          ;
-;     ENA SLD           ; 30                          ;
-;     SCLR              ; 57                          ;
+;     ENA SLD           ; 25                          ;
+;     SCLR              ; 39                          ;
 ;     SLD               ; 34                          ;
-;     plain             ; 43                          ;
-; cycloneiii_lcell_comb ; 978                         ;
+;     plain             ; 40                          ;
+; cycloneiii_lcell_comb ; 942                         ;
 ;     arith             ; 79                          ;
 ;         2 data inputs ; 79                          ;
-;     normal            ; 899                         ;
+;     normal            ; 863                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 34                          ;
-;         2 data inputs ; 118                         ;
-;         3 data inputs ; 164                         ;
-;         4 data inputs ; 581                         ;
+;         2 data inputs ; 105                         ;
+;         3 data inputs ; 144                         ;
+;         4 data inputs ; 578                         ;
 ; cycloneiii_ram_block  ; 8                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.49                        ;
+; Average LUT depth     ; 3.46                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1137,7 +1128,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:09     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -1147,7 +1138,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Thu Dec 08 22:05:52 2016
+    Info: Processing started: Thu Dec 08 23:21:08 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BombSquad -c BombSquad
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -1156,9 +1147,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file //vboxs
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/lcdcontroller.v
     Info (12023): Found entity 1: LCDController File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LCDController.v Line: 32
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/ssd_sequence.v
-    Info (12023): Found entity 1: SSD_Sequence File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SSD_Sequence.v Line: 1
+    Info (12023): Found entity 1: SSD_Sequence File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SSD_Sequence.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/sevsegtimer.v
-    Info (12023): Found entity 1: SevSegTimer File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SevSegTimer.v Line: 1
+    Info (12023): Found entity 1: SevSegTimer File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SevSegTimer.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/sequenceverifier.v
     Info (12023): Found entity 1: SequenceVerifier File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SequenceVerifier.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/sequencekeygenerator.v
@@ -1170,13 +1161,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file //vboxs
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/ram_sim.v
     Info (12023): Found entity 1: RAM_sim File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/RAM_sim.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/onesec_timer.v
-    Info (12023): Found entity 1: OneSec_Timer File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/OneSec_Timer.v Line: 1
+    Info (12023): Found entity 1: OneSec_Timer File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/OneSec_Timer.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/lfsr8bit.v
-    Info (12023): Found entity 1: LFSR8bit File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LFSR8bit.v Line: 1
+    Info (12023): Found entity 1: LFSR8bit File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LFSR8bit.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/gamecontroller.v
     Info (12023): Found entity 1: GameController File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/GameController.v Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/countdown.v
-    Info (12023): Found entity 1: Countdown File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 1
+    Info (12023): Found entity 1: Countdown File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 21
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/buttonshaper.v
     Info (12023): Found entity 1: ButtonShaper File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/ButtonShaper.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file //vboxsvr/uh2016/ece 5440 add/project/git/bombsquad/bombsquad.v
@@ -1211,18 +1202,18 @@ Warning (12125): Using design file db/altsyncram_0p91.tdf, which is not specifie
 Info (12128): Elaborating entity "altsyncram_0p91" for hierarchy "ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated" File: //vboxsvr/uh2016/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
 Info (12128): Elaborating entity "GameController" for hierarchy "GameController:MainGameController" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 55
 Info (12128): Elaborating entity "OneSec_Timer" for hierarchy "OneSec_Timer:OneSecondTimer" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 58
-Warning (10230): Verilog HDL assignment warning at OneSec_Timer.v(16): truncated value with size 32 to match size of target (26) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/OneSec_Timer.v Line: 16
+Warning (10230): Verilog HDL assignment warning at OneSec_Timer.v(30): truncated value with size 32 to match size of target (26) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/OneSec_Timer.v Line: 30
 Info (12128): Elaborating entity "Countdown" for hierarchy "Countdown:CountdownTimer" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 61
-Warning (10230): Verilog HDL assignment warning at Countdown.v(18): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 18
-Warning (10230): Verilog HDL assignment warning at Countdown.v(24): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 24
-Warning (10230): Verilog HDL assignment warning at Countdown.v(25): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 25
-Warning (10230): Verilog HDL assignment warning at Countdown.v(31): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 31
-Warning (10230): Verilog HDL assignment warning at Countdown.v(34): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 34
-Warning (10230): Verilog HDL assignment warning at Countdown.v(35): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 35
-Warning (10230): Verilog HDL assignment warning at Countdown.v(36): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 36
 Warning (10230): Verilog HDL assignment warning at Countdown.v(38): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 38
-Warning (10230): Verilog HDL assignment warning at Countdown.v(42): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 42
 Warning (10230): Verilog HDL assignment warning at Countdown.v(44): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 44
+Warning (10230): Verilog HDL assignment warning at Countdown.v(45): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 45
+Warning (10230): Verilog HDL assignment warning at Countdown.v(51): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 51
+Warning (10230): Verilog HDL assignment warning at Countdown.v(54): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 54
+Warning (10230): Verilog HDL assignment warning at Countdown.v(55): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 55
+Warning (10230): Verilog HDL assignment warning at Countdown.v(56): truncated value with size 32 to match size of target (4) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 56
+Warning (10230): Verilog HDL assignment warning at Countdown.v(58): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 58
+Warning (10230): Verilog HDL assignment warning at Countdown.v(62): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 62
+Warning (10230): Verilog HDL assignment warning at Countdown.v(64): truncated value with size 32 to match size of target (1) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 64
 Info (12128): Elaborating entity "SevSegTimer" for hierarchy "SevSegTimer:SevSegTimer1" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 64
 Info (12128): Elaborating entity "SequenceKeyGenerator" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 69
 Info (12128): Elaborating entity "SequenceKeyBuilder" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SequenceKeyGenerator.v Line: 32
@@ -1241,15 +1232,16 @@ Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(428): trun
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(471): truncated value with size 32 to match size of target (3) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SequenceVerifier.v Line: 471
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(514): truncated value with size 32 to match size of target (3) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SequenceVerifier.v Line: 514
 Info (12128): Elaborating entity "SSD_Sequence" for hierarchy "SSD_Sequence:SSD_Sequence1" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 75
-Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(52): truncated value with size 32 to match size of target (2) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SSD_Sequence.v Line: 52
+Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(77): truncated value with size 32 to match size of target (2) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SSD_Sequence.v Line: 77
 Info (12128): Elaborating entity "LCDController" for hierarchy "LCDController:LCDController1" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 78
 Warning (10230): Verilog HDL assignment warning at LCDController.v(548): truncated value with size 32 to match size of target (6) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LCDController.v Line: 548
 Warning (10230): Verilog HDL assignment warning at LCDController.v(561): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LCDController.v Line: 561
 Warning (10230): Verilog HDL assignment warning at LCDController.v(564): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LCDController.v Line: 564
 Info (12128): Elaborating entity "LEDDriver" for hierarchy "LEDDriver:LEDDriver1" File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 81
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(67): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 67
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(74): truncated value with size 19 to match size of target (18) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 74
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(80): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 80
+Warning (10036): Verilog HDL or VHDL warning at LEDDriver.v(41): object "direction" assigned a value but never read File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 41
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(79): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 79
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(91): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 91
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(103): truncated value with size 32 to match size of target (22) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/LEDDriver.v Line: 103
 Warning (12011): Net is missing source, defaulting to GND
     Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 24
     Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 24
@@ -1274,29 +1266,21 @@ Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lcd_on" is stuck at VCC File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 36
     Warning (13410): Pin "lcd_flag[8]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 37
-    Warning (13410): Pin "led_g[0]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[1]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[2]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[3]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[4]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[5]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[6]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
-    Warning (13410): Pin "led_g[7]" is stuck at GND File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 40
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 21 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/syn/output_files/BombSquad.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1128 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1094 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 87 output pins
-    Info (21061): Implemented 1020 logic cells
+    Info (21061): Implemented 986 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
-    Info: Peak virtual memory: 867 megabytes
-    Info: Processing ended: Thu Dec 08 22:06:52 2016
-    Info: Elapsed time: 00:01:00
-    Info: Total CPU time (on all processors): 00:00:37
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
+    Info: Peak virtual memory: 871 megabytes
+    Info: Processing ended: Thu Dec 08 23:22:00 2016
+    Info: Elapsed time: 00:00:52
+    Info: Total CPU time (on all processors): 00:00:39
 
 
 +------------------------------------------+
