@@ -53,13 +53,15 @@ module LEDDriver(clk, reset, state, led_g, led_r);
     else begin
       case(state)
 
-	// AUTHENTICATION SUCCESS (SETUP FOR NEXT ANIMATION)
+	/*// AUTHENTICATION SUCCESS (SETUP FOR NEXT ANIMATION)
 	8'h01: begin
 	  led_r <= 18'b000000000000000001;
-	end
+	end*/
 
 	// GAME IN PROGRESS ANIMATION (KNIGHT RIDER)
         8'h10: begin
+	  led_g <= 0;
+
 	  if (counter == C_20MS) begin
 	    counter <= 0;
 	    
@@ -68,7 +70,10 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 	    if (led_r == 18'b100000000000000000)
 	      led_r <= 18'b000000000000000001;
 	  end
-	
+	  else if (counter == 0) begin
+	    led_r <= 18'b000000000000000001;
+	    counter <= counter + 1;
+	  end
 	  else begin
 	    counter <= counter + 1;
 	  end
@@ -76,6 +81,8 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 
 	// GAME SUCCESS ANIMATION
 	8'h20: begin
+	  led_r <= 0;
+
 	if (counter == C_45MS) begin
 	    counter <= 0;
 	    led_g <= random1;
@@ -88,6 +95,8 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 
 	// GAME OVER ANIMATION
 	8'h30: begin
+	  led_g <= 0;
+
 	  if (counter == C_45MS) begin
 	    counter <= 0;
 	    led_r <= {random1[4:1], random2[7:1], random3[7:1]};
@@ -101,6 +110,7 @@ module LEDDriver(clk, reset, state, led_g, led_r);
         default: begin
 	  led_g <= 8'b0;
 	  led_r <= 8'b0;
+	  counter <= 0;
         end
       endcase
     end
