@@ -70,8 +70,8 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     // module ROM_Sim(address, clock, q);
     ROM_Sim UserCredentials(rom_addr, clk, rom_cred);
 
-    // module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_current);
-    GameController MainGameController(s_auth, {cur_time3, cur_time2, cur_time1}, verifier_result, clk, rst, verify, submit, game_state);
+    // module GameController(s_auth, cur_time, s_results, clk, rst, timeout, s_current);
+    GameController MainGameController(s_auth, {cur_time3, cur_time2, cur_time1}, verifier_result, clk, rst, one_sec, game_state);
 
     // module OneSec_Timer(clk, reset, timeout);
     OneSec_Timer OneSecondTimer(clk, rst, one_sec);

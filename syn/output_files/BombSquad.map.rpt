@@ -1,5 +1,5 @@
 Analysis & Synthesis report for BombSquad
-Fri Dec 09 00:09:13 2016
+Fri Dec 09 11:30:01 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -19,37 +19,41 @@ Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
  11. State Machine - |BombSquad|SSD_Sequence:SSD_Sequence1|state
  12. State Machine - |BombSquad|SequenceVerifier:UserSequenceVerifier|level_stage
  13. State Machine - |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state
- 14. State Machine - |BombSquad|Authentication:UserAuthentication|State_m
- 15. State Machine - |BombSquad|ButtonShaper:SubmitButton|State
- 16. State Machine - |BombSquad|ButtonShaper:VerifyButton|State
- 17. State Machine - |BombSquad|ButtonShaper:RotateButton|State
- 18. Registers Removed During Synthesis
- 19. Removed Registers Triggering Further Register Optimizations
- 20. General Register Statistics
- 21. Multiplexer Restructuring Statistics (Restructuring Performed)
- 22. Source assignments for ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated
- 23. Parameter Settings for User Entity Instance: ButtonShaper:RotateButton
- 24. Parameter Settings for User Entity Instance: ButtonShaper:VerifyButton
- 25. Parameter Settings for User Entity Instance: ButtonShaper:SubmitButton
- 26. Parameter Settings for User Entity Instance: Authentication:UserAuthentication
- 27. Parameter Settings for User Entity Instance: ROM_Sim:UserCredentials|altsyncram:altsyncram_component
- 28. Parameter Settings for User Entity Instance: GameController:MainGameController
- 29. Parameter Settings for User Entity Instance: Countdown:CountdownTimer
- 30. Parameter Settings for User Entity Instance: SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1
- 31. Parameter Settings for User Entity Instance: SequenceVerifier:UserSequenceVerifier
- 32. Parameter Settings for User Entity Instance: SSD_Sequence:SSD_Sequence1
- 33. Parameter Settings for User Entity Instance: LCDController:LCDController1
- 34. Parameter Settings for User Entity Instance: LEDDriver:LEDDriver1
- 35. altsyncram Parameter Settings by Entity Instance
- 36. Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR3"
- 37. Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR2"
- 38. Port Connectivity Checks: "LCDController:LCDController1"
- 39. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"
- 40. Port Connectivity Checks: "Authentication:UserAuthentication"
- 41. Post-Synthesis Netlist Statistics for Top Partition
- 42. Elapsed Time Per Partition
- 43. Analysis & Synthesis Messages
- 44. Analysis & Synthesis Suppressed Messages
+ 14. State Machine - |BombSquad|GameController:MainGameController|game_state
+ 15. State Machine - |BombSquad|Authentication:UserAuthentication|State_m
+ 16. State Machine - |BombSquad|ButtonShaper:SubmitButton|State
+ 17. State Machine - |BombSquad|ButtonShaper:VerifyButton|State
+ 18. State Machine - |BombSquad|ButtonShaper:RotateButton|State
+ 19. Registers Removed During Synthesis
+ 20. Removed Registers Triggering Further Register Optimizations
+ 21. General Register Statistics
+ 22. Registers Packed Into Inferred Megafunctions
+ 23. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 24. Source assignments for ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated
+ 25. Source assignments for LCDController:LCDController1|altsyncram:WideOr85_rtl_0|altsyncram_pp01:auto_generated
+ 26. Parameter Settings for User Entity Instance: ButtonShaper:RotateButton
+ 27. Parameter Settings for User Entity Instance: ButtonShaper:VerifyButton
+ 28. Parameter Settings for User Entity Instance: ButtonShaper:SubmitButton
+ 29. Parameter Settings for User Entity Instance: Authentication:UserAuthentication
+ 30. Parameter Settings for User Entity Instance: ROM_Sim:UserCredentials|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: GameController:MainGameController
+ 32. Parameter Settings for User Entity Instance: Countdown:CountdownTimer
+ 33. Parameter Settings for User Entity Instance: SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1
+ 34. Parameter Settings for User Entity Instance: SequenceVerifier:UserSequenceVerifier
+ 35. Parameter Settings for User Entity Instance: SSD_Sequence:SSD_Sequence1
+ 36. Parameter Settings for User Entity Instance: LCDController:LCDController1
+ 37. Parameter Settings for User Entity Instance: LEDDriver:LEDDriver1
+ 38. Parameter Settings for Inferred Entity Instance: LCDController:LCDController1|altsyncram:WideOr85_rtl_0
+ 39. altsyncram Parameter Settings by Entity Instance
+ 40. Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR3"
+ 41. Port Connectivity Checks: "LEDDriver:LEDDriver1|LFSR8bit:LFSR2"
+ 42. Port Connectivity Checks: "LCDController:LCDController1"
+ 43. Port Connectivity Checks: "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1"
+ 44. Port Connectivity Checks: "Authentication:UserAuthentication"
+ 45. Post-Synthesis Netlist Statistics for Top Partition
+ 46. Elapsed Time Per Partition
+ 47. Analysis & Synthesis Messages
+ 48. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -76,18 +80,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Dec 09 00:09:13 2016       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 09 11:30:00 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; BombSquad                                   ;
 ; Top-level Entity Name              ; BombSquad                                   ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 954                                         ;
-;     Total combinational functions  ; 941                                         ;
-;     Dedicated logic registers      ; 422                                         ;
-; Total registers                    ; 422                                         ;
+; Total logic elements               ; 948                                         ;
+;     Total combinational functions  ; 934                                         ;
+;     Dedicated logic registers      ; 408                                         ;
+; Total registers                    ; 408                                         ;
 ; Total pins                         ; 100                                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 2,048                                       ;
+; Total memory bits                  ; 3,808                                       ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total PLLs                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
@@ -222,6 +226,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; altdpram.inc                     ; yes             ; Megafunction                           ; d:/altera_lite/16.0/quartus/libraries/megafunctions/altdpram.inc                       ;         ;
 ; db/altsyncram_0p91.tdf           ; yes             ; Auto-Generated Megafunction            ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_0p91.tdf ;         ;
 ; rom_initial.hex                  ; yes             ; Auto-Found Memory Initialization File  ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/rom_initial.hex        ;         ;
+; db/altsyncram_pp01.tdf           ; yes             ; Auto-Generated Megafunction            ; F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_pp01.tdf ;         ;
 +----------------------------------+-----------------+----------------------------------------+----------------------------------------------------------------------------------------+---------+
 
 
@@ -230,31 +235,31 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 954       ;
+; Estimated Total logic elements              ; 948       ;
 ;                                             ;           ;
-; Total combinational functions               ; 941       ;
+; Total combinational functions               ; 934       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 576       ;
-;     -- 3 input functions                    ; 144       ;
-;     -- <=2 input functions                  ; 221       ;
+;     -- 4 input functions                    ; 554       ;
+;     -- 3 input functions                    ; 161       ;
+;     -- <=2 input functions                  ; 219       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 862       ;
+;     -- normal mode                          ; 855       ;
 ;     -- arithmetic mode                      ; 79        ;
 ;                                             ;           ;
-; Total registers                             ; 422       ;
-;     -- Dedicated logic registers            ; 422       ;
+; Total registers                             ; 408       ;
+;     -- Dedicated logic registers            ; 408       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 100       ;
-; Total memory bits                           ; 2048      ;
+; Total memory bits                           ; 3808      ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 430       ;
-; Total fan-out                               ; 4720      ;
-; Average fan-out                             ; 3.00      ;
+; Maximum fan-out                             ; 471       ;
+; Total fan-out                               ; 5040      ;
+; Average fan-out                             ; 3.14      ;
 +---------------------------------------------+-----------+
 
 
@@ -263,24 +268,26 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                               ; Entity Name          ; Library Name ;
 +------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BombSquad                                           ; 941 (1)           ; 422 (0)      ; 2048        ; 0            ; 0       ; 0         ; 100  ; 0            ; |BombSquad                                                                                        ; BombSquad            ; work         ;
-;    |Authentication:UserAuthentication|               ; 60 (60)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
+; |BombSquad                                           ; 934 (1)           ; 408 (0)      ; 3808        ; 0            ; 0       ; 0         ; 100  ; 0            ; |BombSquad                                                                                        ; BombSquad            ; work         ;
+;    |Authentication:UserAuthentication|               ; 59 (59)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
 ;    |ButtonShaper:RotateButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:RotateButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:SubmitButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:SubmitButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:VerifyButton|                       ; 2 (2)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ButtonShaper:VerifyButton                                                              ; ButtonShaper         ; work         ;
-;    |Countdown:CountdownTimer|                        ; 31 (31)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
-;    |GameController:MainGameController|               ; 26 (26)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
-;    |LCDController:LCDController1|                    ; 354 (354)         ; 179 (179)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
-;    |LEDDriver:LEDDriver1|                            ; 86 (78)           ; 64 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
+;    |Countdown:CountdownTimer|                        ; 29 (29)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
+;    |GameController:MainGameController|               ; 37 (37)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
+;    |LCDController:LCDController1|                    ; 344 (344)         ; 159 (159)    ; 1760        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
+;       |altsyncram:WideOr85_rtl_0|                    ; 0 (0)             ; 0 (0)        ; 1760        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1|altsyncram:WideOr85_rtl_0                                 ; altsyncram           ; work         ;
+;          |altsyncram_pp01:auto_generated|            ; 0 (0)             ; 0 (0)        ; 1760        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LCDController:LCDController1|altsyncram:WideOr85_rtl_0|altsyncram_pp01:auto_generated  ; altsyncram_pp01      ; work         ;
+;    |LEDDriver:LEDDriver1|                            ; 84 (76)           ; 64 (48)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
 ;       |LFSR8bit:LFSR1|                               ; 8 (8)             ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR1                                                    ; LFSR8bit             ; work         ;
 ;    |OneSec_Timer:OneSecondTimer|                     ; 36 (36)           ; 27 (27)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|OneSec_Timer:OneSecondTimer                                                            ; OneSec_Timer         ; work         ;
 ;    |ROM_Sim:UserCredentials|                         ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials                                                                ; ROM_Sim              ; work         ;
 ;       |altsyncram:altsyncram_component|              ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
 ;          |altsyncram_0p91:auto_generated|            ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated ; altsyncram_0p91      ; work         ;
-;    |SSD_Sequence:SSD_Sequence1|                      ; 163 (163)         ; 37 (37)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
-;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 19 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
-;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 19 (19)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
-;    |SequenceVerifier:UserSequenceVerifier|           ; 137 (137)         ; 35 (35)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
+;    |SSD_Sequence:SSD_Sequence1|                      ; 166 (166)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
+;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 20 (0)            ; 18 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
+;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 20 (20)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
+;    |SequenceVerifier:UserSequenceVerifier|           ; 130 (130)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
 ;    |SevSegTimer:SevSegTimer1|                        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer1                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer2|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer2                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer3|                        ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BombSquad|SevSegTimer:SevSegTimer3                                                               ; SevSegTimer          ; work         ;
@@ -288,13 +295,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                     ;
-+---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
-; Name                                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF             ;
-+---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
-; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; ROM_initial.hex ;
-+---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+-----------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                  ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
+; Name                                                                                              ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                          ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
+; LCDController:LCDController1|altsyncram:WideOr85_rtl_0|altsyncram_pp01:auto_generated|ALTSYNCRAM  ; AUTO ; ROM  ; 32           ; 55           ; --           ; --           ; 1760 ; BombSquad.BombSquad0.rtl.mif ;
+; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; ROM_initial.hex              ;
++---------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -372,6 +380,19 @@ Encoding Type:  One-Hot
 
 
 Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |BombSquad|GameController:MainGameController|game_state                                                     ;
++---------------------------+----------------------+-------------------------+--------------------+---------------------------+
+; Name                      ; game_state.game_over ; game_state.game_success ; game_state.in_game ; game_state.authentication ;
++---------------------------+----------------------+-------------------------+--------------------+---------------------------+
+; game_state.authentication ; 0                    ; 0                       ; 0                  ; 0                         ;
+; game_state.in_game        ; 0                    ; 0                       ; 1                  ; 1                         ;
+; game_state.game_success   ; 0                    ; 1                       ; 0                  ; 1                         ;
+; game_state.game_over      ; 1                    ; 0                       ; 0                  ; 1                         ;
++---------------------------+----------------------+-------------------------+--------------------+---------------------------+
+
+
+Encoding Type:  One-Hot
 +----------------------------------------------------------------------+
 ; State Machine - |BombSquad|Authentication:UserAuthentication|State_m ;
 +-----------------+--------------+-----------------+-------------------+
@@ -425,29 +446,23 @@ Encoding Type:  One-Hot
 ; Register name                                                                                  ; Reason for Removal                                                 ;
 +------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 ; LCDController:LCDController1|lcd_activate                                                      ; Stuck at VCC due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[14][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[9][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[8][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[7][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[6][4]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[6][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[5][1]                                                       ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[5][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[5][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[4][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[4][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[3][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[3][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[2][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[2][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[0][1]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[0][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[0][4]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[0][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[15][0]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[15][1]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[15][2]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[15][3]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[15][4]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[15][5]                                                      ; Stuck at VCC due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[15][6]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[15][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[14][1]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[14][3]                                                      ; Stuck at GND due to stuck port data_in                             ;
@@ -458,12 +473,10 @@ Encoding Type:  One-Hot
 ; LCDController:LCDController1|data1[12][3]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[12][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[11][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[10][3]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[10][5]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[10][6]                                                      ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[10][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[9][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[8][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[8][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[7][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[6][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
@@ -475,43 +488,52 @@ Encoding Type:  One-Hot
 ; LCDController:LCDController1|data1[3][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[2][4]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[2][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[1][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[1][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[0][0]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[0][1]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[0][2]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[0][3]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[0][4]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[0][5]                                                       ; Stuck at VCC due to stuck port data_in                             ;
-; LCDController:LCDController1|data1[0][6]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data1[0][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][0]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][1]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][2]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][3]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][4]                                                  ; Stuck at VCC due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][5]                                                  ; Stuck at VCC due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][6]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[1][7]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][0]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][1]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][2]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][3]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][4]                                                  ; Stuck at VCC due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][5]                                                  ; Stuck at VCC due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][6]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_score[0][7]                                                  ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[5][4]                                                   ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[5][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[4][5]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[4][6]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[4][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[3][0]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[3][4]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[3][5]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[3][6]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[3][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[2][0]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[2][5]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[2][6]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[2][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[1][3]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[1][5]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[1][6]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[1][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data_user[0][3]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[0][5]                                                   ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data_user[0][6]                                                   ; Stuck at VCC due to stuck port data_in                             ;
 ; LCDController:LCDController1|data_user[0][7]                                                   ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[14][4]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[15][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[15][4]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[15][1]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[15][0]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[13][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[12][0]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[12][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[11][4]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[11][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[10][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[9][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
-; LCDController:LCDController1|data2[8][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[14][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[15][7]                                                      ; Stuck at GND due to stuck port data_in                             ;
+; LCDController:LCDController1|data2[15][4]                                                      ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|lcd_flag[8]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; LCDController:LCDController1|data2[1][7]                                                       ; Stuck at GND due to stuck port data_in                             ;
 ; SSD_Sequence:SSD_Sequence1|sevseg_1[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_1[1]                 ;
@@ -519,54 +541,42 @@ Encoding Type:  One-Hot
 ; SSD_Sequence:SSD_Sequence1|sevseg_3[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_3[1]                 ;
 ; SSD_Sequence:SSD_Sequence1|sevseg_4[2]                                                         ; Merged with SSD_Sequence:SSD_Sequence1|sevseg_4[1]                 ;
 ; GameController:MainGameController|s_current[3,6,7]                                             ; Merged with GameController:MainGameController|s_current[2]         ;
-; LCDController:LCDController1|data1[5][1]                                                       ; Merged with LCDController:LCDController1|data1[1][0]               ;
-; LCDController:LCDController1|data1[6][4]                                                       ; Merged with LCDController:LCDController1|data1[1][0]               ;
-; LCDController:LCDController1|data1[2][0]                                                       ; Merged with LCDController:LCDController1|data1[13][0]              ;
-; LCDController:LCDController1|data1[5][6]                                                       ; Merged with LCDController:LCDController1|data1[5][0]               ;
-; LCDController:LCDController1|data2[2][6]                                                       ; Merged with LCDController:LCDController1|data1[11][0]              ;
-; LCDController:LCDController1|data2[3][6]                                                       ; Merged with LCDController:LCDController1|data1[11][0]              ;
-; LCDController:LCDController1|data1[13][4]                                                      ; Merged with LCDController:LCDController1|data1[12][0]              ;
-; LCDController:LCDController1|data1[14][0]                                                      ; Merged with LCDController:LCDController1|data1[11][4]              ;
-; LCDController:LCDController1|data1[1][2]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
-; LCDController:LCDController1|data1[1][4]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
-; LCDController:LCDController1|data1[7][2]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
-; LCDController:LCDController1|data1[7][3]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
-; LCDController:LCDController1|data1[9][5]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
 ; LCDController:LCDController1|data2[0][2]                                                       ; Merged with LCDController:LCDController1|data2[0][0]               ;
 ; LCDController:LCDController1|data2[0][6]                                                       ; Merged with LCDController:LCDController1|data2[0][0]               ;
-; LCDController:LCDController1|data2[15][2]                                                      ; Merged with LCDController:LCDController1|data2[0][0]               ;
-; LCDController:LCDController1|data2[15][3]                                                      ; Merged with LCDController:LCDController1|data2[0][0]               ;
-; LCDController:LCDController1|data2[15][6]                                                      ; Merged with LCDController:LCDController1|data2[0][0]               ;
-; LCDController:LCDController1|data2[7][4]                                                       ; Merged with LCDController:LCDController1|data2[0][0]               ;
-; LCDController:LCDController1|data2[1][4]                                                       ; Merged with LCDController:LCDController1|data2[1][0]               ;
-; LCDController:LCDController1|data2[11][0]                                                      ; Merged with LCDController:LCDController1|data1[12][4]              ;
-; LCDController:LCDController1|data2[5][0]                                                       ; Merged with LCDController:LCDController1|data1[12][4]              ;
-; LCDController:LCDController1|data2[6][3]                                                       ; Merged with LCDController:LCDController1|data2[4][2]               ;
-; LCDController:LCDController1|data2[7][0]                                                       ; Merged with LCDController:LCDController1|data2[4][2]               ;
-; LCDController:LCDController1|data2[10][0]                                                      ; Merged with LCDController:LCDController1|data1[8][1]               ;
-; LCDController:LCDController1|data1[2][1]                                                       ; Merged with LCDController:LCDController1|data1[13][6]              ;
-; LCDController:LCDController1|data1[2][6]                                                       ; Merged with LCDController:LCDController1|data1[13][6]              ;
-; LCDController:LCDController1|data1[7][6]                                                       ; Merged with LCDController:LCDController1|data1[7][1]               ;
-; LCDController:LCDController1|data1[11][3]                                                      ; Merged with LCDController:LCDController1|data1[11][1]              ;
-; LCDController:LCDController1|data1[5][4]                                                       ; Merged with LCDController:LCDController1|data1[11][1]              ;
-; LCDController:LCDController1|data2[9][3]                                                       ; Merged with LCDController:LCDController1|data1[11][1]              ;
+; LCDController:LCDController1|data2[3][2]                                                       ; Merged with LCDController:LCDController1|data2[3][0]               ;
+; LCDController:LCDController1|data2[6][6]                                                       ; Merged with LCDController:LCDController1|data1[9][6]               ;
+; LCDController:LCDController1|data2[7][1]                                                       ; Merged with LCDController:LCDController1|data1[9][6]               ;
+; LCDController:LCDController1|data2[7][6]                                                       ; Merged with LCDController:LCDController1|data1[9][6]               ;
+; LCDController:LCDController1|data2[8][0]                                                       ; Merged with LCDController:LCDController1|data1[9][6]               ;
+; LCDController:LCDController1|data2[8][6]                                                       ; Merged with LCDController:LCDController1|data1[9][6]               ;
+; LCDController:LCDController1|data1[0][6]                                                       ; Merged with LCDController:LCDController1|data1[0][1]               ;
+; LCDController:LCDController1|data1[1][3]                                                       ; Merged with LCDController:LCDController1|data1[0][1]               ;
+; LCDController:LCDController1|data2[3][4]                                                       ; Merged with LCDController:LCDController1|data1[1][1]               ;
+; LCDController:LCDController1|data2[9][1]                                                       ; Merged with LCDController:LCDController1|data1[1][1]               ;
+; LCDController:LCDController1|data2[5][5]                                                       ; Merged with LCDController:LCDController1|data1[4][1]               ;
 ; LCDController:LCDController1|data1[6][5]                                                       ; Merged with LCDController:LCDController1|data1[13][1]              ;
-; LCDController:LCDController1|data1[7][4]                                                       ; Merged with LCDController:LCDController1|data1[13][1]              ;
-; LCDController:LCDController1|data2[4][1]                                                       ; Merged with LCDController:LCDController1|data1[12][2]              ;
-; LCDController:LCDController1|data2[7][1]                                                       ; Merged with LCDController:LCDController1|data2[6][6]               ;
-; LCDController:LCDController1|data2[7][6]                                                       ; Merged with LCDController:LCDController1|data2[6][6]               ;
-; LCDController:LCDController1|data2[9][4]                                                       ; Merged with LCDController:LCDController1|data2[9][1]               ;
-; LCDController:LCDController1|data2[14][2]                                                      ; Merged with LCDController:LCDController1|data2[14][1]              ;
-; LCDController:LCDController1|data2[14][3]                                                      ; Merged with LCDController:LCDController1|data2[14][1]              ;
-; LCDController:LCDController1|data1[8][5]                                                       ; Merged with LCDController:LCDController1|data1[6][2]               ;
-; LCDController:LCDController1|data1[14][2]                                                      ; Merged with LCDController:LCDController1|data1[13][2]              ;
-; LCDController:LCDController1|data1[14][6]                                                      ; Merged with LCDController:LCDController1|data1[13][2]              ;
+; LCDController:LCDController1|data2[0][1]                                                       ; Merged with LCDController:LCDController1|data1[8][3]               ;
+; LCDController:LCDController1|data2[0][3]                                                       ; Merged with LCDController:LCDController1|data1[8][3]               ;
+; LCDController:LCDController1|data2[3][1]                                                       ; Merged with LCDController:LCDController1|data1[8][3]               ;
+; LCDController:LCDController1|data2[1][2]                                                       ; Merged with LCDController:LCDController1|data2[1][1]               ;
+; LCDController:LCDController1|data1[15][6]                                                      ; Merged with LCDController:LCDController1|data1[15][2]              ;
+; LCDController:LCDController1|data2[5][1]                                                       ; Merged with LCDController:LCDController1|data1[15][2]              ;
+; LCDController:LCDController1|data2[8][4]                                                       ; Merged with LCDController:LCDController1|data1[15][2]              ;
+; LCDController:LCDController1|data1[1][2]                                                       ; Merged with LCDController:LCDController1|data1[11][4]              ;
+; LCDController:LCDController1|data2[8][2]                                                       ; Merged with LCDController:LCDController1|data1[12][2]              ;
 ; LCDController:LCDController1|data1[1][6]                                                       ; Merged with LCDController:LCDController1|data1[13][2]              ;
-; LCDController:LCDController1|data2[7][3]                                                       ; Merged with LCDController:LCDController1|data2[7][2]               ;
-; LCDController:LCDController1|data2[4][6]                                                       ; Merged with LCDController:LCDController1|data2[4][4]               ;
+; LCDController:LCDController1|data1[14][6]                                                      ; Merged with LCDController:LCDController1|data1[14][2]              ;
+; LCDController:LCDController1|data1[5][4]                                                       ; Merged with LCDController:LCDController1|data1[11][3]              ;
+; LCDController:LCDController1|data2[4][2]                                                       ; Merged with LCDController:LCDController1|data1[11][3]              ;
+; LCDController:LCDController1|data2[15][3]                                                      ; Merged with LCDController:LCDController1|data2[15][2]              ;
+; LCDController:LCDController1|data2[15][6]                                                      ; Merged with LCDController:LCDController1|data2[15][2]              ;
+; LCDController:LCDController1|data2[2][3]                                                       ; Merged with LCDController:LCDController1|data1[5][5]               ;
+; LCDController:LCDController1|data2[6][4]                                                       ; Merged with LCDController:LCDController1|data1[5][5]               ;
+; LCDController:LCDController1|data2[9][3]                                                       ; Merged with LCDController:LCDController1|data2[6][3]               ;
+; LCDController:LCDController1|data1[2][5]                                                       ; Merged with LCDController:LCDController1|data1[13][5]              ;
 ; LCDController:LCDController1|data1[12][5]                                                      ; Merged with LCDController:LCDController1|data1[11][5]              ;
 ; LCDController:LCDController1|data1[3][5]                                                       ; Merged with LCDController:LCDController1|data1[11][5]              ;
-; LCDController:LCDController1|data1[4][5]                                                       ; Merged with LCDController:LCDController1|data1[11][5]              ;
+; LCDController:LCDController1|data2[3][5]                                                       ; Merged with LCDController:LCDController1|data2[2][5]               ;
 ; LCDController:LCDController1|data2[12][5]                                                      ; Merged with LCDController:LCDController1|data2[11][5]              ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[0]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[0] ;
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|output_sequence[1]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[1] ;
@@ -591,15 +601,14 @@ Encoding Type:  One-Hot
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|output_sequence[7]                                         ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[7] ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|output_sequence[7]          ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|output_sequence[7] ;
 ; LCDController:LCDController1|data_user[2][4]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
-; LCDController:LCDController1|data_user[3][2]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
-; LCDController:LCDController1|data_user[5][0]                                                   ; Merged with LCDController:LCDController1|data_user[0][0]           ;
-; LCDController:LCDController1|data_user[5][3]                                                   ; Merged with LCDController:LCDController1|data_user[1][0]           ;
+; LCDController:LCDController1|data_user[3][0]                                                   ; Merged with LCDController:LCDController1|data_user[2][1]           ;
+; LCDController:LCDController1|data_user[3][6]                                                   ; Merged with LCDController:LCDController1|data_user[2][1]           ;
+; LCDController:LCDController1|data_user[4][6]                                                   ; Merged with LCDController:LCDController1|data_user[2][1]           ;
 ; LCDController:LCDController1|data_user[5][2]                                                   ; Merged with LCDController:LCDController1|data_user[4][0]           ;
+; LCDController:LCDController1|data_user[5][3]                                                   ; Merged with LCDController:LCDController1|data_user[4][0]           ;
 ; LCDController:LCDController1|data_user[5][6]                                                   ; Merged with LCDController:LCDController1|data_user[4][0]           ;
-; LCDController:LCDController1|data_user[0][4]                                                   ; Merged with LCDController:LCDController1|data_user[0][1]           ;
-; LCDController:LCDController1|data_user[1][6]                                                   ; Merged with LCDController:LCDController1|data_user[0][6]           ;
-; LCDController:LCDController1|data_user[2][1]                                                   ; Merged with LCDController:LCDController1|data_user[0][6]           ;
-; LCDController:LCDController1|data_user[2][6]                                                   ; Merged with LCDController:LCDController1|data_user[0][6]           ;
+; LCDController:LCDController1|data_user[3][2]                                                   ; Merged with LCDController:LCDController1|data_user[3][1]           ;
+; LCDController:LCDController1|data_user[5][0]                                                   ; Merged with LCDController:LCDController1|data_user[3][1]           ;
 ; LCDController:LCDController1|data_user[4][3]                                                   ; Merged with LCDController:LCDController1|data_user[1][2]           ;
 ; LCDController:LCDController1|data_user[5][1]                                                   ; Merged with LCDController:LCDController1|data_user[1][2]           ;
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|LFSR[0]                                                    ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR[0]            ;
@@ -626,33 +635,27 @@ Encoding Type:  One-Hot
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR2|LFSR[7]                                                    ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR[7]            ;
 ; LEDDriver:LEDDriver1|LFSR8bit:LFSR3|LFSR[7]                                                    ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR[7]            ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR[7]                     ; Merged with LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR[7]            ;
-; LCDController:LCDController1|data1[5][5]                                                       ; Merged with LCDController:LCDController1|data1[1][1]               ;
-; LCDController:LCDController1|data2[3][1]                                                       ; Merged with LCDController:LCDController1|data1[1][1]               ;
-; LCDController:LCDController1|data2[5][3]                                                       ; Merged with LCDController:LCDController1|data1[1][1]               ;
-; LCDController:LCDController1|data2[5][2]                                                       ; Merged with LCDController:LCDController1|data1[9][1]               ;
-; LCDController:LCDController1|data2[6][2]                                                       ; Merged with LCDController:LCDController1|data1[9][1]               ;
+; LCDController:LCDController1|data1[6][4]                                                       ; Merged with LCDController:LCDController1|data1[5][1]               ;
 ; LCDController:LCDController1|data1[9][3]                                                       ; Merged with LCDController:LCDController1|data1[3][2]               ;
-; LCDController:LCDController1|data1[3][3]                                                       ; Merged with LCDController:LCDController1|data1[2][3]               ;
-; LCDController:LCDController1|data2[6][5]                                                       ; Merged with LCDController:LCDController1|data1[2][3]               ;
-; LCDController:LCDController1|data2[7][5]                                                       ; Merged with LCDController:LCDController1|data1[2][3]               ;
-; LCDController:LCDController1|data1[1][5]                                                       ; Merged with LCDController:LCDController1|data1[14][5]              ;
-; LCDController:LCDController1|data1[2][5]                                                       ; Merged with LCDController:LCDController1|data1[13][5]              ;
-; LCDController:LCDController1|data2[15][5]                                                      ; Merged with LCDController:LCDController1|data2[0][5]               ;
-; LCDController:LCDController1|data2[3][5]                                                       ; Merged with LCDController:LCDController1|data2[2][5]               ;
+; LCDController:LCDController1|data1[7][3]                                                       ; Merged with LCDController:LCDController1|data1[1][4]               ;
+; LCDController:LCDController1|data1[9][5]                                                       ; Merged with LCDController:LCDController1|data1[1][4]               ;
+; LCDController:LCDController1|data2[6][5]                                                       ; Merged with LCDController:LCDController1|data1[1][4]               ;
+; LCDController:LCDController1|data2[7][5]                                                       ; Merged with LCDController:LCDController1|data1[1][4]               ;
+; LCDController:LCDController1|data2[8][5]                                                       ; Merged with LCDController:LCDController1|data1[1][4]               ;
+; LCDController:LCDController1|data1[2][6]                                                       ; Merged with LCDController:LCDController1|data1[13][6]              ;
 ; LCDController:LCDController1|data1[12][6]                                                      ; Merged with LCDController:LCDController1|data1[11][6]              ;
 ; LCDController:LCDController1|data1[3][6]                                                       ; Merged with LCDController:LCDController1|data1[11][6]              ;
-; LCDController:LCDController1|data1[4][6]                                                       ; Merged with LCDController:LCDController1|data1[11][6]              ;
+; LCDController:LCDController1|data2[3][6]                                                       ; Merged with LCDController:LCDController1|data2[2][6]               ;
 ; LCDController:LCDController1|data2[12][6]                                                      ; Merged with LCDController:LCDController1|data2[11][6]              ;
 ; LCDController:LCDController1|data_user[1][4]                                                   ; Merged with LCDController:LCDController1|data_user[1][1]           ;
 ; LCDController:LCDController1|data_user[4][1]                                                   ; Merged with LCDController:LCDController1|data_user[1][1]           ;
 ; LCDController:LCDController1|data_user[4][4]                                                   ; Merged with LCDController:LCDController1|data_user[1][1]           ;
-; LCDController:LCDController1|data_user[5][5]                                                   ; Merged with LCDController:LCDController1|data_user[1][1]           ;
-; LCDController:LCDController1|data_user[4][2]                                                   ; Merged with LCDController:LCDController1|data_user[2][2]           ;
-; LCDController:LCDController1|data_user[1][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
-; LCDController:LCDController1|data_user[2][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
-; LCDController:LCDController1|data_user[5][4]                                                   ; Merged with LCDController:LCDController1|data_user[0][5]           ;
+; LCDController:LCDController1|data_user[3][3]                                                   ; Merged with LCDController:LCDController1|data_user[0][2]           ;
+; LCDController:LCDController1|data_user[3][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][3]           ;
+; LCDController:LCDController1|data_user[4][5]                                                   ; Merged with LCDController:LCDController1|data_user[0][3]           ;
 ; LCDController:LCDController1|lcd_on                                                            ; Stuck at VCC due to stuck port data_in                             ;
-; GameController:MainGameController|game_state[2]                                                ; Stuck at GND due to stuck port data_in                             ;
+; SequenceVerifier:UserSequenceVerifier|stage_counter[2]                                         ; Stuck at GND due to stuck port data_in                             ;
+; GameController:MainGameController|s_current[2]                                                 ; Stuck at GND due to stuck port data_in                             ;
 ; ButtonShaper:SubmitButton|State.S_Off2                                                         ; Lost fanout                                                        ;
 ; ButtonShaper:VerifyButton|State.S_Off2                                                         ; Lost fanout                                                        ;
 ; ButtonShaper:RotateButton|State.S_Off2                                                         ; Lost fanout                                                        ;
@@ -672,94 +675,99 @@ Encoding Type:  One-Hot
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~5 ; Lost fanout                                                        ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~6 ; Lost fanout                                                        ;
 ; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~7 ; Lost fanout                                                        ;
+; GameController:MainGameController|game_state~6                                                 ; Lost fanout                                                        ;
+; GameController:MainGameController|game_state~7                                                 ; Lost fanout                                                        ;
+; GameController:MainGameController|game_state~8                                                 ; Lost fanout                                                        ;
 ; Authentication:UserAuthentication|State_m~4                                                    ; Lost fanout                                                        ;
 ; Authentication:UserAuthentication|State_m~5                                                    ; Lost fanout                                                        ;
-; LCDController:LCDController1|data2[11][6]                                                      ; Merged with LCDController:LCDController1|data1[11][0]              ;
-; LCDController:LCDController1|data2[6][1]                                                       ; Merged with LCDController:LCDController1|data2[14][6]              ;
-; LCDController:LCDController1|data2[2][5]                                                       ; Merged with LCDController:LCDController1|data2[11][5]              ;
-; GameController:MainGameController|s_current[2]                                                 ; Stuck at GND due to stuck port data_in                             ;
-; Total Number of Removed Registers = 256                                                        ;                                                                    ;
+; LCDController:LCDController1|data2[15][2]                                                      ; Merged with LCDController:LCDController1|data2[14][0]              ;
+; LCDController:LCDController1|data2[14][4]                                                      ; Merged with LCDController:LCDController1|data2[11][4]              ;
+; LCDController:LCDController1|data2[13][4]                                                      ; Merged with LCDController:LCDController1|data1[10][3]              ;
+; Total Number of Removed Registers = 240                                                        ;                                                                    ;
 +------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                       ;
-+-------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; Register name                                   ; Reason for Removal        ; Registers Removed due to This Register                                              ;
-+-------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
-; LCDController:LCDController1|lcd_activate       ; Stuck at VCC              ; LCDController:LCDController1|data2[14][7],                                          ;
-;                                                 ; due to stuck port data_in ; LCDController:LCDController1|data2[7][7], LCDController:LCDController1|data2[6][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[6][7], LCDController:LCDController1|data2[5][1], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[5][7], LCDController:LCDController1|data2[4][3], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[4][7], LCDController:LCDController1|data2[3][3], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[3][7], LCDController:LCDController1|data2[2][3], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[2][7], LCDController:LCDController1|data2[0][1], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[0][3], LCDController:LCDController1|data2[0][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data2[0][7],                                           ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][0],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][1],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][2],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][3],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][4],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][5],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][6],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[15][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[14][1],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[14][3],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[14][4],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[14][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[13][3],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[13][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[12][3],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[12][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[11][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[10][3],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[10][5],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[10][6],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[10][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data1[9][7], LCDController:LCDController1|data1[8][3], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[8][7], LCDController:LCDController1|data1[7][7], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[6][3], LCDController:LCDController1|data1[6][7], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[5][7], LCDController:LCDController1|data1[4][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[4][7], LCDController:LCDController1|data1[3][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[3][7], LCDController:LCDController1|data1[2][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[2][7], LCDController:LCDController1|data1[1][3], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[1][7], LCDController:LCDController1|data1[0][0], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[0][1], LCDController:LCDController1|data1[0][2], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[0][3], LCDController:LCDController1|data1[0][4], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[0][5], LCDController:LCDController1|data1[0][6], ;
-;                                                 ;                           ; LCDController:LCDController1|data1[0][7],                                           ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[5][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[4][5],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[4][6],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[4][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[3][0],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[3][4],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[3][5],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[3][6],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[3][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[2][0],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[2][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[1][3],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[1][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[0][3],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data_user[0][7],                                       ;
-;                                                 ;                           ; LCDController:LCDController1|data2[14][4],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[15][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[15][4],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[15][1],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[15][0],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[13][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[12][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[11][4],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[11][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[10][7],                                          ;
-;                                                 ;                           ; LCDController:LCDController1|data2[9][7], LCDController:LCDController1|data2[8][7], ;
-;                                                 ;                           ; LCDController:LCDController1|lcd_flag[8], LCDController:LCDController1|data2[1][7], ;
-;                                                 ;                           ; LCDController:LCDController1|lcd_on                                                 ;
-; GameController:MainGameController|game_state[2] ; Stuck at GND              ; GameController:MainGameController|s_current[2]                                      ;
-;                                                 ; due to stuck port data_in ;                                                                                     ;
-+-------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                 ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; Register name                             ; Reason for Removal        ; Registers Removed due to This Register                                              ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
+; LCDController:LCDController1|lcd_activate ; Stuck at VCC              ; LCDController:LCDController1|data2[9][7], LCDController:LCDController1|data2[8][7], ;
+;                                           ; due to stuck port data_in ; LCDController:LCDController1|data2[7][7], LCDController:LCDController1|data2[6][7], ;
+;                                           ;                           ; LCDController:LCDController1|data2[5][3], LCDController:LCDController1|data2[5][7], ;
+;                                           ;                           ; LCDController:LCDController1|data2[4][3], LCDController:LCDController1|data2[4][7], ;
+;                                           ;                           ; LCDController:LCDController1|data2[3][3], LCDController:LCDController1|data2[3][7], ;
+;                                           ;                           ; LCDController:LCDController1|data2[2][7], LCDController:LCDController1|data2[0][4], ;
+;                                           ;                           ; LCDController:LCDController1|data2[0][7],                                           ;
+;                                           ;                           ; LCDController:LCDController1|data1[15][0],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[15][1],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[15][3],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[15][4],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[15][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[14][1],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[14][3],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[14][4],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[14][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[13][3],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[13][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[12][3],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[12][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[11][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[10][5],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[10][6],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[10][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data1[9][7], LCDController:LCDController1|data1[8][7], ;
+;                                           ;                           ; LCDController:LCDController1|data1[7][7], LCDController:LCDController1|data1[6][3], ;
+;                                           ;                           ; LCDController:LCDController1|data1[6][7], LCDController:LCDController1|data1[5][7], ;
+;                                           ;                           ; LCDController:LCDController1|data1[4][4], LCDController:LCDController1|data1[4][7], ;
+;                                           ;                           ; LCDController:LCDController1|data1[3][4], LCDController:LCDController1|data1[3][7], ;
+;                                           ;                           ; LCDController:LCDController1|data1[2][4], LCDController:LCDController1|data1[2][7], ;
+;                                           ;                           ; LCDController:LCDController1|data1[1][7], LCDController:LCDController1|data1[0][0], ;
+;                                           ;                           ; LCDController:LCDController1|data1[0][2], LCDController:LCDController1|data1[0][3], ;
+;                                           ;                           ; LCDController:LCDController1|data1[0][4], LCDController:LCDController1|data1[0][7], ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][0],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][1],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][2],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][3],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][4],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][5],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][6],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[1][7],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][0],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][1],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][2],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][3],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][4],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][5],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][6],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_score[0][7],                                      ;
+;                                           ;                           ; LCDController:LCDController1|data_user[5][4],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[5][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[4][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[3][4],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[3][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[2][0],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[2][5],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[2][6],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[2][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[1][3],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[1][5],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[1][6],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[1][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[0][5],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[0][6],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data_user[0][7],                                       ;
+;                                           ;                           ; LCDController:LCDController1|data2[13][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[12][0],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[12][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[11][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[10][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[14][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[15][7],                                          ;
+;                                           ;                           ; LCDController:LCDController1|data2[15][4],                                          ;
+;                                           ;                           ; LCDController:LCDController1|lcd_flag[8], LCDController:LCDController1|data2[1][7], ;
+;                                           ;                           ; LCDController:LCDController1|lcd_on                                                 ;
++-------------------------------------------+---------------------------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -767,57 +775,86 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 422   ;
-; Number of registers using Synchronous Clear  ; 120   ;
-; Number of registers using Synchronous Load   ; 58    ;
+; Total registers                              ; 408   ;
+; Number of registers using Synchronous Clear  ; 125   ;
+; Number of registers using Synchronous Load   ; 60    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 279   ;
+; Number of registers using Clock Enable       ; 281   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[12][3]                                                              ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[8][0]                                                               ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |BombSquad|OneSec_Timer:OneSecondTimer|cnt[12]                                                                    ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[6] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_c[7]                                                             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|user_c[5]                                                            ;
-; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|counter[5]                                                                ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_a[5]                                                             ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[0]                                                                ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_g[4]                                                                          ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|char_cur[0]                                                               ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[12][1]                                                              ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[0]                                                                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|s_update[1]                                                          ;
-; 32:1               ; 6 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; Yes        ; |BombSquad|LCDController:LCDController1|data2[1][5]                                                               ;
-; 32:1               ; 4 bits    ; 84 LEs        ; 20 LEs               ; 64 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|data2[11][3]                                                              ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_3[1]                                                                 ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_2[4]                                                                 ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_1[4]                                                                 ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_4[1]                                                                 ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[1]                                                                  ;
-; 34:1               ; 22 bits   ; 484 LEs       ; 22 LEs               ; 462 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|counter[4]                                                                        ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|ram_a[0]                                                             ;
-; 37:1               ; 17 bits   ; 408 LEs       ; 34 LEs               ; 374 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_r[5]                                                                          ;
-; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; Yes        ; |BombSquad|GameController:MainGameController|s_current[1]                                                         ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 3 LEs                ; 21 LEs                 ; Yes        ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage_counter[0]                                                 ;
-; 262:1              ; 4 bits    ; 696 LEs       ; 12 LEs               ; 684 LEs                ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sequence_out[0]                                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|Authentication:UserAuthentication|State_m                                                              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                       ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                       ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|Selector12                                                                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state           ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage1_target                                                    ;
-; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage2_target                                                    ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage3_target                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                        ;
++------------------------------------------------+---------------------------------------------+------+
+; Register Name                                  ; Megafunction                                ; Type ;
++------------------------------------------------+---------------------------------------------+------+
+; LCDController:LCDController1|data2[3,9][0]     ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[4][0,1,4]   ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[7][0,2..4]  ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[2,5][0,2,4] ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[6][1..3]    ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[8][1,3]     ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data2[11][3]      ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[14][0]      ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[8][0..2]    ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[11][0..2,4] ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[3][0,1,3]   ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[7][0,1,4]   ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[4][0,2,3]   ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[12][0,2,4]  ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[13][0,4]    ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[1][1]       ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[10][1,2]    ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[2][1..3]    ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[9][1,2,4]   ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[6][2]       ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
+; LCDController:LCDController1|data1[5][2,3]     ; LCDController:LCDController1|WideOr85_rtl_0 ; ROM  ;
++------------------------------------------------+---------------------------------------------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|data2[14][6]                                                               ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |BombSquad|OneSec_Timer:OneSecondTimer|cnt[8]                                                                      ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_c[5]                                                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|user_c[0]                                                             ;
+; 4:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |BombSquad|LCDController:LCDController1|counter[7]                                                                 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|rom_a[7]                                                              ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_three[3]                                                                 ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_g[1]                                                                           ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|LCDController:LCDController1|char_cur[2]                                                                ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_two[3]                                                                   ;
+; 32:1               ; 6 bits    ; 126 LEs       ; 24 LEs               ; 102 LEs                ; Yes        ; |BombSquad|LCDController:LCDController1|data2[1][1]                                                                ;
+; 32:1               ; 7 bits    ; 147 LEs       ; 42 LEs               ; 105 LEs                ; Yes        ; |BombSquad|LCDController:LCDController1|data2[11][2]                                                               ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|GameController:MainGameController|counter[2]                                                            ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_3[1]                                                                  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_2[3]                                                                  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_1[3]                                                                  ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sevseg_4[3]                                                                  ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BombSquad|Countdown:CountdownTimer|value_one[3]                                                                   ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 8 LEs                ; 2 LEs                  ; Yes        ; |BombSquad|GameController:MainGameController|s_current[2]                                                          ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|s_update[0]                                                           ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |BombSquad|Authentication:UserAuthentication|ram_a[3]                                                              ;
+; 35:1               ; 22 bits   ; 506 LEs       ; 22 LEs               ; 484 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|counter[2]                                                                         ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 10 LEs               ; 4 LEs                  ; Yes        ; |BombSquad|GameController:MainGameController|s_current[0]                                                          ;
+; 37:1               ; 17 bits   ; 408 LEs       ; 34 LEs               ; 374 LEs                ; Yes        ; |BombSquad|LEDDriver:LEDDriver1|led_r[7]                                                                           ;
+; 11:1               ; 3 bits    ; 21 LEs        ; 3 LEs                ; 18 LEs                 ; Yes        ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage_counter[0]                                                  ;
+; 262:1              ; 4 bits    ; 696 LEs       ; 12 LEs               ; 684 LEs                ; Yes        ; |BombSquad|SSD_Sequence:SSD_Sequence1|sequence_out[3]                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|Selector11                                                                 ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|Authentication:UserAuthentication|State_m                                                               ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                        ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|LCDController:LCDController1|fsm                                                                        ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state            ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage1_target                                                     ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage2_target                                                     ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |BombSquad|SequenceVerifier:UserSequenceVerifier|stage3_target                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -827,6 +864,15 @@ Encoding Type:  One-Hot
 +---------------------------------+--------------------+------+-------------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                               ;
 +---------------------------------+--------------------+------+-------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Source assignments for LCDController:LCDController1|altsyncram:WideOr85_rtl_0|altsyncram_pp01:auto_generated ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                             ;
++---------------------------------+--------------------+------+------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                              ;
++---------------------------------+--------------------+------+------------------------------------------------+
 
 
 +------------------------------------------------------------------------+
@@ -1037,7 +1083,69 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+---------+----------------------------------------+
 ; C_20MS         ; 1000000 ; Signed Integer                         ;
 ; C_45MS         ; 2250000 ; Signed Integer                         ;
+; C_1SAN         ; 2777778 ; Signed Integer                         ;
 +----------------+---------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: LCDController:LCDController1|altsyncram:WideOr85_rtl_0 ;
++------------------------------------+------------------------------+-------------------------------------+
+; Parameter Name                     ; Value                        ; Type                                ;
++------------------------------------+------------------------------+-------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                            ; Untyped                             ;
+; AUTO_CARRY_CHAINS                  ; ON                           ; AUTO_CARRY                          ;
+; IGNORE_CARRY_BUFFERS               ; OFF                          ; IGNORE_CARRY                        ;
+; AUTO_CASCADE_CHAINS                ; ON                           ; AUTO_CASCADE                        ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                          ; IGNORE_CASCADE                      ;
+; WIDTH_BYTEENA                      ; 1                            ; Untyped                             ;
+; OPERATION_MODE                     ; ROM                          ; Untyped                             ;
+; WIDTH_A                            ; 55                           ; Untyped                             ;
+; WIDTHAD_A                          ; 5                            ; Untyped                             ;
+; NUMWORDS_A                         ; 32                           ; Untyped                             ;
+; OUTDATA_REG_A                      ; UNREGISTERED                 ; Untyped                             ;
+; ADDRESS_ACLR_A                     ; NONE                         ; Untyped                             ;
+; OUTDATA_ACLR_A                     ; NONE                         ; Untyped                             ;
+; WRCONTROL_ACLR_A                   ; NONE                         ; Untyped                             ;
+; INDATA_ACLR_A                      ; NONE                         ; Untyped                             ;
+; BYTEENA_ACLR_A                     ; NONE                         ; Untyped                             ;
+; WIDTH_B                            ; 1                            ; Untyped                             ;
+; WIDTHAD_B                          ; 1                            ; Untyped                             ;
+; NUMWORDS_B                         ; 1                            ; Untyped                             ;
+; INDATA_REG_B                       ; CLOCK1                       ; Untyped                             ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                       ; Untyped                             ;
+; RDCONTROL_REG_B                    ; CLOCK1                       ; Untyped                             ;
+; ADDRESS_REG_B                      ; CLOCK1                       ; Untyped                             ;
+; OUTDATA_REG_B                      ; UNREGISTERED                 ; Untyped                             ;
+; BYTEENA_REG_B                      ; CLOCK1                       ; Untyped                             ;
+; INDATA_ACLR_B                      ; NONE                         ; Untyped                             ;
+; WRCONTROL_ACLR_B                   ; NONE                         ; Untyped                             ;
+; ADDRESS_ACLR_B                     ; NONE                         ; Untyped                             ;
+; OUTDATA_ACLR_B                     ; NONE                         ; Untyped                             ;
+; RDCONTROL_ACLR_B                   ; NONE                         ; Untyped                             ;
+; BYTEENA_ACLR_B                     ; NONE                         ; Untyped                             ;
+; WIDTH_BYTEENA_A                    ; 1                            ; Untyped                             ;
+; WIDTH_BYTEENA_B                    ; 1                            ; Untyped                             ;
+; RAM_BLOCK_TYPE                     ; AUTO                         ; Untyped                             ;
+; BYTE_SIZE                          ; 8                            ; Untyped                             ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                    ; Untyped                             ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ         ; Untyped                             ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ         ; Untyped                             ;
+; INIT_FILE                          ; BombSquad.BombSquad0.rtl.mif ; Untyped                             ;
+; INIT_FILE_LAYOUT                   ; PORT_A                       ; Untyped                             ;
+; MAXIMUM_DEPTH                      ; 0                            ; Untyped                             ;
+; CLOCK_ENABLE_INPUT_A               ; NORMAL                       ; Untyped                             ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL                       ; Untyped                             ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                       ; Untyped                             ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                       ; Untyped                             ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN              ; Untyped                             ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN              ; Untyped                             ;
+; ENABLE_ECC                         ; FALSE                        ; Untyped                             ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                        ; Untyped                             ;
+; WIDTH_ECCSTATUS                    ; 3                            ; Untyped                             ;
+; DEVICE_FAMILY                      ; Cyclone IV E                 ; Untyped                             ;
+; CBXI_PARAMETER                     ; altsyncram_pp01              ; Untyped                             ;
++------------------------------------+------------------------------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1046,12 +1154,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------+
 ; Name                                      ; Value                                                   ;
 +-------------------------------------------+---------------------------------------------------------+
-; Number of entity instances                ; 1                                                       ;
+; Number of entity instances                ; 2                                                       ;
 ; Entity Instance                           ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; ROM                                                     ;
 ;     -- WIDTH_A                            ; 8                                                       ;
 ;     -- NUMWORDS_A                         ; 256                                                     ;
 ;     -- OUTDATA_REG_A                      ; CLOCK0                                                  ;
+;     -- WIDTH_B                            ; 1                                                       ;
+;     -- NUMWORDS_B                         ; 1                                                       ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                                  ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                            ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                               ;
+; Entity Instance                           ; LCDController:LCDController1|altsyncram:WideOr85_rtl_0  ;
+;     -- OPERATION_MODE                     ; ROM                                                     ;
+;     -- WIDTH_A                            ; 55                                                      ;
+;     -- NUMWORDS_A                         ; 32                                                      ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                            ;
 ;     -- WIDTH_B                            ; 1                                                       ;
 ;     -- NUMWORDS_B                         ; 1                                                       ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                                  ;
@@ -1113,25 +1232,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 100                         ;
-; cycloneiii_ff         ; 422                         ;
-;     ENA               ; 196                         ;
-;     ENA SCLR          ; 59                          ;
-;     ENA SLD           ; 24                          ;
-;     SCLR              ; 61                          ;
+; cycloneiii_ff         ; 408                         ;
+;     ENA               ; 173                         ;
+;     ENA SCLR          ; 82                          ;
+;     ENA SCLR SLD      ; 1                           ;
+;     ENA SLD           ; 25                          ;
+;     SCLR              ; 42                          ;
 ;     SLD               ; 34                          ;
-;     plain             ; 48                          ;
-; cycloneiii_lcell_comb ; 945                         ;
+;     plain             ; 51                          ;
+; cycloneiii_lcell_comb ; 938                         ;
 ;     arith             ; 79                          ;
 ;         2 data inputs ; 79                          ;
-;     normal            ; 866                         ;
+;     normal            ; 859                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 35                          ;
-;         2 data inputs ; 109                         ;
-;         3 data inputs ; 144                         ;
-;         4 data inputs ; 576                         ;
-; cycloneiii_ram_block  ; 8                           ;
+;         1 data inputs ; 42                          ;
+;         2 data inputs ; 100                         ;
+;         3 data inputs ; 161                         ;
+;         4 data inputs ; 554                         ;
+; cycloneiii_ram_block  ; 63                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.00                        ;
+; Max LUT depth         ; 8.00                        ;
 ; Average LUT depth     ; 3.44                        ;
 +-----------------------+-----------------------------+
 
@@ -1141,7 +1261,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:07     ;
+; Top            ; 00:00:08     ;
 +----------------+--------------+
 
 
@@ -1151,15 +1271,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
-    Info: Processing started: Fri Dec 09 00:08:43 2016
+    Info: Processing started: Fri Dec 09 11:29:27 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BombSquad -c BombSquad
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/leddriver.v
     Info (12023): Found entity 1: LEDDriver File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 26
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/lcdcontroller.v
-    Info (12023): Found entity 1: LCDController File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 32
+    Info (12023): Found entity 1: LCDController File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/ssd_sequence.v
-    Info (12023): Found entity 1: SSD_Sequence File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 26
+    Info (12023): Found entity 1: SSD_Sequence File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sevsegtimer.v
     Info (12023): Found entity 1: SevSegTimer File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SevSegTimer.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/sequenceverifier.v
@@ -1173,7 +1293,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/ram_sim.v
     Info (12023): Found entity 1: RAM_sim File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/RAM_sim.v Line: 40
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/onesec_timer.v
-    Info (12023): Found entity 1: OneSec_Timer File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 15
+    Info (12023): Found entity 1: OneSec_Timer File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 17
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/lfsr8bit.v
     Info (12023): Found entity 1: LFSR8bit File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LFSR8bit.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/gamecontroller.v
@@ -1183,15 +1303,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/buttonshaper.v
     Info (12023): Found entity 1: ButtonShaper File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ButtonShaper.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/bombsquad.v
-    Info (12023): Found entity 1: BombSquad File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 14
+    Info (12023): Found entity 1: BombSquad File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 33
 Info (12021): Found 1 design units, including 1 entities, in source file /[ece 5440] advanced digital design/project/src/bombsquad/authentication.v
     Info (12023): Found entity 1: Authentication File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 43
 Info (12127): Elaborating entity "BombSquad" for the top level hierarchy
-Info (12128): Elaborating entity "ButtonShaper" for hierarchy "ButtonShaper:RotateButton" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 44
-Info (12128): Elaborating entity "Authentication" for hierarchy "Authentication:UserAuthentication" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 49
-Warning (10230): Verilog HDL assignment warning at Authentication.v(124): truncated value with size 32 to match size of target (8) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 124
-Warning (10230): Verilog HDL assignment warning at Authentication.v(137): truncated value with size 8 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 137
-Info (12128): Elaborating entity "ROM_Sim" for hierarchy "ROM_Sim:UserCredentials" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 52
+Info (12128): Elaborating entity "ButtonShaper" for hierarchy "ButtonShaper:RotateButton" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 63
+Info (12128): Elaborating entity "Authentication" for hierarchy "Authentication:UserAuthentication" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 68
+Warning (10230): Verilog HDL assignment warning at Authentication.v(125): truncated value with size 32 to match size of target (8) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 125
+Warning (10230): Verilog HDL assignment warning at Authentication.v(138): truncated value with size 8 to match size of target (4) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 138
+Info (12128): Elaborating entity "ROM_Sim" for hierarchy "ROM_Sim:UserCredentials" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 71
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
 Info (12130): Elaborated megafunction instantiation "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
 Info (12133): Instantiated megafunction "ROM_Sim:UserCredentials|altsyncram:altsyncram_component" with the following parameter: File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/ROM_Sim.v Line: 82
@@ -1212,10 +1332,11 @@ Info (12133): Instantiated megafunction "ROM_Sim:UserCredentials|altsyncram:alts
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0p91.tdf
     Info (12023): Found entity 1: altsyncram_0p91 File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_0p91.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_0p91" for hierarchy "ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated" File: d:/altera_lite/16.0/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "GameController" for hierarchy "GameController:MainGameController" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 55
-Info (12128): Elaborating entity "OneSec_Timer" for hierarchy "OneSec_Timer:OneSecondTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 58
-Warning (10230): Verilog HDL assignment warning at OneSec_Timer.v(30): truncated value with size 32 to match size of target (26) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 30
-Info (12128): Elaborating entity "Countdown" for hierarchy "Countdown:CountdownTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 61
+Info (12128): Elaborating entity "GameController" for hierarchy "GameController:MainGameController" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 74
+Warning (10230): Verilog HDL assignment warning at GameController.v(106): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/GameController.v Line: 106
+Info (12128): Elaborating entity "OneSec_Timer" for hierarchy "OneSec_Timer:OneSecondTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 77
+Warning (10230): Verilog HDL assignment warning at OneSec_Timer.v(32): truncated value with size 32 to match size of target (26) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/OneSec_Timer.v Line: 32
+Info (12128): Elaborating entity "Countdown" for hierarchy "Countdown:CountdownTimer" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 80
 Warning (10230): Verilog HDL assignment warning at Countdown.v(38): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 38
 Warning (10230): Verilog HDL assignment warning at Countdown.v(44): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 44
 Warning (10230): Verilog HDL assignment warning at Countdown.v(45): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 45
@@ -1226,74 +1347,94 @@ Warning (10230): Verilog HDL assignment warning at Countdown.v(56): truncated va
 Warning (10230): Verilog HDL assignment warning at Countdown.v(58): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 58
 Warning (10230): Verilog HDL assignment warning at Countdown.v(62): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 62
 Warning (10230): Verilog HDL assignment warning at Countdown.v(64): truncated value with size 32 to match size of target (1) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 64
-Info (12128): Elaborating entity "SevSegTimer" for hierarchy "SevSegTimer:SevSegTimer1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 64
-Info (12128): Elaborating entity "SequenceKeyGenerator" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 69
+Info (12128): Elaborating entity "SevSegTimer" for hierarchy "SevSegTimer:SevSegTimer1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 83
+Info (12128): Elaborating entity "SequenceKeyGenerator" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 88
 Info (12128): Elaborating entity "SequenceKeyBuilder" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 32
 Info (12128): Elaborating entity "LFSR8bit" for hierarchy "SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceKeyGenerator.v Line: 35
-Info (12128): Elaborating entity "SequenceVerifier" for hierarchy "SequenceVerifier:UserSequenceVerifier" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 72
+Info (12128): Elaborating entity "SequenceVerifier" for hierarchy "SequenceVerifier:UserSequenceVerifier" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 91
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(112): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 112
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(142): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 142
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(172): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 172
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(202): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 202
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(243): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 243
 Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(273): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 273
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(302): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 302
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(332): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 332
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(387): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 387
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(430): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 430
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(473): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 473
-Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(516): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 516
-Info (12128): Elaborating entity "SSD_Sequence" for hierarchy "SSD_Sequence:SSD_Sequence1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 75
-Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(77): truncated value with size 32 to match size of target (2) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 77
-Info (12128): Elaborating entity "LCDController" for hierarchy "LCDController:LCDController1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 78
-Warning (10230): Verilog HDL assignment warning at LCDController.v(548): truncated value with size 32 to match size of target (6) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 548
-Warning (10230): Verilog HDL assignment warning at LCDController.v(561): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 561
-Warning (10230): Verilog HDL assignment warning at LCDController.v(564): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 564
-Info (12128): Elaborating entity "LEDDriver" for hierarchy "LEDDriver:LEDDriver1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 81
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(303): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 303
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(333): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 333
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(388): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 388
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(431): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 431
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(474): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 474
+Warning (10230): Verilog HDL assignment warning at SequenceVerifier.v(517): truncated value with size 32 to match size of target (3) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SequenceVerifier.v Line: 517
+Info (12128): Elaborating entity "SSD_Sequence" for hierarchy "SSD_Sequence:SSD_Sequence1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 94
+Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(75): truncated value with size 32 to match size of target (2) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 75
+Warning (10230): Verilog HDL assignment warning at SSD_Sequence.v(88): truncated value with size 32 to match size of target (2) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 88
+Info (12128): Elaborating entity "LCDController" for hierarchy "LCDController:LCDController1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 97
+Warning (10230): Verilog HDL assignment warning at LCDController.v(565): truncated value with size 32 to match size of target (6) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 565
+Warning (10230): Verilog HDL assignment warning at LCDController.v(578): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 578
+Warning (10230): Verilog HDL assignment warning at LCDController.v(581): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LCDController.v Line: 581
+Info (12128): Elaborating entity "LEDDriver" for hierarchy "LEDDriver:LEDDriver1" File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 100
 Warning (10036): Verilog HDL or VHDL warning at LEDDriver.v(41): object "direction" assigned a value but never read File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 41
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(75): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 75
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(78): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 78
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(92): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 92
-Warning (10230): Verilog HDL assignment warning at LEDDriver.v(106): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 106
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(77): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 77
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(91): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 91
+Warning (10230): Verilog HDL assignment warning at LEDDriver.v(105): truncated value with size 32 to match size of target (22) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/LEDDriver.v Line: 105
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
+    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
+    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
+    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
 Warning (12011): Net is missing source, defaulting to GND
-    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
-    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 24
+    Warning (12110): Net "ram_id[7]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[6]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[5]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+    Warning (12110): Net "ram_id[4]" is missing source, defaulting to GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 43
+Info (19000): Inferred 1 megafunctions from design logic
+    Info (276031): Inferred altsyncram megafunction from the following design logic: "LCDController:LCDController1|WideOr85_rtl_0"
+        Info (286033): Parameter OPERATION_MODE set to ROM
+        Info (286033): Parameter WIDTH_A set to 55
+        Info (286033): Parameter WIDTHAD_A set to 5
+        Info (286033): Parameter NUMWORDS_A set to 32
+        Info (286033): Parameter OUTDATA_REG_A set to UNREGISTERED
+        Info (286033): Parameter RAM_BLOCK_TYPE set to AUTO
+        Info (286033): Parameter INIT_FILE set to BombSquad.BombSquad0.rtl.mif
+Info (12130): Elaborated megafunction instantiation "LCDController:LCDController1|altsyncram:WideOr85_rtl_0"
+Info (12133): Instantiated megafunction "LCDController:LCDController1|altsyncram:WideOr85_rtl_0" with the following parameter:
+    Info (12134): Parameter "OPERATION_MODE" = "ROM"
+    Info (12134): Parameter "WIDTH_A" = "55"
+    Info (12134): Parameter "WIDTHAD_A" = "5"
+    Info (12134): Parameter "NUMWORDS_A" = "32"
+    Info (12134): Parameter "OUTDATA_REG_A" = "UNREGISTERED"
+    Info (12134): Parameter "RAM_BLOCK_TYPE" = "AUTO"
+    Info (12134): Parameter "INIT_FILE" = "BombSquad.BombSquad0.rtl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_pp01.tdf
+    Info (12023): Found entity 1: altsyncram_pp01 File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/db/altsyncram_pp01.tdf Line: 28
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "lcd_on" is stuck at VCC File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 36
-    Warning (13410): Pin "lcd_flag[8]" is stuck at GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 37
+    Warning (13410): Pin "lcd_on" is stuck at VCC File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 55
+    Warning (13410): Pin "lcd_flag[8]" is stuck at GND File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 56
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 21 registers lost all their fanouts during netlist optimizations.
+Info (17049): 24 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1098 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1155 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 87 output pins
-    Info (21061): Implemented 990 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 59 warnings
-    Info: Peak virtual memory: 861 megabytes
-    Info: Processing ended: Fri Dec 09 00:09:13 2016
-    Info: Elapsed time: 00:00:30
-    Info: Total CPU time (on all processors): 00:00:54
+    Info (21061): Implemented 992 logic cells
+    Info (21064): Implemented 63 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 862 megabytes
+    Info: Processing ended: Fri Dec 09 11:30:01 2016
+    Info: Elapsed time: 00:00:34
+    Info: Total CPU time (on all processors): 00:00:59
 
 
 +------------------------------------------+

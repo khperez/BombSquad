@@ -43,6 +43,13 @@ Name state.s2
 state.s1 0 
 state.s2 1 
 
+State Machine - |BombSquad|GameController:MainGameController|game_state
+Name game_state.game_over game_state.game_success game_state.in_game game_state.authentication 
+game_state.authentication 0 0 0 0 
+game_state.in_game 0 0 1 1 
+game_state.game_success 0 1 0 1 
+game_state.game_over 1 0 0 1 
+
 State Machine - |BombSquad|Authentication:UserAuthentication|State_m
 Name State_m.Init State_m.Next_id State_m.Compare 
 State_m.Init 0 0 0 

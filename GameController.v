@@ -22,13 +22,14 @@
         0x30: game over sequence begin
 */
 
-module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_current);
+module GameController(s_auth, cur_time, s_results, clk, rst, timeout, s_current);
     input [1:0] s_auth, s_results;
     input clk, rst;
-    input verify, submit;
     input [11:0] cur_time;
+    input timeout;
 
     reg [2:0] game_state;
+    reg [2:0] counter;
 
     parameter authentication = 3'b000, in_game = 3'b001,
               game_success = 3'b010, game_over = 3'b011;
@@ -79,12 +80,14 @@ module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_c
                                 else if (s_results == 2'b01)
                                     begin
                                         s_current <= 8'h20;
+                                        counter <= 0;
                                         game_state <= game_success;
                                     end
                                 else if (s_results == 2'b10)
                                     begin
                                         s_current <= 8'h30;
                                         game_state <= game_over;
+                                        counter <= 0;
                                     end
                                 else
                                     begin
@@ -93,15 +96,14 @@ module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_c
                                     end
                              end
                     game_success: begin
-                                        if (verify == 1)
+                                        if (counter == 3)
                                             begin
-                                                s_current <= 8'h10;
                                                 game_state <= in_game;
+                                                s_current <= 8'h10;
                                             end
-                                        else if (submit == 1)
+                                        else if (timeout == 1)
                                             begin
-                                                s_current <= 8'h00;
-                                                game_state <= authentication;
+                                                counter <= counter + 1;
                                             end
                                         else
                                             begin
@@ -110,21 +112,8 @@ module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_c
                                             end
                                   end
                     game_over: begin
-                                    if (verify == 1)
-                                        begin
-                                            s_current <= 8'h10;
-                                            game_state <= in_game;
-                                        end
-                                    else if (submit == 1)
-                                        begin
-                                            s_current <= 8'h00;
-                                            game_state <= authentication;
-                                        end
-                                    else
-                                        begin
-                                            game_state <= game_over;
-                                            s_current <= 8'h30;
-                                        end
+                                    game_state <= game_over;
+                                    s_current <= 8'h30;
                                end
                     endcase
                 end
