@@ -1,8 +1,33 @@
-module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
+/*
+	SSD_Sequence.v
+	Description:
+	Will map the sequence provided by the controller to the correct encoded sequence and game started to the user for 3 seconds.
+	After the encoded sequence is game started, the module will then enter a FSM to manipulate the seven segment game state in order
+	for the user to input their response.  
+	
+	Inputs
+		sequence_in:		Value used to generate the encoded sequence.
+		game_state:			Provided game state from the controller.
+		one_sec:			Pulse indicating ne second has elapsed.
+		button_move:		Push button used to rotate the user input displayed on the seven segment display.
+		button_next:		Push button used to validate the response entered from the user as well to move to the next seven segment if applicable.
+		clk: 				On-board 50 Mhz clock
+		reset:				active low push button
+		
+	Outputs
+		sequence_out:		Contains the submitted information from the user.
+		sevseg_1:			Contains the first digit. Right most digit.
+		sevseg_2:			Contains the second digit. Second from the right digit.
+		sevseg_3:			Contains the third digit. Second from the left digit.
+		sevseg_4:			Contains the fourth digit. Left most digit.
+*/
+
+
+module SSD_Sequence(sequence_in, game_state, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
 
 	input[15:0] sequence_in;
 	input one_sec, button_move, button_next;
-	input [7:0] display;
+	input [7:0] game_state;
 
 	output[6:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
 	reg[6:0] sevseg_1, sevseg_2, sevseg_3, sevseg_4;
@@ -38,7 +63,7 @@ module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk
 					sevseg_3 <= 7'b1111111;
 					sevseg_4 <= 7'b1111111;
 					visabity <= 0;
-					if (display == 8'h10)
+					if (game_state == 8'h10)
 						state <= show2Sec;
 					else
 						state <= init;

@@ -1,3 +1,16 @@
+/*
+	SevSegTimer.v 
+	Description:			
+	Maps a 4-bit bus to its corresponding integer expression on the seven segment display.
+	
+	Inputs
+		digit_reg:			A binary value representative of its decimal value.
+		
+	Outputs
+		segment_output:		The mapped value to produce the corresponding decimal value on the seven segment display.
+
+*/
+
 module SevSegTimer(digit_reg, segment_output);
 	input [3:0] digit_reg;
 	output [6:0] segment_output;

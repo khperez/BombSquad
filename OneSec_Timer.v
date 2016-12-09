@@ -1,3 +1,17 @@
+/*
+	OneSecTimer.v
+	Description:
+	Continuously sends pulses in one second intervals.
+	
+	Inputs
+		clk: 		On-board 50 Mhz clock
+		reset:		active low push button
+		
+	Outputs
+		timeout:	pulse signal indicating one second has occurred.
+
+*/
+
 module OneSec_Timer(clk, reset, timeout);
 	
 	output timeout;

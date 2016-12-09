@@ -1,3 +1,18 @@
+/*
+	LFSR8bit.v
+	Description:
+	The 16-bit many-to-one LFSR will continuously iterate from which
+	samples will be taken to create the game’s sequence which the user will decode.
+	
+	Inputs
+		clk: 				On-board 50 Mhz clock
+		reset:				active low push button
+		
+	Outputs
+		output_sequence:	Output will cycle between 255 different unique states. 
+
+*/
+
 module LFSR8bit(reset, clk, output_sequence);
 
 	output [7:0] output_sequence;

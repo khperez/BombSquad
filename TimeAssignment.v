@@ -1,3 +1,17 @@
+/*
+	TimeAssignment.v
+	Description:
+	This module will receive the current level of the user and define the time allotted for the user to complete the level.  
+	
+	Inputs
+		game_level:			The current level of the user.
+		
+	Outputs
+		value_one:			Contains the time for the first digit. Right most digit.
+		value_two:			Contains the time for the second digit. Middle digit.
+		value_three:		Contains the time for the third digit. Left most digit.
+*/
+
 module TimeAssignment(game_level, value_three, value_two, value_one);
 		
 		input[7:0] game_level;
