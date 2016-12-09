@@ -42,7 +42,7 @@ module Countdown(init_time, game_state, sec_timer, reset, clk, value_three, valu
 			init:
 			begin
 			if (game_state == 8'h10) begin state <= countdown; value_one = 0; value_two = 0; value_three = 2; end
-			else begin state <= init; end
+			else begin state <= init; value_one = 0; value_two = 0; value_three = 2; end
 			end
 			countdown:
 			begin
