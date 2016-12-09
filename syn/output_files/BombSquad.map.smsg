@@ -1,3 +1,3 @@
-Warning (10268): Verilog HDL information at SSD_Sequence.v(45): always construct contains both blocking and non-blocking assignments File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/SSD_Sequence.v Line: 45
-Warning (10268): Verilog HDL information at Countdown.v(36): always construct contains both blocking and non-blocking assignments File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Countdown.v Line: 36
-Warning (10268): Verilog HDL information at Authentication.v(57): always construct contains both blocking and non-blocking assignments File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/Authentication.v Line: 57
+Warning (10268): Verilog HDL information at SSD_Sequence.v(45): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/SSD_Sequence.v Line: 45
+Warning (10268): Verilog HDL information at Countdown.v(36): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Countdown.v Line: 36
+Warning (10268): Verilog HDL information at Authentication.v(57): always construct contains both blocking and non-blocking assignments File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/Authentication.v Line: 57

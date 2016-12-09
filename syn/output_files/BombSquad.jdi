@@ -1,8 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="383ba76467f773e1c306"/>
+    <hash md5_digest_80b="c033b51e5ec79ebcb128"/>
   </project>
   <file_info>
-    <file device="EP4CE115F29C7" path="//VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/syn/output_files/BombSquad.sof" usercode="0xFFFFFFFF"/>
+    <file device="EP4CE115F29C7" path="BombSquad.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

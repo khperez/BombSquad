@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Dec 08 23:22:39 2016
+Fitter Status : Successful - Fri Dec 09 00:09:50 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : BombSquad
 Top-level Entity Name : BombSquad
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 981 / 114,480 ( < 1 % )
-    Total combinational functions : 938 / 114,480 ( < 1 % )
+Total logic elements : 989 / 114,480 ( < 1 % )
+    Total combinational functions : 941 / 114,480 ( < 1 % )
     Dedicated logic registers : 422 / 114,480 ( < 1 % )
 Total registers : 422
 Total pins : 100 / 529 ( 19 % )

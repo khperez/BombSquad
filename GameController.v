@@ -19,9 +19,7 @@
         0x02: authentication fail
         0x10: game in progress
         0x20: game success sequence begin
-        0x21: game success sequence end
         0x30: game over sequence begin
-        0x31: game over sequence end
 */
 
 module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
@@ -100,8 +98,8 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                             end
                                         else if (s_results == 2'b11)
                                             begin
-                                                s_current <= 8'h21;
-                                                game_state <= s_auth;
+                                                s_current <= 8'h10;
+                                                game_state <= in_game;
                                             end
                                   end
                     game_over: begin
@@ -114,7 +112,7 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                     // Game Over Sequence end
                                     else if (s_results == 2'b11)
                                         begin
-                                            s_current <= 8'h31;
+                                            s_current <= 8'h00;
                                             game_state <= s_auth;
                                         end
                                end
