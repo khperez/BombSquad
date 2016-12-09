@@ -62,7 +62,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
     else if (lcd_activate == 1) begin
 
       case (user)
-	8'b1100: begin
+	4'b1100: begin
 	  data_user[0] <= " ";
 	  data_user[1] <= " ";
 	  data_user[2] <= " ";
@@ -71,7 +71,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
 	  data_user[5] <= "T";
 	end
 
-	8'b0011: begin
+	4'b0011: begin
 	  data_user[0] <= "S";
 	  data_user[1] <= "E";
 	  data_user[2] <= "R";
@@ -80,7 +80,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
 	  data_user[5] <= "O";
 	end
 
-	8'b1101: begin
+	4'b1101: begin
 	  data_user[0] <= "D";
 	  data_user[1] <= "A";
 	  data_user[2] <= "N";
@@ -89,7 +89,7 @@ module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
 	  data_user[5] <= "L";
 	end
 
-	8'b0100: begin
+	4'b0100: begin
 	  data_user[0] <= "R";
 	  data_user[1] <= "A";
 	  data_user[2] <= "F";
