@@ -12,15 +12,23 @@
 		value_three:		Contains the time for the third digit. Left most digit.
 */
 
-module TimeAssignment(game_level, value_three, value_two, value_one);
+module TimeAssignment(game_level, clk, reset, value_three, value_two, value_one);
 		
 		input[7:0] game_level;
 		
 		output[3:0] value_three, value_two, value_one;
 		reg[3:0] value_three, value_two, value_one;
 		
-		always@(game_level)
+		always@(posedge clk)
 		begin
+			if (reset == 0)
+			begin
+				value_three = 4'd2;
+				value_two = 4'd0;
+				value_one = 4'd0;
+			end
+			else
+			begin
 			case(game_level)
 				8'b00000000:begin
 					value_three = 4'd2;
@@ -83,5 +91,6 @@ module TimeAssignment(game_level, value_three, value_two, value_one);
 					value_one = 4'd0;
 				end
 			endcase
+			end
 		end
 endmodule

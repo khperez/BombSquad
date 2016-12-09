@@ -106,6 +106,6 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
 	RAM_sim	RAM_sim1(address_out, clk, data_out, r_w, data_in);
 	
 	//module TimeAssignment(game_level, value_three, value_two, value_one);
-	TimeAssignment	TimeAssignment1(cur_level, value_three, value_two, value_one);
+	TimeAssignment	TimeAssignment1(cur_level, clk, reset, value_three, value_two, value_one);
 
 endmodule
