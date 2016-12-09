@@ -58,12 +58,12 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 	    counter <= counter + 1;
 	  end
 	end
-      endcase
 
-      default: begin
-	led_g <= 18'b111111111111111111;
-	led_r <= 18'b11111111;
-      end
+        default: begin
+	  led_g <= 18'b111111111111111111;
+	  led_r <= 18'b11111111;
+        end
+      endcase
     end
   end
 endmodule
