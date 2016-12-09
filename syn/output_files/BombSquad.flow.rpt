@@ -1,5 +1,5 @@
 Flow report for BombSquad
-Thu Dec 08 19:41:00 2016
+Thu Dec 08 22:08:14 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Dec 08 19:41:00 2016       ;
+; Flow Status                        ; Successful - Thu Dec 08 22:08:14 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; BombSquad                                   ;
 ; Top-level Entity Name              ; BombSquad                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 875 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 832 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 387 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 387                                         ;
+; Total logic elements               ; 1,012 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 974 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 415 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 415                                         ;
 ; Total pins                         ; 100 / 529 ( 19 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,048 / 3,981,312 ( < 1 % )                 ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/08/2016 19:39:28 ;
+; Start date & time ; 12/08/2016 22:05:58 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; BombSquad           ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 57185444663523.148124756813540        ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 8796756084507.148125635402008         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                           ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)             ; <None>        ; --          ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                  ; --            ; --          ; eda_simulation ;
@@ -97,12 +97,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:31     ; 1.0                     ; 850 MB              ; 00:00:54                           ;
-; Fitter                    ; 00:00:33     ; 1.0                     ; 1386 MB             ; 00:00:36                           ;
-; Assembler                 ; 00:00:07     ; 1.0                     ; 774 MB              ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 925 MB              ; 00:00:05                           ;
-; EDA Netlist Writer        ; 00:00:07     ; 1.0                     ; 761 MB              ; 00:00:04                           ;
-; Total                     ; 00:01:24     ; --                      ; --                  ; 00:01:45                           ;
+; Analysis & Synthesis      ; 00:00:58     ; 1.0                     ; 866 MB              ; 00:00:37                           ;
+; Fitter                    ; 00:00:38     ; 1.0                     ; 1593 MB             ; 00:00:32                           ;
+; Assembler                 ; 00:00:08     ; 1.0                     ; 792 MB              ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 960 MB              ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 775 MB              ; 00:00:04                           ;
+; Total                     ; 00:02:06     ; --                      ; --                  ; 00:01:23                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -111,11 +111,11 @@ agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; miniAtticus      ; Windows 8 ; 6.2        ; x86_64         ;
-; Fitter                    ; miniAtticus      ; Windows 8 ; 6.2        ; x86_64         ;
-; Assembler                 ; miniAtticus      ; Windows 8 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; miniAtticus      ; Windows 8 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; miniAtticus      ; Windows 8 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-E68LGU0  ; Windows 8 ; 6.2        ; x86_64         ;
+; Fitter                    ; DESKTOP-E68LGU0  ; Windows 8 ; 6.2        ; x86_64         ;
+; Assembler                 ; DESKTOP-E68LGU0  ; Windows 8 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-E68LGU0  ; Windows 8 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DESKTOP-E68LGU0  ; Windows 8 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

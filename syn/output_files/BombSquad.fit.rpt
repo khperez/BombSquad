@@ -1,5 +1,5 @@
 Fitter report for BombSquad
-Thu Dec 08 19:40:33 2016
+Thu Dec 08 22:07:32 2016
 Quartus Prime Version 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 
 
@@ -70,17 +70,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Thu Dec 08 19:40:33 2016       ;
+; Fitter Status                      ; Successful - Thu Dec 08 22:07:32 2016       ;
 ; Quartus Prime Version              ; 16.0.0 Build 211 04/27/2016 SJ Lite Edition ;
 ; Revision Name                      ; BombSquad                                   ;
 ; Top-level Entity Name              ; BombSquad                                   ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE115F29C7                               ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 875 / 114,480 ( < 1 % )                     ;
-;     Total combinational functions  ; 832 / 114,480 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 387 / 114,480 ( < 1 % )                     ;
-; Total registers                    ; 387                                         ;
+; Total logic elements               ; 1,012 / 114,480 ( < 1 % )                   ;
+;     Total combinational functions  ; 974 / 114,480 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 415 / 114,480 ( < 1 % )                     ;
+; Total registers                    ; 415                                         ;
 ; Total pins                         ; 100 / 529 ( 19 % )                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 2,048 / 3,981,312 ( < 1 % )                 ;
@@ -149,15 +149,21 @@ agreement for further details.
 +----------------------------------------------------------------------------+---------------------------------------+---------------------------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   1.1%      ;
++----------------------------+-------------+
 
 
 +---------------------------------------------------+
@@ -274,8 +280,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1438 ) ; 0.00 % ( 0 / 1438 )        ; 0.00 % ( 0 / 1438 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1438 ) ; 0.00 % ( 0 / 1438 )        ; 0.00 % ( 0 / 1438 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1608 ) ; 0.00 % ( 0 / 1608 )        ; 0.00 % ( 0 / 1608 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1608 ) ; 0.00 % ( 0 / 1608 )        ; 0.00 % ( 0 / 1608 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -298,7 +304,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1428 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1598 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 10 )     ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -306,7 +312,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.pin.
+The pin-out file can be found in //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/syn/output_files/BombSquad.pin.
 
 
 +---------------------------------------------------------------------------+
@@ -314,26 +320,26 @@ The pin-out file can be found in F:/[ECE 5440] Advanced Digital Design/Project/s
 +---------------------------------------------+-----------------------------+
 ; Resource                                    ; Usage                       ;
 +---------------------------------------------+-----------------------------+
-; Total logic elements                        ; 875 / 114,480 ( < 1 % )     ;
-;     -- Combinational with no register       ; 488                         ;
-;     -- Register only                        ; 43                          ;
-;     -- Combinational with a register        ; 344                         ;
+; Total logic elements                        ; 1,012 / 114,480 ( < 1 % )   ;
+;     -- Combinational with no register       ; 597                         ;
+;     -- Register only                        ; 38                          ;
+;     -- Combinational with a register        ; 377                         ;
 ;                                             ;                             ;
 ; Logic element usage by number of LUT inputs ;                             ;
-;     -- 4 input functions                    ; 466                         ;
-;     -- 3 input functions                    ; 148                         ;
-;     -- <=2 input functions                  ; 218                         ;
-;     -- Register only                        ; 43                          ;
+;     -- 4 input functions                    ; 581                         ;
+;     -- 3 input functions                    ; 164                         ;
+;     -- <=2 input functions                  ; 229                         ;
+;     -- Register only                        ; 38                          ;
 ;                                             ;                             ;
 ; Logic elements by mode                      ;                             ;
-;     -- normal mode                          ; 753                         ;
+;     -- normal mode                          ; 895                         ;
 ;     -- arithmetic mode                      ; 79                          ;
 ;                                             ;                             ;
-; Total registers*                            ; 387 / 117,053 ( < 1 % )     ;
-;     -- Dedicated logic registers            ; 387 / 114,480 ( < 1 % )     ;
+; Total registers*                            ; 415 / 117,053 ( < 1 % )     ;
+;     -- Dedicated logic registers            ; 415 / 114,480 ( < 1 % )     ;
 ;     -- I/O registers                        ; 0 / 2,573 ( 0 % )           ;
 ;                                             ;                             ;
-; Total LABs:  partially or completely used   ; 72 / 7,155 ( 1 % )          ;
+; Total LABs:  partially or completely used   ; 75 / 7,155 ( 1 % )          ;
 ; Virtual pins                                ; 0                           ;
 ; I/O pins                                    ; 100 / 529 ( 19 % )          ;
 ;     -- Clock pins                           ; 1 / 7 ( 14 % )              ;
@@ -352,85 +358,85 @@ The pin-out file can be found in F:/[ECE 5440] Advanced Digital Design/Project/s
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )               ;
 ; Impedance control blocks                    ; 0 / 4 ( 0 % )               ;
 ; Average interconnect usage (total/H/V)      ; 0.4% / 0.4% / 0.4%          ;
-; Peak interconnect usage (total/H/V)         ; 4.4% / 3.4% / 5.9%          ;
-; Maximum fan-out                             ; 388                         ;
-; Highest non-global fan-out                  ; 295                         ;
-; Total fan-out                               ; 4200                        ;
-; Average fan-out                             ; 2.85                        ;
+; Peak interconnect usage (total/H/V)         ; 4.2% / 3.3% / 6.0%          ;
+; Maximum fan-out                             ; 416                         ;
+; Highest non-global fan-out                  ; 332                         ;
+; Total fan-out                               ; 4803                        ;
+; Average fan-out                             ; 2.93                        ;
 +---------------------------------------------+-----------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Fitter Partition Statistics                                                                           ;
-+---------------------------------------------+------------------------+--------------------------------+
-; Statistic                                   ; Top                    ; hard_block:auto_generated_inst ;
-+---------------------------------------------+------------------------+--------------------------------+
-; Difficulty Clustering Region                ; Low                    ; Low                            ;
-;                                             ;                        ;                                ;
-; Total logic elements                        ; 875 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- Combinational with no register       ; 488                    ; 0                              ;
-;     -- Register only                        ; 43                     ; 0                              ;
-;     -- Combinational with a register        ; 344                    ; 0                              ;
-;                                             ;                        ;                                ;
-; Logic element usage by number of LUT inputs ;                        ;                                ;
-;     -- 4 input functions                    ; 466                    ; 0                              ;
-;     -- 3 input functions                    ; 148                    ; 0                              ;
-;     -- <=2 input functions                  ; 218                    ; 0                              ;
-;     -- Register only                        ; 43                     ; 0                              ;
-;                                             ;                        ;                                ;
-; Logic elements by mode                      ;                        ;                                ;
-;     -- normal mode                          ; 753                    ; 0                              ;
-;     -- arithmetic mode                      ; 79                     ; 0                              ;
-;                                             ;                        ;                                ;
-; Total registers                             ; 387                    ; 0                              ;
-;     -- Dedicated logic registers            ; 387 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
-;     -- I/O registers                        ; 0                      ; 0                              ;
-;                                             ;                        ;                                ;
-; Total LABs:  partially or completely used   ; 72 / 7155 ( 1 % )      ; 0 / 7155 ( 0 % )               ;
-;                                             ;                        ;                                ;
-; Virtual pins                                ; 0                      ; 0                              ;
-; I/O pins                                    ; 100                    ; 0                              ;
-; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )        ; 0 / 532 ( 0 % )                ;
-; Total memory bits                           ; 2048                   ; 0                              ;
-; Total RAM block bits                        ; 9216                   ; 0                              ;
-; M9K                                         ; 1 / 432 ( < 1 % )      ; 0 / 432 ( 0 % )                ;
-; Clock control block                         ; 1 / 24 ( 4 % )         ; 0 / 24 ( 0 % )                 ;
-;                                             ;                        ;                                ;
-; Connections                                 ;                        ;                                ;
-;     -- Input Connections                    ; 0                      ; 0                              ;
-;     -- Registered Input Connections         ; 0                      ; 0                              ;
-;     -- Output Connections                   ; 0                      ; 0                              ;
-;     -- Registered Output Connections        ; 0                      ; 0                              ;
-;                                             ;                        ;                                ;
-; Internal Connections                        ;                        ;                                ;
-;     -- Total Connections                    ; 4195                   ; 5                              ;
-;     -- Registered Connections               ; 1961                   ; 0                              ;
-;                                             ;                        ;                                ;
-; External Connections                        ;                        ;                                ;
-;     -- Top                                  ; 0                      ; 0                              ;
-;     -- hard_block:auto_generated_inst       ; 0                      ; 0                              ;
-;                                             ;                        ;                                ;
-; Partition Interface                         ;                        ;                                ;
-;     -- Input Ports                          ; 13                     ; 0                              ;
-;     -- Output Ports                         ; 87                     ; 0                              ;
-;     -- Bidir Ports                          ; 0                      ; 0                              ;
-;                                             ;                        ;                                ;
-; Registered Ports                            ;                        ;                                ;
-;     -- Registered Input Ports               ; 0                      ; 0                              ;
-;     -- Registered Output Ports              ; 0                      ; 0                              ;
-;                                             ;                        ;                                ;
-; Port Connectivity                           ;                        ;                                ;
-;     -- Input Ports driven by GND            ; 0                      ; 0                              ;
-;     -- Output Ports driven by GND           ; 0                      ; 0                              ;
-;     -- Input Ports driven by VCC            ; 0                      ; 0                              ;
-;     -- Output Ports driven by VCC           ; 0                      ; 0                              ;
-;     -- Input Ports with no Source           ; 0                      ; 0                              ;
-;     -- Output Ports with no Source          ; 0                      ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                      ; 0                              ;
-;     -- Output Ports with no Fanout          ; 0                      ; 0                              ;
-+---------------------------------------------+------------------------+--------------------------------+
++--------------------------------------------------------------------------------------------------------+
+; Fitter Partition Statistics                                                                            ;
++---------------------------------------------+-------------------------+--------------------------------+
+; Statistic                                   ; Top                     ; hard_block:auto_generated_inst ;
++---------------------------------------------+-------------------------+--------------------------------+
+; Difficulty Clustering Region                ; Low                     ; Low                            ;
+;                                             ;                         ;                                ;
+; Total logic elements                        ; 1012 / 114480 ( < 1 % ) ; 0 / 114480 ( 0 % )             ;
+;     -- Combinational with no register       ; 597                     ; 0                              ;
+;     -- Register only                        ; 38                      ; 0                              ;
+;     -- Combinational with a register        ; 377                     ; 0                              ;
+;                                             ;                         ;                                ;
+; Logic element usage by number of LUT inputs ;                         ;                                ;
+;     -- 4 input functions                    ; 581                     ; 0                              ;
+;     -- 3 input functions                    ; 164                     ; 0                              ;
+;     -- <=2 input functions                  ; 229                     ; 0                              ;
+;     -- Register only                        ; 38                      ; 0                              ;
+;                                             ;                         ;                                ;
+; Logic elements by mode                      ;                         ;                                ;
+;     -- normal mode                          ; 895                     ; 0                              ;
+;     -- arithmetic mode                      ; 79                      ; 0                              ;
+;                                             ;                         ;                                ;
+; Total registers                             ; 415                     ; 0                              ;
+;     -- Dedicated logic registers            ; 415 / 114480 ( < 1 % )  ; 0 / 114480 ( 0 % )             ;
+;     -- I/O registers                        ; 0                       ; 0                              ;
+;                                             ;                         ;                                ;
+; Total LABs:  partially or completely used   ; 75 / 7155 ( 1 % )       ; 0 / 7155 ( 0 % )               ;
+;                                             ;                         ;                                ;
+; Virtual pins                                ; 0                       ; 0                              ;
+; I/O pins                                    ; 100                     ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0 / 532 ( 0 % )         ; 0 / 532 ( 0 % )                ;
+; Total memory bits                           ; 2048                    ; 0                              ;
+; Total RAM block bits                        ; 9216                    ; 0                              ;
+; M9K                                         ; 1 / 432 ( < 1 % )       ; 0 / 432 ( 0 % )                ;
+; Clock control block                         ; 1 / 24 ( 4 % )          ; 0 / 24 ( 0 % )                 ;
+;                                             ;                         ;                                ;
+; Connections                                 ;                         ;                                ;
+;     -- Input Connections                    ; 0                       ; 0                              ;
+;     -- Registered Input Connections         ; 0                       ; 0                              ;
+;     -- Output Connections                   ; 0                       ; 0                              ;
+;     -- Registered Output Connections        ; 0                       ; 0                              ;
+;                                             ;                         ;                                ;
+; Internal Connections                        ;                         ;                                ;
+;     -- Total Connections                    ; 4798                    ; 5                              ;
+;     -- Registered Connections               ; 2234                    ; 0                              ;
+;                                             ;                         ;                                ;
+; External Connections                        ;                         ;                                ;
+;     -- Top                                  ; 0                       ; 0                              ;
+;     -- hard_block:auto_generated_inst       ; 0                       ; 0                              ;
+;                                             ;                         ;                                ;
+; Partition Interface                         ;                         ;                                ;
+;     -- Input Ports                          ; 13                      ; 0                              ;
+;     -- Output Ports                         ; 87                      ; 0                              ;
+;     -- Bidir Ports                          ; 0                       ; 0                              ;
+;                                             ;                         ;                                ;
+; Registered Ports                            ;                         ;                                ;
+;     -- Registered Input Ports               ; 0                       ; 0                              ;
+;     -- Registered Output Ports              ; 0                       ; 0                              ;
+;                                             ;                         ;                                ;
+; Port Connectivity                           ;                         ;                                ;
+;     -- Input Ports driven by GND            ; 0                       ; 0                              ;
+;     -- Output Ports driven by GND           ; 0                       ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0                       ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0                       ; 0                              ;
+;     -- Input Ports with no Source           ; 0                       ; 0                              ;
+;     -- Output Ports with no Source          ; 0                       ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                       ; 0                              ;
+;     -- Output Ports with no Fanout          ; 0                       ; 0                              ;
++---------------------------------------------+-------------------------+--------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -438,9 +444,9 @@ The pin-out file can be found in F:/[ECE 5440] Advanced Digital Design/Project/s
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
 ; Name          ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +---------------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+-----------+
-; clk           ; Y2    ; 2        ; 0            ; 36           ; 14           ; 388                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; clk           ; Y2    ; 2        ; 0            ; 36           ; 14           ; 416                   ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; rotate_button ; R24   ; 5        ; 115          ; 35           ; 21           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
-; rst           ; M23   ; 6        ; 115          ; 40           ; 7            ; 295                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
+; rst           ; M23   ; 6        ; 115          ; 40           ; 7            ; 332                   ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; submit_button ; M21   ; 6        ; 115          ; 53           ; 14           ; 2                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; user_cred[0]  ; AB28  ; 5        ; 115          ; 17           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
 ; user_cred[1]  ; AC28  ; 5        ; 115          ; 14           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ; no        ;
@@ -1380,24 +1386,25 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
 ; Compilation Hierarchy Node                           ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                               ; Entity Name          ; Library Name ;
 +------------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------+----------------------+--------------+
-; |BombSquad                                           ; 875 (1)     ; 387 (0)                   ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 100  ; 0            ; 488 (1)      ; 43 (0)            ; 344 (0)          ; |BombSquad                                                                                        ; BombSquad            ; work         ;
-;    |Authentication:UserAuthentication|               ; 59 (59)     ; 33 (33)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 26 (26)      ; 0 (0)             ; 33 (33)          ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
-;    |ButtonShaper:RotateButton|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 3 (3)            ; |BombSquad|ButtonShaper:RotateButton                                                              ; ButtonShaper         ; work         ;
+; |BombSquad                                           ; 1012 (1)    ; 415 (0)                   ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 100  ; 0            ; 597 (1)      ; 38 (0)            ; 377 (0)          ; |BombSquad                                                                                        ; BombSquad            ; work         ;
+;    |Authentication:UserAuthentication|               ; 58 (58)     ; 34 (34)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 34 (34)          ; |BombSquad|Authentication:UserAuthentication                                                      ; Authentication       ; work         ;
+;    |ButtonShaper:RotateButton|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 2 (2)            ; |BombSquad|ButtonShaper:RotateButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:SubmitButton|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 2 (2)            ; |BombSquad|ButtonShaper:SubmitButton                                                              ; ButtonShaper         ; work         ;
 ;    |ButtonShaper:VerifyButton|                       ; 3 (3)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 2 (2)            ; |BombSquad|ButtonShaper:VerifyButton                                                              ; ButtonShaper         ; work         ;
-;    |Countdown:CountdownTimer|                        ; 30 (30)     ; 13 (13)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 16 (16)      ; 0 (0)             ; 14 (14)          ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
+;    |Countdown:CountdownTimer|                        ; 28 (28)     ; 13 (13)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 13 (13)          ; |BombSquad|Countdown:CountdownTimer                                                               ; Countdown            ; work         ;
 ;    |GameController:MainGameController|               ; 27 (27)     ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 21 (21)      ; 0 (0)             ; 6 (6)            ; |BombSquad|GameController:MainGameController                                                      ; GameController       ; work         ;
-;    |LCDController:LCDController1|                    ; 339 (339)   ; 169 (169)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 170 (170)    ; 0 (0)             ; 169 (169)        ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
-;    |LEDDriver:LEDDriver1|                            ; 66 (66)     ; 42 (42)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 24 (24)      ; 0 (0)             ; 42 (42)          ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
-;    |OneSec_Timer:OneSecondTimer|                     ; 40 (40)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 13 (13)      ; 4 (4)             ; 23 (23)          ; |BombSquad|OneSec_Timer:OneSecondTimer                                                            ; OneSec_Timer         ; work         ;
+;    |LCDController:LCDController1|                    ; 356 (356)   ; 179 (179)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 177 (177)    ; 0 (0)             ; 179 (179)        ; |BombSquad|LCDController:LCDController1                                                           ; LCDController        ; work         ;
+;    |LEDDriver:LEDDriver1|                            ; 132 (115)   ; 57 (41)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 75 (74)      ; 9 (0)             ; 48 (41)          ; |BombSquad|LEDDriver:LEDDriver1                                                                   ; LEDDriver            ; work         ;
+;       |LFSR8bit:LFSR1|                               ; 11 (11)     ; 10 (10)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 3 (3)             ; 7 (7)            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR1                                                    ; LFSR8bit             ; work         ;
+;       |LFSR8bit:LFSR2|                               ; 6 (6)       ; 6 (6)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 6 (6)             ; 0 (0)            ; |BombSquad|LEDDriver:LEDDriver1|LFSR8bit:LFSR2                                                    ; LFSR8bit             ; work         ;
+;    |OneSec_Timer:OneSecondTimer|                     ; 37 (37)     ; 27 (27)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 10 (10)      ; 1 (1)             ; 26 (26)          ; |BombSquad|OneSec_Timer:OneSecondTimer                                                            ; OneSec_Timer         ; work         ;
 ;    |ROM_Sim:UserCredentials|                         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |BombSquad|ROM_Sim:UserCredentials                                                                ; ROM_Sim              ; work         ;
 ;       |altsyncram:altsyncram_component|              ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
 ;          |altsyncram_0p91:auto_generated|            ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 2048        ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |BombSquad|ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated ; altsyncram_0p91      ; work         ;
-;    |SSD_Sequence:SSD_Sequence1|                      ; 187 (187)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 149 (149)    ; 25 (25)           ; 13 (13)          ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
-;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 38 (0)      ; 34 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 4 (0)        ; 11 (0)            ; 23 (0)           ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
-;       |LFSR8bit:LFSR8bit1|                           ; 17 (17)     ; 16 (16)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 9 (9)             ; 7 (7)            ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1                     ; LFSR8bit             ; work         ;
-;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 21 (21)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 3 (3)        ; 2 (2)             ; 16 (16)          ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
-;    |SequenceVerifier:UserSequenceVerifier|           ; 59 (59)     ; 17 (17)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 42 (42)      ; 1 (1)             ; 16 (16)          ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
+;    |SSD_Sequence:SSD_Sequence1|                      ; 188 (188)   ; 37 (37)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 151 (151)    ; 24 (24)           ; 13 (13)          ; |BombSquad|SSD_Sequence:SSD_Sequence1                                                             ; SSD_Sequence         ; work         ;
+;    |SequenceKeyGenerator:PuzzleSequenceKeyGenerator| ; 19 (0)      ; 18 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (0)        ; 0 (0)             ; 18 (0)           ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator                                        ; SequenceKeyGenerator ; work         ;
+;       |SequenceKeyBuilder:SequenceKeyBuilder1|       ; 19 (19)     ; 18 (18)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 18 (18)          ; |BombSquad|SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1 ; SequenceKeyBuilder   ; work         ;
+;    |SequenceVerifier:UserSequenceVerifier|           ; 135 (135)   ; 35 (35)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 100 (100)    ; 1 (1)             ; 34 (34)          ; |BombSquad|SequenceVerifier:UserSequenceVerifier                                                  ; SequenceVerifier     ; work         ;
 ;    |SevSegTimer:SevSegTimer1|                        ; 8 (8)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 8 (8)        ; 0 (0)             ; 0 (0)            ; |BombSquad|SevSegTimer:SevSegTimer1                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer2|                        ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |BombSquad|SevSegTimer:SevSegTimer2                                                               ; SevSegTimer          ; work         ;
 ;    |SevSegTimer:SevSegTimer3|                        ; 7 (7)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 7 (7)        ; 0 (0)             ; 0 (0)            ; |BombSquad|SevSegTimer:SevSegTimer3                                                               ; SevSegTimer          ; work         ;
@@ -1498,7 +1505,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; led_r[16]         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; led_r[17]         ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; clk               ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; rst               ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; rst               ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; rotate_button     ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; verify_button     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; user_cred[1]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1506,7 +1513,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; user_cred[3]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; user_cred[2]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; user_cred[5]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
-; user_cred[4]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; user_cred[4]      ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
 ; user_cred[7]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; user_cred[6]      ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 ; submit_button     ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
@@ -1520,301 +1527,338 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------+-------------------+---------+
 ; clk                                                                                                              ;                   ;         ;
 ; rst                                                                                                              ;                   ;         ;
-;      - LCDController:LCDController1|lcd_flag[0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[3]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[7]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_flag[9]                                                                  ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_one[0]                                                                     ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_one[3]                                                                     ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_two[0]                                                                     ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_two[3]                                                                     ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_three[0]                                                                   ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_three[2]                                                                   ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_three[3]                                                                   ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[0]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[1]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[3]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[4]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[5]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[6]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[0]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[1]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[3]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[4]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[5]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[6]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[0]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[1]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[3]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[4]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[5]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[6]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[0]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[1]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[3]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[4]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[5]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[6]                                                                    ; 0                 ; 6       ;
-;      - LCDController:LCDController1|lcd_en                                                                       ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_g[0]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[0]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[17]                                                                            ; 0                 ; 6       ;
-;      - GameController:MainGameController|s_current[0]                                                            ; 0                 ; 6       ;
-;      - GameController:MainGameController|s_current[1]                                                            ; 0                 ; 6       ;
-;      - GameController:MainGameController|s_current[4]                                                            ; 0                 ; 6       ;
-;      - GameController:MainGameController|s_current[5]                                                            ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|visabity[0]                                                                    ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|visabity[1]                                                                    ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3reg[0]                                                        ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3reg[1]                                                        ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3reg[2]                                                        ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3reg[3]                                                        ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3_target[3]                                                    ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3_target[2]                                                    ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3_target[1]                                                    ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage3_target[0]                                                    ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|result[0]                                                           ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|result[1]                                                           ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[3]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[2]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[1]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[0]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[7]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[6]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[5]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[4]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[11]   ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[10]   ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[9]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[8]    ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[15]   ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[14]   ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[13]   ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12]   ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[10][2]                                                                 ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|direction                                                                            ; 0                 ; 6       ;
-;      - GameController:MainGameController|game_state[1]                                                           ; 0                 ; 6       ;
-;      - GameController:MainGameController|game_state[0]                                                           ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|transmit           ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR[0]                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|User[0]                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|User[1]                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|User[2]                                                                 ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|state                                                                            ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state.firstSeg                                                                 ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state.show2Sec                                                                 ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|level_stage.stage3                                                  ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|State_m.Compare                                                         ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[1]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[2]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[3]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[4]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[5]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[6]                                                                             ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[7]                                                                             ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[9][0]                                                                  ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_one[0]~3                                                                   ; 0                 ; 6       ;
-;      - OneSec_Timer:OneSecondTimer|timeout                                                                       ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_three[1]~5                                                                 ; 0                 ; 6       ;
-;      - ButtonShaper:RotateButton|B_out                                                                           ; 0                 ; 6       ;
-;      - ButtonShaper:VerifyButton|B_out                                                                           ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_1[3]~4                                                                  ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_2[5]~4                                                                  ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_3[1]~5                                                                  ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sevseg_4[5]~4                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[14][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[3][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[2][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[13][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[12][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[5][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[4][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[12][4]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[8][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[0][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[10][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[3][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[4][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[6][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[9][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[1][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[8][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[4][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][4]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[7][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[6][0]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[12][0]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[10][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[9][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[6][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[4][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[7][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[3][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[1][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[13][6]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[13][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[12][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[14][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[6][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[14][6]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[9][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[12][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[2][1]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[12][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[11][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[10][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][1]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[3][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[2][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[13][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[10][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[9][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[8][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[5][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[4][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[3][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[2][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[6][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[12][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[11][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][2]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[7][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[9][2]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm.S_POWER                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[2][3]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[5][3]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[4][3]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][3]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[11][3]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][3]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[12][3]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[4][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[3][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[2][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[5][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[12][4]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[10][4]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[10][4]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[9][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[8][4]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[0][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[14][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[9][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[5][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[4][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[11][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[10][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[7][5]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[14][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[13][5]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[9][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[8][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[5][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[13][6]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[10][6]                                                                 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[6][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[9][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[8][6]                                                                  ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data1[11][6]                                                                 ; 0                 ; 6       ;
-;      - LEDDriver:LEDDriver1|led_r[4]~8                                                                           ; 0                 ; 6       ;
-;      - GameController:MainGameController|s_current~13                                                            ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~19                                                                       ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~20                                                                       ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~21                                                                       ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~22                                                                       ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~23                                                                       ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[11]~0 ; 0                 ; 6       ;
-;      - LCDController:LCDController1|counter[5]~26                                                                ; 0                 ; 6       ;
-;      - LCDController:LCDController1|counter[5]~27                                                                ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~27                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|char_cur[3]~16                                                               ; 0                 ; 6       ;
-;      - LCDController:LCDController1|char_cur[3]~17                                                               ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_WRITEDATA                                                         ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~28                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_DISPCLR                                                           ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~29                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data2[1][0]~2                                                                ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data_user[0][1]                                                              ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data_user[0][0]                                                              ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_ENTRYMODE                                                         ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~30                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data_user[0][2]                                                              ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data_user[1][2]                                                              ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_DISPCNTRL                                                         ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~31                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|data_user[2][2]                                                              ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_FNCTNSET                                                          ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~32                                                                       ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm_next.S_DISPOFF                                                           ; 0                 ; 6       ;
-;      - LCDController:LCDController1|fsm~33                                                                       ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|flag~0                                                                  ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|s_update[0]~1                                                           ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|s_update~2                                                              ; 0                 ; 6       ;
-;      - OneSec_Timer:OneSecondTimer|cnt[22]~28                                                                    ; 0                 ; 6       ;
-;      - ButtonShaper:RotateButton|State~6                                                                         ; 0                 ; 6       ;
-;      - ButtonShaper:VerifyButton|State~6                                                                         ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|state~25                                                                       ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~8            ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|level_stage~22                                                      ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|level_stage~23                                                      ; 0                 ; 6       ;
-;      - SSD_Sequence:SSD_Sequence1|sequence_out[3]~10                                                             ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~0                                                                 ; 0                 ; 6       ;
-;      - ButtonShaper:SubmitButton|B_out                                                                           ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c[0]~2                                                              ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~3                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~1                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c[3]~2                                                             ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~3                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~4                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~5                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~4                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~5                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~6                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~7                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~6                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~7                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~8                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_c~9                                                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~8                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|user_c~9                                                                ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|State_m~8                                                               ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage_counter[2]~0                                                  ; 0                 ; 6       ;
-;      - SequenceVerifier:UserSequenceVerifier|stage_counter[2]~3                                                  ; 0                 ; 6       ;
-;      - ButtonShaper:RotateButton|State~7                                                                         ; 0                 ; 6       ;
-;      - ButtonShaper:VerifyButton|State~7                                                                         ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~1                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~2                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~3                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~4                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~5                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~6                                 ; 0                 ; 6       ;
-;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|LFSR8bit:LFSR8bit1|LFSR~7                                 ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|User[0]~3                                                               ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|flag~1                                                                  ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|State_m~9                                                               ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|rom_a[2]~10                                                             ; 0                 ; 6       ;
-;      - ButtonShaper:SubmitButton|State~6                                                                         ; 0                 ; 6       ;
-;      - Authentication:UserAuthentication|State_m~11                                                              ; 0                 ; 6       ;
-;      - ButtonShaper:SubmitButton|State~7                                                                         ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_one[0]~8                                                                   ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_two[2]~8                                                                   ; 0                 ; 6       ;
-;      - Countdown:CountdownTimer|value_three[0]~8                                                                 ; 0                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[3]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[7]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_flag[9]                                                                  ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_one[0]                                                                     ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_one[3]                                                                     ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_two[0]                                                                     ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_two[3]                                                                     ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_three[3]                                                                   ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[0]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[1]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[3]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[4]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[5]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[6]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[0]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[1]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[3]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[4]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[5]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[6]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[0]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[1]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[3]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[4]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[5]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[6]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[0]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[1]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[3]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[4]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[5]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[6]                                                                    ; 1                 ; 6       ;
+;      - LCDController:LCDController1|lcd_en                                                                       ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[0]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[1]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[2]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[3]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[4]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[5]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[6]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[7]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[8]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[9]                                                                             ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[10]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[11]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[12]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[13]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[14]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[15]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[16]                                                                            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|led_r[17]                                                                            ; 1                 ; 6       ;
+;      - GameController:MainGameController|s_current[0]                                                            ; 1                 ; 6       ;
+;      - GameController:MainGameController|s_current[1]                                                            ; 1                 ; 6       ;
+;      - GameController:MainGameController|s_current[4]                                                            ; 1                 ; 6       ;
+;      - GameController:MainGameController|s_current[5]                                                            ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|visabity[0]                                                                    ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|visabity[1]                                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1reg[0]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1reg[1]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1reg[2]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1reg[3]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2reg[0]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2reg[1]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2reg[2]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2reg[3]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3reg[0]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3reg[1]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3reg[2]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3reg[3]                                                        ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1_target[3]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1_target[2]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1_target[1]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage1_target[0]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2_target[3]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2_target[2]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2_target[1]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage2_target[0]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3_target[3]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3_target[2]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3_target[1]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage3_target[0]                                                    ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|result[0]                                                           ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|result[1]                                                           ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[3]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[2]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[1]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[0]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[7]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[6]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[5]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[4]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[11]   ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[10]   ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[9]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[8]    ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[15]   ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[14]   ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[13]   ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12]   ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][2]                                                                 ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|direction                                                                            ; 1                 ; 6       ;
+;      - GameController:MainGameController|game_state[1]                                                           ; 1                 ; 6       ;
+;      - GameController:MainGameController|game_state[0]                                                           ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|transmit           ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR[0]                                                               ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|ram_a[0]                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|ram_a[1]                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|ram_a[2]                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|ram_a[3]                                                                ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|state                                                                            ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state.firstSeg                                                                 ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state.show2Sec                                                                 ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage.stage3                                                  ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage.stage2                                                  ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage.stage1                                                  ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|State_m.Compare                                                         ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage.stage_fail                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[9][0]                                                                  ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_one[3]~3                                                                   ; 1                 ; 6       ;
+;      - OneSec_Timer:OneSecondTimer|timeout                                                                       ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_three[1]~4                                                                 ; 1                 ; 6       ;
+;      - ButtonShaper:RotateButton|B_out                                                                           ; 1                 ; 6       ;
+;      - ButtonShaper:VerifyButton|B_out                                                                           ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_1[6]~4                                                                  ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_2[4]~4                                                                  ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_3[6]~5                                                                  ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sevseg_4[1]~4                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[14][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[3][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[2][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[13][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[12][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[5][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[4][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[12][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[8][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[0][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[10][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[3][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[4][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[6][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[9][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[1][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[8][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[4][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[7][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[6][0]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[12][0]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[10][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[9][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[6][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[4][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[7][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[3][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[1][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[13][6]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[13][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[12][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[14][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[6][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[14][6]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[9][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[12][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[2][1]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[12][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[11][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][1]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[3][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[2][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[13][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[10][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[9][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[8][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[5][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[4][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[3][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[2][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[6][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[12][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[11][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][2]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[7][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[9][2]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm.S_POWER                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[2][3]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[5][3]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[4][3]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[12][3]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[11][3]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][3]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][3]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][3]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[4][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[3][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[2][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[5][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[12][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[10][4]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[9][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[8][4]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[0][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[14][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[9][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[5][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[4][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[11][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[7][5]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[14][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[13][5]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[9][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[8][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[5][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[13][6]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[10][6]                                                                 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[9][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[6][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[8][6]                                                                  ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data1[11][6]                                                                 ; 1                 ; 6       ;
+;      - GameController:MainGameController|s_current~14                                                            ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~19                                                                       ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~20                                                                       ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~21                                                                       ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~22                                                                       ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~23                                                                       ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12]~0 ; 1                 ; 6       ;
+;      - LCDController:LCDController1|counter[0]~26                                                                ; 1                 ; 6       ;
+;      - LCDController:LCDController1|counter[0]~27                                                                ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~27                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|char_cur[5]~16                                                               ; 1                 ; 6       ;
+;      - LCDController:LCDController1|char_cur[5]~17                                                               ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_WRITEDATA                                                         ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~28                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_DISPCLR                                                           ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~29                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data2[1][0]~3                                                                ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[1][0]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[0][0]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[4][0]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_ENTRYMODE                                                         ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~30                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[0][1]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[1][1]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[3][1]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[0][6]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[1][2]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_DISPCNTRL                                                         ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~31                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[2][2]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[0][2]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_FNCTNSET                                                          ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~32                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm_next.S_DISPOFF                                                           ; 1                 ; 6       ;
+;      - LCDController:LCDController1|fsm~33                                                                       ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[3][3]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[2][3]                                                              ; 1                 ; 6       ;
+;      - LCDController:LCDController1|data_user[0][5]                                                              ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|counter[3]~67                                                                        ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|flag~0                                                                  ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|s_update[1]~1                                                           ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|s_update~2                                                              ; 1                 ; 6       ;
+;      - OneSec_Timer:OneSecondTimer|cnt[1]~28                                                                     ; 1                 ; 6       ;
+;      - ButtonShaper:RotateButton|State~6                                                                         ; 1                 ; 6       ;
+;      - ButtonShaper:VerifyButton|State~6                                                                         ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|state~25                                                                       ; 1                 ; 6       ;
+;      - SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|state~8            ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~1                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~2                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~3                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~4                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~5                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~6                                                                ; 1                 ; 6       ;
+;      - LEDDriver:LEDDriver1|LFSR8bit:LFSR1|LFSR~7                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~0                                                                 ; 1                 ; 6       ;
+;      - ButtonShaper:SubmitButton|B_out                                                                           ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c[7]~2                                                              ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~3                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~1                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c[0]~2                                                             ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~3                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~4                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~5                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~4                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~5                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~6                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~7                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~6                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~7                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~8                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_c~9                                                                 ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~8                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~9                                                                ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|State_m~8                                                               ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage~23                                                      ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage_counter[0]~6                                                  ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|stage_counter[0]~11                                                 ; 1                 ; 6       ;
+;      - SequenceVerifier:UserSequenceVerifier|level_stage~25                                                      ; 1                 ; 6       ;
+;      - ButtonShaper:RotateButton|State~7                                                                         ; 1                 ; 6       ;
+;      - ButtonShaper:VerifyButton|State~7                                                                         ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|ram_a[1]~9                                                              ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|flag~1                                                                  ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|State_m~9                                                               ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|rom_a[7]~10                                                             ; 1                 ; 6       ;
+;      - ButtonShaper:SubmitButton|State~6                                                                         ; 1                 ; 6       ;
+;      - Authentication:UserAuthentication|State_m~11                                                              ; 1                 ; 6       ;
+;      - ButtonShaper:SubmitButton|State~7                                                                         ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_one[2]~8                                                                   ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_two[3]~9                                                                   ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_two[2]~10                                                                  ; 1                 ; 6       ;
+;      - Countdown:CountdownTimer|value_three[0]~7                                                                 ; 1                 ; 6       ;
+;      - SSD_Sequence:SSD_Sequence1|sequence_out[3]~30                                                             ; 1                 ; 6       ;
 ; rotate_button                                                                                                    ;                   ;         ;
 ;      - ButtonShaper:RotateButton|State~6                                                                         ; 1                 ; 6       ;
 ;      - ButtonShaper:RotateButton|State~7                                                                         ; 1                 ; 6       ;
@@ -1832,7 +1876,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; user_cred[5]                                                                                                     ;                   ;         ;
 ;      - Authentication:UserAuthentication|user_c~6                                                                ; 1                 ; 6       ;
 ; user_cred[4]                                                                                                     ;                   ;         ;
-;      - Authentication:UserAuthentication|user_c~7                                                                ; 0                 ; 6       ;
+;      - Authentication:UserAuthentication|user_c~7                                                                ; 1                 ; 6       ;
 ; user_cred[7]                                                                                                     ;                   ;         ;
 ;      - Authentication:UserAuthentication|user_c~8                                                                ; 0                 ; 6       ;
 ; user_cred[6]                                                                                                     ;                   ;         ;
@@ -1848,38 +1892,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------------------------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                      ; Location            ; Fan-Out ; Usage                                 ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +-----------------------------------------------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
-; Authentication:UserAuthentication|State_m~8                                                               ; LCCOMB_X109_Y36_N6  ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|State_m~9                                                               ; LCCOMB_X105_Y36_N24 ; 9       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|User[0]~3                                                               ; LCCOMB_X108_Y36_N4  ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|rom_a[2]~10                                                             ; LCCOMB_X105_Y36_N30 ; 8       ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|rom_c[0]~2                                                              ; LCCOMB_X107_Y36_N4  ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|s_update[0]~1                                                           ; LCCOMB_X109_Y36_N30 ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Authentication:UserAuthentication|user_c[3]~2                                                             ; LCCOMB_X107_Y36_N2  ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Countdown:CountdownTimer|state                                                                            ; FF_X106_Y33_N29     ; 14      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
-; Countdown:CountdownTimer|value_one[0]~8                                                                   ; LCCOMB_X106_Y33_N24 ; 4       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Countdown:CountdownTimer|value_three[0]~8                                                                 ; LCCOMB_X107_Y33_N24 ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; Countdown:CountdownTimer|value_two[0]~4                                                                   ; LCCOMB_X107_Y33_N12 ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; GameController:MainGameController|s_current[1]                                                            ; FF_X108_Y40_N19     ; 74      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
-; GameController:MainGameController|s_current[5]                                                            ; FF_X108_Y40_N3      ; 78      ; Sync. clear, Sync. load               ; no     ; --                   ; --               ; --                        ;
-; GameController:MainGameController|s_current~13                                                            ; LCCOMB_X108_Y39_N30 ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; LCDController:LCDController1|char_cur[3]~16                                                               ; LCCOMB_X110_Y40_N28 ; 6       ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
-; LCDController:LCDController1|char_cur[3]~17                                                               ; LCCOMB_X110_Y40_N30 ; 6       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; LCDController:LCDController1|counter[5]~26                                                                ; LCCOMB_X105_Y43_N22 ; 22      ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
-; LCDController:LCDController1|counter[5]~27                                                                ; LCCOMB_X109_Y43_N22 ; 22      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; LCDController:LCDController1|data2[1][0]~2                                                                ; LCCOMB_X110_Y43_N20 ; 6       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; LEDDriver:LEDDriver1|led_r[4]~10                                                                          ; LCCOMB_X101_Y51_N8  ; 18      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; LEDDriver:LEDDriver1|led_r[4]~8                                                                           ; LCCOMB_X101_Y51_N20 ; 39      ; Clock enable, Sync. load              ; no     ; --                   ; --               ; --                        ;
-; OneSec_Timer:OneSecondTimer|cnt[22]~28                                                                    ; LCCOMB_X109_Y33_N30 ; 26      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|sequence_out[3]~27                                                             ; LCCOMB_X102_Y31_N2  ; 4       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|sevseg_1[3]~4                                                                  ; LCCOMB_X99_Y30_N2   ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|sevseg_2[5]~4                                                                  ; LCCOMB_X103_Y30_N18 ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|sevseg_3[1]~5                                                                  ; LCCOMB_X103_Y29_N24 ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|sevseg_4[5]~4                                                                  ; LCCOMB_X102_Y33_N16 ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SSD_Sequence:SSD_Sequence1|state~20                                                                       ; LCCOMB_X102_Y30_N16 ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[11]~0 ; LCCOMB_X106_Y32_N18 ; 16      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; SequenceVerifier:UserSequenceVerifier|stage_counter[2]~3                                                  ; LCCOMB_X100_Y31_N18 ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
-; clk                                                                                                       ; PIN_Y2              ; 388     ; Clock                                 ; yes    ; Global Clock         ; GCLK4            ; --                        ;
-; rst                                                                                                       ; PIN_M23             ; 295     ; Clock enable, Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|State_m~8                                                               ; LCCOMB_X108_Y36_N6  ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|State_m~9                                                               ; LCCOMB_X105_Y36_N26 ; 9       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|ram_a[1]~9                                                              ; LCCOMB_X107_Y36_N4  ; 4       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|rom_a[7]~10                                                             ; LCCOMB_X106_Y36_N28 ; 8       ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|rom_c[7]~2                                                              ; LCCOMB_X106_Y36_N4  ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|s_update[1]~1                                                           ; LCCOMB_X109_Y36_N2  ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Authentication:UserAuthentication|user_c[0]~2                                                             ; LCCOMB_X108_Y36_N8  ; 8       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Countdown:CountdownTimer|value_one[3]~4                                                                   ; LCCOMB_X109_Y38_N16 ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Countdown:CountdownTimer|value_three[0]~7                                                                 ; LCCOMB_X110_Y35_N26 ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; Countdown:CountdownTimer|value_two[3]~9                                                                   ; LCCOMB_X110_Y34_N16 ; 4       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; GameController:MainGameController|s_current[1]                                                            ; FF_X106_Y38_N27     ; 76      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
+; GameController:MainGameController|s_current[5]                                                            ; FF_X109_Y38_N21     ; 83      ; Sync. clear, Sync. load               ; no     ; --                   ; --               ; --                        ;
+; GameController:MainGameController|s_current~14                                                            ; LCCOMB_X105_Y38_N2  ; 2       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; LCDController:LCDController1|char_cur[5]~16                                                               ; LCCOMB_X110_Y42_N26 ; 6       ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
+; LCDController:LCDController1|char_cur[5]~17                                                               ; LCCOMB_X106_Y43_N28 ; 6       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; LCDController:LCDController1|counter[0]~26                                                                ; LCCOMB_X111_Y42_N26 ; 22      ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
+; LCDController:LCDController1|counter[0]~27                                                                ; LCCOMB_X110_Y42_N0  ; 22      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; LCDController:LCDController1|data2[1][0]~3                                                                ; LCCOMB_X106_Y40_N16 ; 6       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; LEDDriver:LEDDriver1|counter[17]~66                                                                       ; LCCOMB_X92_Y41_N22  ; 22      ; Sync. clear                           ; no     ; --                   ; --               ; --                        ;
+; LEDDriver:LEDDriver1|counter[3]~67                                                                        ; LCCOMB_X91_Y41_N24  ; 22      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; OneSec_Timer:OneSecondTimer|cnt[1]~28                                                                     ; LCCOMB_X111_Y40_N0  ; 26      ; Sync. load                            ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|sequence_out[3]~26                                                             ; LCCOMB_X97_Y36_N14  ; 4       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|sevseg_1[6]~4                                                                  ; LCCOMB_X98_Y36_N26  ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|sevseg_2[4]~4                                                                  ; LCCOMB_X96_Y34_N4   ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|sevseg_3[6]~5                                                                  ; LCCOMB_X95_Y36_N24  ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|sevseg_4[1]~4                                                                  ; LCCOMB_X95_Y35_N20  ; 5       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SSD_Sequence:SSD_Sequence1|state~20                                                                       ; LCCOMB_X97_Y34_N20  ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SequenceKeyGenerator:PuzzleSequenceKeyGenerator|SequenceKeyBuilder:SequenceKeyBuilder1|sequence_key[12]~0 ; LCCOMB_X97_Y38_N12  ; 16      ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; SequenceVerifier:UserSequenceVerifier|stage_counter[0]~11                                                 ; LCCOMB_X100_Y37_N22 ; 3       ; Clock enable                          ; no     ; --                   ; --               ; --                        ;
+; clk                                                                                                       ; PIN_Y2              ; 416     ; Clock                                 ; yes    ; Global Clock         ; GCLK4            ; --                        ;
+; rst                                                                                                       ; PIN_M23             ; 332     ; Clock enable, Sync. clear, Sync. load ; no     ; --                   ; --               ; --                        ;
 +-----------------------------------------------------------------------------------------------------------+---------------------+---------+---------------------------------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1888,7 +1931,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; clk  ; PIN_Y2   ; 388     ; 52                                   ; Global Clock         ; GCLK4            ; --                        ;
+; clk  ; PIN_Y2   ; 416     ; 37                                   ; Global Clock         ; GCLK4            ; --                        ;
 +------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
@@ -1908,7 +1951,7 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
 +----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
-;0;(11001100) (314) (204) (CC)    ;(00110011) (63) (51) (33)   ;(11110000) (360) (240) (F0)   ;(00001111) (17) (15) (0F)   ;(11111111) (377) (255) (FF)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
+;0;(11001100) (314) (204) (CC)    ;(00110011) (63) (51) (33)   ;(11010001) (321) (209) (D1)   ;(01001110) (116) (78) (4E)   ;(11111111) (377) (255) (FF)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
 ;8;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
 ;16;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
 ;24;(00000000) (0) (0) (00)    ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;(00000000) (0) (0) (00)   ;
@@ -1947,154 +1990,161 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------------+---------------------------+
 ; Routing Resource Type ; Usage                     ;
 +-----------------------+---------------------------+
-; Block interconnects   ; 1,063 / 342,891 ( < 1 % ) ;
-; C16 interconnects     ; 118 / 10,120 ( 1 % )      ;
-; C4 interconnects      ; 489 / 209,544 ( < 1 % )   ;
-; Direct links          ; 275 / 342,891 ( < 1 % )   ;
+; Block interconnects   ; 1,174 / 342,891 ( < 1 % ) ;
+; C16 interconnects     ; 96 / 10,120 ( < 1 % )     ;
+; C4 interconnects      ; 623 / 209,544 ( < 1 % )   ;
+; Direct links          ; 272 / 342,891 ( < 1 % )   ;
 ; Global clocks         ; 1 / 20 ( 5 % )            ;
-; Local interconnects   ; 602 / 119,088 ( < 1 % )   ;
-; R24 interconnects     ; 127 / 9,963 ( 1 % )       ;
-; R4 interconnects      ; 631 / 289,782 ( < 1 % )   ;
+; Local interconnects   ; 677 / 119,088 ( < 1 % )   ;
+; R24 interconnects     ; 111 / 9,963 ( 1 % )       ;
+; R4 interconnects      ; 636 / 289,782 ( < 1 % )   ;
 +-----------------------+---------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.15) ; Number of LABs  (Total = 72) ;
+; Number of Logic Elements  (Average = 13.49) ; Number of LABs  (Total = 75) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 7                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 2                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
+; 5                                           ; 3                            ;
 ; 6                                           ; 2                            ;
-; 7                                           ; 2                            ;
+; 7                                           ; 1                            ;
 ; 8                                           ; 2                            ;
-; 9                                           ; 2                            ;
-; 10                                          ; 4                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 2                            ;
-; 13                                          ; 1                            ;
-; 14                                          ; 3                            ;
+; 9                                           ; 1                            ;
+; 10                                          ; 3                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 1                            ;
+; 13                                          ; 2                            ;
+; 14                                          ; 5                            ;
 ; 15                                          ; 7                            ;
-; 16                                          ; 35                           ;
+; 16                                          ; 44                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.86) ; Number of LABs  (Total = 72) ;
+; LAB-wide Signals  (Average = 1.91) ; Number of LABs  (Total = 75) ;
 +------------------------------------+------------------------------+
-; 1 Clock                            ; 67                           ;
-; 1 Clock enable                     ; 34                           ;
-; 1 Sync. clear                      ; 16                           ;
-; 1 Sync. load                       ; 15                           ;
-; 2 Clock enables                    ; 2                            ;
+; 1 Clock                            ; 73                           ;
+; 1 Clock enable                     ; 31                           ;
+; 1 Sync. clear                      ; 24                           ;
+; 1 Sync. load                       ; 11                           ;
+; 2 Clock enables                    ; 4                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 17.53) ; Number of LABs  (Total = 72) ;
+; Number of Signals Sourced  (Average = 19.01) ; Number of LABs  (Total = 75) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 4                            ;
-; 2                                            ; 3                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 2                            ;
+; 1                                            ; 2                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
 ; 5                                            ; 0                            ;
-; 6                                            ; 1                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 1                            ;
-; 9                                            ; 2                            ;
-; 10                                           ; 1                            ;
+; 6                                            ; 2                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
+; 12                                           ; 3                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 4                            ;
+; 14                                           ; 3                            ;
 ; 15                                           ; 0                            ;
-; 16                                           ; 1                            ;
-; 17                                           ; 3                            ;
-; 18                                           ; 8                            ;
-; 19                                           ; 4                            ;
-; 20                                           ; 4                            ;
-; 21                                           ; 4                            ;
-; 22                                           ; 6                            ;
-; 23                                           ; 0                            ;
+; 16                                           ; 2                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 7                            ;
+; 19                                           ; 10                           ;
+; 20                                           ; 7                            ;
+; 21                                           ; 5                            ;
+; 22                                           ; 5                            ;
+; 23                                           ; 4                            ;
 ; 24                                           ; 1                            ;
-; 25                                           ; 5                            ;
-; 26                                           ; 4                            ;
-; 27                                           ; 6                            ;
-; 28                                           ; 3                            ;
-; 29                                           ; 1                            ;
+; 25                                           ; 4                            ;
+; 26                                           ; 3                            ;
+; 27                                           ; 5                            ;
+; 28                                           ; 0                            ;
+; 29                                           ; 2                            ;
+; 30                                           ; 1                            ;
+; 31                                           ; 0                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.00) ; Number of LABs  (Total = 72) ;
+; Number of Signals Sourced Out  (Average = 7.21) ; Number of LABs  (Total = 75) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 9                            ;
-; 2                                               ; 4                            ;
-; 3                                               ; 3                            ;
-; 4                                               ; 6                            ;
-; 5                                               ; 5                            ;
-; 6                                               ; 5                            ;
+; 1                                               ; 4                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 5                            ;
+; 4                                               ; 4                            ;
+; 5                                               ; 6                            ;
+; 6                                               ; 13                           ;
 ; 7                                               ; 5                            ;
-; 8                                               ; 6                            ;
-; 9                                               ; 10                           ;
-; 10                                              ; 4                            ;
-; 11                                              ; 6                            ;
-; 12                                              ; 3                            ;
-; 13                                              ; 2                            ;
-; 14                                              ; 2                            ;
-; 15                                              ; 2                            ;
+; 8                                               ; 9                            ;
+; 9                                               ; 7                            ;
+; 10                                              ; 8                            ;
+; 11                                              ; 8                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 1                            ;
+; 14                                              ; 1                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 0                            ;
+; 17                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 12.81) ; Number of LABs  (Total = 72) ;
+; Number of Distinct Inputs  (Average = 14.00) ; Number of LABs  (Total = 75) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 3                            ;
-; 4                                            ; 5                            ;
-; 5                                            ; 5                            ;
-; 6                                            ; 3                            ;
-; 7                                            ; 2                            ;
-; 8                                            ; 4                            ;
-; 9                                            ; 4                            ;
-; 10                                           ; 3                            ;
+; 3                                            ; 2                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 6                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 5                            ;
+; 8                                            ; 6                            ;
+; 9                                            ; 0                            ;
+; 10                                           ; 2                            ;
 ; 11                                           ; 3                            ;
-; 12                                           ; 4                            ;
-; 13                                           ; 8                            ;
+; 12                                           ; 5                            ;
+; 13                                           ; 4                            ;
 ; 14                                           ; 5                            ;
-; 15                                           ; 3                            ;
-; 16                                           ; 3                            ;
-; 17                                           ; 2                            ;
+; 15                                           ; 2                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 4                            ;
 ; 18                                           ; 2                            ;
 ; 19                                           ; 2                            ;
-; 20                                           ; 1                            ;
-; 21                                           ; 1                            ;
+; 20                                           ; 3                            ;
+; 21                                           ; 2                            ;
 ; 22                                           ; 3                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 2                            ;
+; 25                                           ; 2                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 1                            ;
-; 28                                           ; 0                            ;
+; 28                                           ; 1                            ;
 ; 29                                           ; 1                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 0                            ;
-; 32                                           ; 3                            ;
+; 32                                           ; 0                            ;
+; 33                                           ; 0                            ;
+; 34                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
@@ -2303,34 +2353,33 @@ RAM content values are presented in the following format: (Binary) (Octal) (Deci
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk             ; clk                  ; 1.6               ;
+; clk             ; clk                  ; 1.3               ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                                                                                                             ;
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
-; Source Register                              ; Destination Register                                                                                                   ; Delay Added in ns ;
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
-; Authentication:UserAuthentication|rom_a[4]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.221             ;
-; Authentication:UserAuthentication|rom_a[3]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.221             ;
-; Authentication:UserAuthentication|rom_a[6]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.220             ;
-; Authentication:UserAuthentication|rom_a[5]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.220             ;
-; Authentication:UserAuthentication|rom_a[2]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.220             ;
-; Authentication:UserAuthentication|rom_a[1]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.220             ;
-; Authentication:UserAuthentication|rom_a[7]   ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.220             ;
-; LEDDriver:LEDDriver1|led_r[17]               ; LEDDriver:LEDDriver1|direction                                                                                         ; 0.027             ;
-; LCDController:LCDController1|data_user[2][2] ; LCDController:LCDController1|data2[10][2]                                                                              ; 0.011             ;
-+----------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
-Note: This table only shows the top 9 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                           ;
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                            ; Destination Register                                                                                                   ; Delay Added in ns ;
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Authentication:UserAuthentication|rom_a[6] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.188             ;
+; Authentication:UserAuthentication|rom_a[5] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.188             ;
+; Authentication:UserAuthentication|rom_a[4] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.187             ;
+; Authentication:UserAuthentication|rom_a[3] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.187             ;
+; Authentication:UserAuthentication|rom_a[2] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.187             ;
+; Authentication:UserAuthentication|rom_a[1] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.187             ;
+; Authentication:UserAuthentication|rom_a[7] ; ROM_Sim:UserCredentials|altsyncram:altsyncram_component|altsyncram_0p91:auto_generated|ram_block1a7~porta_address_reg0 ; 0.187             ;
++--------------------------------------------+------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 7 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (119006): Selected device EP4CE115F29C7 for design "BombSquad"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2359,7 +2408,7 @@ Info (332144): No user constrained base clocks found in the design
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332154): The derive_clock_uncertainty command did not apply clock uncertainty to any clock-to-clock transfers.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
-Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/BombSquad.v Line: 22
+Info (176353): Automatically promoted node clk~input (placed in PIN Y2 (CLK2, DIFFCLK_1p)) File: //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/BombSquad.v Line: 22
     Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G4
 Info (176233): Starting register packing
 Info (176235): Finished register packing
@@ -2370,30 +2419,30 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:07
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:06
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 3% of the available device resources in the region that extends from location X104_Y37 to location X115_Y48
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 0.82 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (11888): Total time spent on timing analysis during the Fitter is 0.97 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
-Info (144001): Generated suppressed messages file F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.fit.smsg
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:03
+Info (144001): Generated suppressed messages file //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/syn/output_files/BombSquad.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 1386 megabytes
-    Info: Processing ended: Thu Dec 08 19:40:36 2016
-    Info: Elapsed time: 00:00:36
-    Info: Total CPU time (on all processors): 00:00:37
+    Info: Peak virtual memory: 1593 megabytes
+    Info: Processing ended: Thu Dec 08 22:07:34 2016
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:00:33
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in F:/[ECE 5440] Advanced Digital Design/Project/src/BombSquad/syn/output_files/BombSquad.fit.smsg.
+The suppressed messages can be found in //VBOXSVR/uh2016/ECE 5440 ADD/Project/Git/BombSquad/syn/output_files/BombSquad.fit.smsg.
 
 

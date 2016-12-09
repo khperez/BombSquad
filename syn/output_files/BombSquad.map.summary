@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Thu Dec 08 19:39:59 2016
+Analysis & Synthesis Status : Successful - Thu Dec 08 22:06:51 2016
 Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Lite Edition
 Revision Name : BombSquad
 Top-level Entity Name : BombSquad
 Family : Cyclone IV E
-Total logic elements : 847
-    Total combinational functions : 832
-    Dedicated logic registers : 387
-Total registers : 387
+Total logic elements : 987
+    Total combinational functions : 974
+    Dedicated logic registers : 415
+Total registers : 415
 Total pins : 100
 Total virtual pins : 0
 Total memory bits : 2,048
