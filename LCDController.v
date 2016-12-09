@@ -13,16 +13,15 @@
 	- 0x01: authentication success
 	- 0x02: authentication failed
         - 0x10: game in progress
-        - 0x11: level 1 success
-        - 0x12: level 1 failed
-        - 0x13: level 2 success
-        - 0x14: level 2 failed
-	- 0x15: level 3 success
-        - 0x16: level 3 failed
         - 0x20: game success sequence begin
         - 0x21: game success sequence end
         - 0x30: game over sequence begin
         - 0x31: game over sequence end
+     + user: authenticated user id
+	- 1100: katherine perez
+	- 0011: sergio silva
+	- 1101: daniel lopez
+	- 0100: rafael campos
 
    OUTPUTS:
      + lcd_on: lcd power control flag
@@ -30,9 +29,10 @@
      + lcd_flag: lcd control flags (RS RW DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0)
 */
 
-module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
+module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
   input clk, reset;
   input [7:0] state;
+  input [3:0] user;
   output lcd_on, lcd_en;
   output [9:0] lcd_flag;
   reg lcd_on, lcd_en;
@@ -44,6 +44,7 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
   reg [5:0] char_cur;
   reg [7:0] data1 [0:15];
   reg [7:0] data2 [0:15];
+  reg [7:0] data_user [0:5];
 
   parameter C_1MS = 50000, C_2MS = 100000, C_20MS = 1000000, C_45MS = 2250000;
   parameter S_POWER = 1, S_FNCTNSET = 2, S_DISPCNTRL = 3, S_DISPOFF = 4, S_DISPCLR = 5, S_ENTRYMODE = 6, S_WRITEDATA = 7, S_PUSH = 8; 
@@ -59,6 +60,53 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
     end
 
     else if (lcd_activate == 1) begin
+
+      case (user)
+	8'b1100: begin
+	  data_user[0] <= " ";
+	  data_user[1] <= " ";
+	  data_user[2] <= " ";
+	  data_user[3] <= "K";
+	  data_user[4] <= "A";
+	  data_user[5] <= "T";
+	end
+
+	8'b0011: begin
+	  data_user[0] <= "S";
+	  data_user[1] <= "E";
+	  data_user[2] <= "R";
+	  data_user[3] <= "G";
+	  data_user[4] <= "I";
+	  data_user[5] <= "O";
+	end
+
+	8'b1101: begin
+	  data_user[0] <= "D";
+	  data_user[1] <= "A";
+	  data_user[2] <= "N";
+	  data_user[3] <= "I";
+	  data_user[4] <= "E";
+	  data_user[5] <= "L";
+	end
+
+	8'0100: begin
+	  data_user[0] <= "R";
+	  data_user[1] <= "A";
+	  data_user[2] <= "F";
+	  data_user[3] <= "A";
+	  data_user[4] <= "E";
+	  data_user[5] <= "L";
+	end
+	
+	default: begin
+	  data_user[0] <= "E";
+	  data_user[1] <= "R";
+	  data_user[2] <= "R";
+	  data_user[3] <= "O";
+	  data_user[4] <= "R";
+	  data_user[5] <= "!";
+    endcase
+
       case (state)
 	// AUTHENTICATION PENDING
 	8'h00: begin
@@ -176,267 +224,39 @@ module LCDController(clk, reset, state, lcd_on, lcd_en, lcd_flag);
 
 	// GAME IN PROGRESS
 	8'h10: begin 
-	  // ____GAME__IN____ //
-	  // ____PROGRESS____ //
+	  // _BOMB_ACTIVATED_  //
+	  // _HURRY__XXXXXX!_ //
 	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "G";
-	  data1[5]  <= "A";
-	  data1[6]  <= "M";
-	  data1[7]  <= "E";
-	  data1[8]  <= " ";
-	  data1[9]  <= " ";
-	  data1[10] <= "I";
-	  data1[11] <= "N";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
+	  data1[1]  <= "B";
+	  data1[2]  <= "O";
+	  data1[3]  <= "M";
+	  data1[4]  <= "B";
+	  data1[5]  <= " ";
+	  data1[6]  <= "A";
+	  data1[7]  <= "C";
+	  data1[8]  <= "T";
+	  data1[9]  <= "I";
+	  data1[10] <= "V";
+	  data1[11] <= "A";
+	  data1[12] <= "T";
+	  data1[13] <= "E";
+	  data1[14] <= "D";
 	  data1[15] <= " ";
 	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= "P";
-	  data2[5]  <= "R"; 
-	  data2[6]  <= "O"; 
-	  data2[7]  <= "G"; 
-	  data2[8]  <= "R"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "S";
-	  data2[11] <= "S";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 1 SUCCESS
-	8'h11: begin 
-	  // ____LEVEL__1____ //
-	  // _____PASSED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "1";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "P"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "S"; 
-	  data2[8]  <= "S"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 1 FAILURE
-	8'h12: begin 
-	  // ____LEVEL__1____ //
-	  // _____FAILED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "1";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "F"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "I"; 
-	  data2[8]  <= "L"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 2 SUCCESS
-	8'h13: begin 
-	  // ____LEVEL__2____ //
-	  // _____PASSED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "2";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "P"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "S"; 
-	  data2[8]  <= "S"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 2 FAILURE
-	8'h14: begin 
-	  // ____LEVEL__2____ //
-	  // _____FAILED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "2";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "F"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "I"; 
-	  data2[8]  <= "L"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 3 SUCCESS
-	8'h15: begin 
-	  // ____LEVEL__3____ //
-	  // _____PASSED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "3";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "P"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "S"; 
-	  data2[8]  <= "S"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
-	  data2[15] <= " ";
-	end
-
-	// LEVEL 3 FAILURE
-	8'h16: begin 
-	  // ____LEVEL__3____ //
-	  // _____FAILED_____ //
-	  data1[0]  <= " ";
-	  data1[1]  <= " ";
-	  data1[2]  <= " ";
-	  data1[3]  <= " ";
-	  data1[4]  <= "L";
-	  data1[5]  <= "E";
-	  data1[6]  <= "V";
-	  data1[7]  <= "E";
-	  data1[8]  <= "L";
-	  data1[9]  <= " ";
-	  data1[10] <= " ";
-	  data1[11] <= "3";
-	  data1[12] <= " ";
-	  data1[13] <= " ";
-	  data1[14] <= " ";
-	  data1[15] <= " ";
-	  data2[0]  <= " ";
-	  data2[1]  <= " ";
-	  data2[2]  <= " "; 
-	  data2[3]  <= " "; 
-	  data2[4]  <= " ";
-	  data2[5]  <= "F"; 
-	  data2[6]  <= "A"; 
-	  data2[7]  <= "I"; 
-	  data2[8]  <= "L"; 
-	  data2[9]  <= "E";
-	  data2[10] <= "D";
-	  data2[11] <= " ";
-	  data2[12] <= " ";
-	  data2[13] <= " ";
-	  data2[14] <= " ";
+	  data2[1]  <= "H";
+	  data2[2]  <= "U"; 
+	  data2[3]  <= "R"; 
+	  data2[4]  <= "R";
+	  data2[5]  <= "Y"; 
+	  data2[6]  <= " "; 
+	  data2[7]  <= " "; 
+	  data2[8]  <= data_user[0];
+	  data2[9]  <= data_user[1];
+	  data2[10] <= data_user[2];
+	  data2[11] <= data_user[3];
+	  data2[12] <= data_user[4];
+	  data2[13] <= data_user[5];
+	  data2[14] <= "!";
 	  data2[15] <= " ";
 	end
 
