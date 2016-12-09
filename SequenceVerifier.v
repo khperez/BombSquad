@@ -23,11 +23,11 @@
 
 */
 
-module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, submit, clk, rst, result);
+module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, clk, rst, result);
     input [7:0] game_state;
     input [15:0] seq_key;
     input [3:0] seq_input;
-    input valid_key, verify, submit;
+    input valid_key, verify;
     input clk, rst;
 
     output reg [1:0] result;
@@ -277,6 +277,7 @@ module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, submi
                                                         begin
                                                             level_stage <= stage3;
                                                             result <= 2'b11;
+                                                            stage_counter <= 0;
                                                         end
                                                 end
                                             else if (seq_input != stage2_target && verify == 1)
@@ -538,18 +539,17 @@ module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, submi
 
                         // Level Success
                         level_success: begin
-                                            // Game success sequence end
-                                            if (game_state == 8'h20 && verify == 1)
-                                                begin
-                                                    level_stage <= stage1;
-                                                    result <= 2'b00;
-                                                end
-                                            else if (game_state == 8'h20 && submit == 1)
+                                            if (game_state == 8'h00)
                                                 begin
                                                     level_stage <= stage0;
                                                     result <= 2'b00;
                                                 end
-                                            else
+                                            else if (game_state == 8'h10)
+                                                begin
+                                                    level_stage <= stage0;
+                                                    result <= 2'b00;
+                                                end
+                                            else if (game_state == 8'h20)
                                                 begin
                                                     level_stage <= level_success;
                                                     result <= 2'b01;
@@ -558,17 +558,17 @@ module SequenceVerifier(game_state, seq_key, valid_key, seq_input, verify, submi
 
                         // Failed Stage
                         stage_fail: begin
-                                        if (game_state == 8'h30 && verify == 1)
-                                            begin
-                                                level_stage <= stage1;
-                                                result <= 2'b11;
-                                            end
-                                        else if (game_state == 8'h30 && submit == 1)
+                                        if (game_state == 8'h00)
                                             begin
                                                 level_stage <= stage0;
                                                 result <= 2'b00;
                                             end
-                                        else
+                                        else if (game_state == 8'h10)
+                                            begin
+                                                level_stage <= stage0;
+                                                result <= 2'b00;
+                                            end
+                                        else if (game_state == 8'h20)
                                             begin
                                                 level_stage <= stage_fail;
                                                 result <= 2'b10;

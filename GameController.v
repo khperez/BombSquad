@@ -22,9 +22,10 @@
         0x30: game over sequence begin
 */
 
-module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
+module GameController(s_auth, cur_time, s_results, clk, rst, verify, submit, s_current);
     input [1:0] s_auth, s_results;
     input clk, rst;
+    input verify, submit;
     input [11:0] cur_time;
 
     reg [2:0] game_state;
@@ -70,63 +71,59 @@ module GameController(s_auth, cur_time, s_results, clk, rst, s_current);
                                         s_current <= 8'h30;
                                         game_state <= game_over;
                                     end
+                                else if (s_results == 2'b00 || s_results == 2'b11)
+                                    begin
+                                        s_current <= 8'h10;
+                                        game_state <= in_game;
+                                    end
+                                else if (s_results == 2'b01)
+                                    begin
+                                        s_current <= 8'h20;
+                                        game_state <= game_success;
+                                    end
+                                else if (s_results == 2'b10)
+                                    begin
+                                        s_current <= 8'h30;
+                                        game_state <= game_over;
+                                    end
                                 else
                                     begin
-                                        if (s_results == 2'b00 || s_results == 2'b11)
-                                            begin
-                                                s_current <= 8'h10;
-                                                game_state <= in_game;
-                                            end
-                                        else if (s_results == 2'b01)
-                                            begin
-                                                s_current <= 8'h20;
-                                                game_state <= game_success;
-                                            end
-                                        else if (s_results == 2'b10)
-                                            begin
-                                                s_current <= 8'h30;
-                                                game_state <= game_over;
-                                            end
+                                        s_current <= s_current;
+                                        game_state <= game_state;
                                     end
                              end
                     game_success: begin
-                                        // Game Success Sequence begin
-                                        if (s_results == 2'b01)
-                                            begin
-                                                s_current <= 8'h20;
-                                                game_state <= game_success;
-                                            end
-                                        else if (s_results == 2'b11)
+                                        if (verify == 1)
                                             begin
                                                 s_current <= 8'h10;
                                                 game_state <= in_game;
+                                            end
+                                        else if (submit == 1)
+                                            begin
+                                                s_current <= 8'h00;
+                                                game_state <= authentication;
                                             end
                                         else
                                             begin
                                                 game_state <= game_success;
+                                                s_current <= 8'h20;
                                             end
                                   end
                     game_over: begin
-                                    // Game Over Sequence begin
-                                    if (s_results == 2'b10)
-                                        begin
-                                            s_current <= 8'h30;
-                                            game_state <= game_over;
-                                        end
-                                    // Game Over Sequence end
-                                    else if (s_results == 2'b11)
-                                        begin
-                                            s_current <= 8'h00;
-                                            game_state <= s_auth;
-                                        end
-                                    else if (s_results == 2'b00)
+                                    if (verify == 1)
                                         begin
                                             s_current <= 8'h10;
                                             game_state <= in_game;
                                         end
+                                    else if (submit == 1)
+                                        begin
+                                            s_current <= 8'h00;
+                                            game_state <= authentication;
+                                        end
                                     else
                                         begin
                                             game_state <= game_over;
+                                            s_current <= 8'h30;
                                         end
                                end
                     endcase
