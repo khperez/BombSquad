@@ -42,6 +42,7 @@ module SSD_Sequence(sequence_in, game_state, one_sec, button_move, button_next, 
 	reg[2:0] state;
 
 	reg[1:0] visabity;
+	reg[1:0] wait_start;
 
 	always@(posedge clk)
 	begin
@@ -52,6 +53,7 @@ module SSD_Sequence(sequence_in, game_state, one_sec, button_move, button_next, 
 			sevseg_3 <= 7'b1111111;
 			sevseg_4 <= 7'b1111111;
 			visabity <= 0;
+			wait_start <= 0;
 			state <= init;
 		end
 		else
@@ -65,9 +67,17 @@ module SSD_Sequence(sequence_in, game_state, one_sec, button_move, button_next, 
 					sevseg_4 <= 7'b1111111;
 					visabity <= 0;
 					if (game_state == 8'h10)
-						state <= show2Sec;
+						if (wait_start == 3)
+							state <= show2Sec;
+						else
+						begin
+							state <= init;
+							wait_start <= wait_start + 1;
+						end
 					else
+					begin
 						state <= init;
+					end
 				end
 				show2Sec:
 				begin
@@ -117,6 +127,7 @@ module SSD_Sequence(sequence_in, game_state, one_sec, button_move, button_next, 
 					sevseg_4 <= 7'b1111110;
 					sequence_out <= 4'b1110;
 					visabity <= 0;
+					wait_start <= 0;
 					state <= firstSeg;
 				end
 				firstSeg:
