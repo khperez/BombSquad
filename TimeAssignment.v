@@ -15,57 +15,57 @@ module TimeAssignment(game_level, value_three, value_two, value_one);
 				end
 				8'b00000001:begin
 					value_three = 4'd1;
-					value_two = 4'd5;
-					value_one = 4'd0;
-				end
-				8'b00000010:begin
-					value_three = 4'd1;
 					value_two = 4'd0;
 					value_one = 4'd0;
 				end
-				8'b00000011:begin
-					value_three = 4'd0;
-					value_two = 4'd9;
-					value_one = 4'd0;
-				end
-				8'b00000100:begin
-					value_three = 4'd0;
-					value_two = 4'd8;
-					value_one = 4'd0;
-				end
-				8'b00000101:begin
-					value_three = 4'd0;
-					value_two = 4'd7;
-					value_one = 4'd0;
-				end
-				8'b00000110:begin
+				8'b00000010:begin
 					value_three = 4'd0;
 					value_two = 4'd6;
 					value_one = 4'd0;
 				end
-				8'b00000111:begin
+				8'b00000011:begin
+					value_three = 4'd0;
+					value_two = 4'd5;
+					value_one = 4'd5;
+				end
+				8'b00000100:begin
 					value_three = 4'd0;
 					value_two = 4'd5;
 					value_one = 4'd0;
 				end
-				8'b00001000:begin
+				8'b00000101:begin
 					value_three = 4'd0;
 					value_two = 4'd4;
+					value_one = 4'd5;
+				end
+				8'b00000110:begin
+					value_three = 4'd0;
+					value_two = 4'd3;
+					value_one = 4'd5;
+				end
+				8'b00000111:begin
+					value_three = 4'd0;
+					value_two = 4'd3;
+					value_one = 4'd0;
+				end
+				8'b00001000:begin
+					value_three = 4'd0;
+					value_two = 4'd2;
 					value_one = 4'd5;
 				end
 				8'b00001001:begin
 					value_three = 4'd0;
-					value_two = 4'd4;
+					value_two = 4'd2;
 					value_one = 4'd0;
 				end
 				8'b00001010:begin
 					value_three = 4'd0;
-					value_two = 4'd3;
+					value_two = 4'd1;
 					value_one = 4'd5;
 				end
 				default:begin
 					value_three = 4'd0;
-					value_two = 4'd3;
+					value_two = 4'd1;
 					value_one = 4'd0;
 				end
 			endcase
