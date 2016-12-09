@@ -42,7 +42,6 @@ module RAMController(user_id, game_state, clk, data_in, reset, address_out, r_w,
 		begin
 			state <= init;
 			location <= 0;
-			cur_level <= 0;
 		end
 		else
 		begin
@@ -58,6 +57,7 @@ module RAMController(user_id, game_state, clk, data_in, reset, address_out, r_w,
 					begin
 						state <= write_to;
 						r_w <= 0;
+						cur_level <= 0;
 					end
 					else
 					begin
