@@ -35,14 +35,14 @@ module Countdown(init_time, game_state, sec_timer, reset, clk, value_three, valu
 
 	always@(posedge clk)
 	begin
-		if (reset == 0) begin state <= init; value_one = 0; value_two = 0; value_three = 2; end
+		if (reset == 0) begin state <= init; value_one = 9; value_two = 9; value_three = 9; end
 		else
 		begin
 			case(state)
 			init:
 			begin
 			if (game_state == 8'h10) begin state <= countdown; value_one = init_time[11:8]; value_two <= init_time[7:4]; value_three <= 2; end
-			else begin state <= init; value_one = 0; value_two = 0; value_three = 2; end
+			else begin state <= init; value_one = 9; value_two = 9; value_three = 9; end
 			end
 			countdown:
 			begin
