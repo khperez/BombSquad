@@ -21,7 +21,7 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     input submit_button, rotate_button, verify_button,
           clk, rst;
 
-    wire [7:0] game_state, rom_cred, rom_addr, ram_id;
+    wire [7:0] game_state, rom_cred, rom_addr, ram_id, cur_level;
     wire [3:0] user, cur_time3, cur_time2, cur_time1;
     wire [1:0] s_auth, verifier_result;
     wire [11:0] init_time;
@@ -74,10 +74,10 @@ module BombSquad(user_cred, submit_button, rotate_button, verify_button, clk, rs
     // module SSD_Sequence(sequence_in, display, one_sec, button_move, button_next, clk, reset, sequence_out, sevseg_1, sevseg_2, sevseg_3, sevseg_4);
     SSD_Sequence SSD_Sequence1(sequence_key, game_state, one_sec, rotate, verify, clk, rst, sequence_input, puzzle_sevseg1, puzzle_sevseg2, puzzle_sevseg3, puzzle_sevseg4);
 
-    // module LCDController(clk, reset, state, user, lcd_on, lcd_en, lcd_flag);
-    LCDController LCDController1(clk, rst, game_state, ram_id, lcd_on, lcd_en, lcd_flag);
-	 
-	 // module LEDDriver(clk, reset, state, led_g, led_r);
-	 LEDDriver LEDDriver1(clk, rst, game_state, led_g, led_r);
+    // module LCDController(clk, reset, state, user, score, lcd_on, lcd_en, lcd_flag);
+    LCDController LCDController1(clk, rst, game_state, ram_id, cur_level, lcd_on, lcd_en, lcd_flag);
+	
+    // module LEDDriver(clk, reset, state, led_g, led_r);
+    LEDDriver LEDDriver1(clk, rst, game_state, led_g, led_r);
 
 endmodule

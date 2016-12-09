@@ -22,7 +22,6 @@
 	- 0011: sergio silva
 	- 1101: daniel lopez
 	- 0100: rafael campos
-     + score: score reading from RAM
 
    OUTPUTS:
      + lcd_on: lcd power control flag
