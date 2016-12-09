@@ -1,14 +1,16 @@
 /*
-	OneSecTimer.v
+	OneSec_Timer.v
 	Description:
-	Continuously sends pulses in one second intervals.
+	Continuously sends single clock cycle pulses in one second intervals.
+	Utilizes an internal register to count the number of clock cycles that
+	has elapsed until the count is equal to 1 second.
 	
 	Inputs
 		clk: 		On-board 50 Mhz clock
-		reset:		active low push button
+		reset:		Active low push button
 		
 	Outputs
-		timeout:	pulse signal indicating one second has occurred.
+		timeout:	Pulse signal indicating one second has occurred.
 
 */
 

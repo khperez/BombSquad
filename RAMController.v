@@ -19,7 +19,7 @@
 */
 
 
-module RAMController(user_id, game_state, clk, reset, address_out, data_in, data_out, cur_level, r_w);
+module RAMController(user_id, game_state, clk, data_in, reset, address_out, r_w, data_out, cur_level);
 	
 	input[3:0] user_id;
 	input[7:0] data_in, game_state;
