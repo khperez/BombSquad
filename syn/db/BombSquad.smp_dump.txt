@@ -1,25 +1,23 @@
 
-State Machine - |BombSquad|LCDController:LCDController1|next
-Name next.S_DISPCLR next.S_DISPOFF next.S_HOME next.S_WRITEDATA next.S_ENTRYMODE next.S_DISPCNTRL next.S_FNCTNSET 
-next.S_FNCTNSET 0 0 0 0 0 0 0 
-next.S_DISPCNTRL 0 0 0 0 0 1 1 
-next.S_ENTRYMODE 0 0 0 0 1 0 1 
-next.S_WRITEDATA 0 0 0 1 0 0 1 
-next.S_HOME 0 0 1 0 0 0 1 
-next.S_DISPOFF 0 1 0 0 0 0 1 
-next.S_DISPCLR 1 0 0 0 0 0 1 
+State Machine - |BombSquad|LCDController:LCDController1|fsm_next
+Name fsm_next.S_WRITEDATA fsm_next.S_ENTRYMODE fsm_next.S_DISPCLR fsm_next.S_DISPOFF fsm_next.S_DISPCNTRL fsm_next.S_FNCTNSET 
+fsm_next.S_FNCTNSET 0 0 0 0 0 0 
+fsm_next.S_DISPCNTRL 0 0 0 0 1 1 
+fsm_next.S_DISPOFF 0 0 0 1 0 1 
+fsm_next.S_DISPCLR 0 0 1 0 0 1 
+fsm_next.S_ENTRYMODE 0 1 0 0 0 1 
+fsm_next.S_WRITEDATA 1 0 0 0 0 1 
 
 State Machine - |BombSquad|LCDController:LCDController1|fsm
-Name fsm.S_DISPCLR fsm.S_DISPOFF fsm.S_PUSH fsm.S_HOME fsm.S_WRITEDATA fsm.S_ENTRYMODE fsm.S_DISPCNTRL fsm.S_FNCTNSET fsm.S_POWER 
-fsm.S_POWER 0 0 0 0 0 0 0 0 0 
-fsm.S_FNCTNSET 0 0 0 0 0 0 0 1 1 
-fsm.S_DISPCNTRL 0 0 0 0 0 0 1 0 1 
-fsm.S_ENTRYMODE 0 0 0 0 0 1 0 0 1 
-fsm.S_WRITEDATA 0 0 0 0 1 0 0 0 1 
-fsm.S_HOME 0 0 0 1 0 0 0 0 1 
-fsm.S_PUSH 0 0 1 0 0 0 0 0 1 
-fsm.S_DISPOFF 0 1 0 0 0 0 0 0 1 
-fsm.S_DISPCLR 1 0 0 0 0 0 0 0 1 
+Name fsm.S_WRITEDATA fsm.S_ENTRYMODE fsm.S_DISPCLR fsm.S_DISPOFF fsm.S_DISPCNTRL fsm.S_FNCTNSET fsm.S_POWER fsm.S_PUSH 
+fsm.S_POWER 0 0 0 0 0 0 0 0 
+fsm.S_FNCTNSET 0 0 0 0 0 1 1 0 
+fsm.S_DISPCNTRL 0 0 0 0 1 0 1 0 
+fsm.S_DISPOFF 0 0 0 1 0 0 1 0 
+fsm.S_DISPCLR 0 0 1 0 0 0 1 0 
+fsm.S_ENTRYMODE 0 1 0 0 0 0 1 0 
+fsm.S_WRITEDATA 1 0 0 0 0 0 1 0 
+fsm.S_PUSH 0 0 0 0 0 0 1 1 
 
 State Machine - |BombSquad|SSD_Sequence:SSD_Sequence1|state
 Name state.fourthSeg state.thirdSeg state.secondSeg state.firstSeg state.initialStart state.show2Sec state.init 
