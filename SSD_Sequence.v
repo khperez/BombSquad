@@ -20,6 +20,7 @@
 		sevseg_2:			Contains the second digit. Second from the right digit.
 		sevseg_3:			Contains the third digit. Second from the left digit.
 		sevseg_4:			Contains the fourth digit. Left most digit.
+		
 */
 
 

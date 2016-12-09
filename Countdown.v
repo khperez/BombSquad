@@ -2,7 +2,7 @@
 	Countdown.v
 	Description:
 	Contains a predetermined starting value in seconds across three 4-bit internal
-	registers which decrements each time a pulse is send from the OneSecTimer module. 
+	registers which decrements each time a pulse is send from the OneSec_Timer module. 
 	
 	Inputs
 		init_time:			Initial time for the countdown sequence. [[4-bit third digit] [4-bit second digit] [4-bit first digit]]
