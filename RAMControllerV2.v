@@ -1,3 +1,24 @@
+/*
+	RAMController.v
+	Description:
+	Will be used to store a high score for the user which will be used to determine the starting time they will receive per level.
+	After the game has completed, the final score will be displayed.  
+	
+	Inputs
+		user_id:			The ID of the user that is currently playing the game.
+		game_state:			Provided game state from the controller.
+		data_in:			The data read in from the RAM. when the r_w signal is low.
+		clk: 				On-board 50 Mhz clock
+		reset:				active low push button
+		
+	Outputs
+		r_w:				The signal which controlles the write/read operation of the RAM. 0 = read and 1 = write.
+		address_out:		The address that will be read from or written to.
+		data_out:			The data that will be written to the RAM while the r_w signal is high.
+		cur_level:			The output of the read operation preformed on the RAM.
+*/
+
+
 module RAMControllerV2(user_id, game_state, clk, reset, address_out, data_in, data_out, cur_level, r_w);
 	
 	input[3:0] user_id;
