@@ -23,9 +23,9 @@ module TimeAssignment(game_level, clk, reset, value_three, value_two, value_one)
 		begin
 			if (reset == 0)
 			begin
-				value_three = 4'd2;
-				value_two = 4'd0;
-				value_one = 4'd0;
+				value_three = 4'b0010;
+				value_two = 4'b0000;
+				value_one = 4'b0000;
 			end
 			else
 			begin
