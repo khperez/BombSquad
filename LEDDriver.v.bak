@@ -62,17 +62,16 @@ module LEDDriver(clk, reset, state, led_g, led_r);
         8'h10: begin
 	  led_g <= 0;
 
-	  if (counter == C_20MS) begin
+	  if (led_r == 18'b000000000000000000) begin
+	    led_r <= 18'b000000000000000001;
+	  end
+	  else if (counter == C_20MS) begin
 	    counter <= 0;
 	    
 	    led_r <= led_r << 1;
 
 	    if (led_r == 18'b100000000000000000)
 	      led_r <= 18'b000000000000000001;
-	  end
-	  else if (counter == 0) begin
-	    led_r <= 18'b000000000000000001;
-	    counter <= counter + 1;
 	  end
 	  else begin
 	    counter <= counter + 1;

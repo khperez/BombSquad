@@ -30,7 +30,7 @@ module LEDDriver(clk, reset, state, led_g, led_r);
   output [17:0] led_r;
   reg [7:0] led_g;
   reg [17:0] led_r;
-  reg [21:0] counter;
+  reg [25:0] counter;
 
   wire [7:0] random1, random2, random3;
 
@@ -40,7 +40,7 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 
   reg direction; // 0:left 1:right
 
-  parameter C_20MS = 1000000, C_45MS = 2250000;
+  parameter C_20MS = 1000000, C_45MS = 2250000, C_1S = 50000000;
 
   always @(posedge clk) begin
     if (reset == 0) begin
@@ -65,7 +65,7 @@ module LEDDriver(clk, reset, state, led_g, led_r);
 	  if (led_r == 18'b000000000000000000) begin
 	    led_r <= 18'b000000000000000001;
 	  end
-	  else if (counter == C_20MS) begin
+	  else if (counter == C_1S) begin
 	    counter <= 0;
 	    
 	    led_r <= led_r << 1;
